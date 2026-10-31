@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>مخضرم صحة | نظام إدارة الجلسات والحسابات الطبية</title>
+  <title>مخضرم صحة | النظام الإداري والمحاسبي المتكامل</title>
   <!-- مكتبة تليجرام الرسمية للـ Mini Apps -->
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
@@ -35,7 +35,6 @@
 
     .container { max-width: 980px; margin: auto; }
 
-    /* شعار مخضرم صحة */
     .brand-logo {
       width: 68px;
       height: 68px;
@@ -73,7 +72,6 @@
     .brand-logo.sm .brand-logo-top,
     .brand-logo.sm .brand-logo-bottom { font-size: 10.5px; }
 
-    /* البطاقات والهيدر */
     .card {
       background: var(--card-bg);
       padding: 18px;
@@ -98,7 +96,6 @@
     .app-header h2 { margin: 0; font-size: 17px; font-weight: 800; color: #fff; }
     .app-header small { color: rgba(255,255,255,0.9); font-size: 12px; font-weight: 600; display: block; }
 
-    /* شبكة الإحصائيات */
     .stats-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(135px, 1fr));
@@ -126,11 +123,10 @@
     .stat-box.pink h3 { color: var(--brand-pink-dark); }
     .stat-box.danger h3 { color: var(--danger); }
     .stat-box.success h3 { color: #059669; }
-    .stat-box p { margin: 4px 0 0; font-size: 11.5px; color: var(--text-muted); font-weight: 700; }
+    .stat-box p { margin: 4px 0 0; font-size: 11px; color: var(--text-muted); font-weight: 700; }
 
     .grid-2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
 
-    /* الحقول والأزرار */
     label { display: block; margin-bottom: 5px; font-weight: 700; font-size: 12.5px; color: #334155; }
     input, select, textarea {
       width: 100%;
@@ -175,7 +171,6 @@
     button.btn-sm { padding: 6px 10px; font-size: 11.5px; border-radius: 8px; }
     button:disabled { background: #94A3B8 !important; box-shadow: none !important; cursor: not-allowed; transform: none; }
 
-    /* أزرار الفلترة والبحث */
     .filter-bar {
       display: flex;
       flex-wrap: wrap;
@@ -201,21 +196,18 @@
       border-color: var(--brand-blue);
     }
 
-    /* الجداول */
     .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-color); }
     table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 520px; background: #fff; }
     th, td { padding: 10px 9px; border-bottom: 1px solid var(--border-color); text-align: right; vertical-align: middle; }
     th { background: #F8FAFC; color: var(--brand-blue-dark); font-weight: 800; font-size: 12px; white-space: nowrap; }
     tr:last-child td { border-bottom: none; }
 
-    /* الشارات */
     .badge-ok { background: #DCFCE7; color: #166534; padding: 3px 8px; border-radius: 8px; font-size: 11px; font-weight: 700; display: inline-block; }
     .badge-wait { background: #FEF3C7; color: #92400E; padding: 3px 8px; border-radius: 8px; font-size: 11px; font-weight: 700; display: inline-block; }
     .badge-danger { background: #FEE2E2; color: #991B1B; padding: 3px 8px; border-radius: 8px; font-size: 11px; font-weight: 700; display: inline-block; }
     .badge-brand { background: #EEF2FF; color: var(--brand-blue); padding: 3px 8px; border-radius: 8px; font-size: 11px; font-weight: 700; display: inline-block; }
     .tg-badge { background: linear-gradient(90deg, rgba(53,98,212,0.12), rgba(238,99,224,0.12)); color: var(--brand-blue-dark); padding: 6px 14px; border-radius: 20px; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 12px; border: 1px solid rgba(53,98,212,0.2); }
 
-    /* شريط الإشعارات العائم */
     .notify-bar {
       display: none;
       padding: 13px 16px;
@@ -265,7 +257,6 @@
       background: #F8FAFC;
     }
 
-    /* شريط التنقل السفلي */
     .bottom-nav {
       position: fixed;
       bottom: 0;
@@ -300,7 +291,6 @@
       background: rgba(53, 98, 212, 0.09);
     }
 
-    /* النوافذ المنبثقة (Modals) */
     .modal-overlay {
       display: none;
       position: fixed;
@@ -340,10 +330,8 @@
 </head>
 <body>
   <div class="container">
-    <!-- شريط الإشعارات الموحد -->
     <div id="notifyBar" class="notify-bar"></div>
 
-    <!-- شاشة التحميل التلقائي لتليجرام -->
     <div id="loadingScreen" class="card" style="text-align:center; padding:45px 20px; display:none; margin-top:40px;">
       <div class="brand-logo" style="margin-bottom:16px;">
         <div class="brand-logo-top">مخضرم</div>
@@ -353,9 +341,7 @@
       <p style="color:var(--text-muted); font-size:13px; margin:0;">يتم التحقق من حسابك عبر تليجرام تلقائياً</p>
     </div>
 
-    <!-- ========================================================= -->
-    <!-- 1. بوابة تسجيل الدخول الموحدة -->
-    <!-- ========================================================= -->
+    <!-- 1. بوابة تسجيل الدخول -->
     <div id="loginView" class="card" style="max-width:420px; margin: 20px auto; border-top: 6px solid var(--brand-blue);">
       <div style="text-align:center; margin-bottom:16px;">
         <div class="brand-logo" style="margin-bottom:12px;">
@@ -373,9 +359,7 @@
       <button type="button" id="loginBtn" class="btn-gradient" style="width:100%; padding:13px; font-size:15px;">تسجيل الدخول</button>
     </div>
 
-    <!-- ========================================================= -->
-    <!-- 2. واجهة المريض (Client View) -->
-    <!-- ========================================================= -->
+    <!-- 2. واجهة المريض -->
     <div id="clientView" style="display:none;">
       <div class="app-header">
         <div class="app-header-info">
@@ -409,15 +393,13 @@
       <div class="card">
         <h3 class="section-title">📋 سجل الجلسات والتوقيع الإلكتروني</h3>
         <div class="secret-alert">
-          🔒 <strong>ضمان السرية التامة:</strong> تقييمك لمستوى الرضا عن الجلسة سري تماماً ويظهر لإدارة «مخضرم صحة» فقط، <u>ولا يظهر للطبيب المعالج نهائياً</u>.
+          🔒 <strong>ضمان السرية التامة (100%):</strong> تقييمك بالنجوم وملاحظاتك المكتوبة عن الجلسة <u>سرية تماماً وتصل للإدارة فقط</u> لضمان جودة الخدمة وتقييم الأطباء بموضوعية، ولا تظهر للطبيب.
         </div>
         <div id="cliSessionsList"></div>
       </div>
     </div>
 
-    <!-- ========================================================= -->
-    <!-- 3. واجهة الطبيب (Doctor View) -->
-    <!-- ========================================================= -->
+    <!-- 3. واجهة الطبيب -->
     <div id="doctorView" style="display:none;">
       <div class="app-header">
         <div class="app-header-info">
@@ -426,8 +408,8 @@
             <div class="brand-logo-bottom">صحة</div>
           </div>
           <div>
-            <h2>👨‍⚕️ د. <span id="docNameTitle"></span></h2>
-            <small>لوحة الطبيب المعالج</small>
+            <h2>👨‍⚕️ د. <span id="docNameTitle"></span> <span id="docRatingBadge" class="badge-brand" style="margin-right:6px; font-size:11px;">⭐⭐⭐⭐⭐ 5.0</span></h2>
+            <small id="docGovSubtitle">محافظتي (بإشراف الإدارة): —</small>
           </div>
         </div>
         <button type="button" class="logout-btn btn-light">خروج</button>
@@ -439,10 +421,9 @@
         <div class="stat-box success"><h3 id="docWeeklyWallet">0 ج.م</h3><p>مستحقات جاهزة للصرف</p></div>
       </div>
 
-      <!-- تبويب الطبيب 1: المرضى وإمضاء الحضور -->
       <div id="docTabPatients" class="doc-tab-content">
         <div class="card">
-          <h3 class="section-title">👥 المرضى المسجلين معك (سطر مدمج لكل مريض)</h3>
+          <h3 class="section-title">👥 المرضى المسجلين معك</h3>
           <div class="table-wrap">
             <table>
               <thead>
@@ -451,7 +432,7 @@
                   <th>إجمالي الباقة</th>
                   <th>مؤكد</th>
                   <th>معلق</th>
-                  <th>المتبقي</th>
+                  <th>المتبقي والصلاحية</th>
                   <th>إمضاء حضور</th>
                 </tr>
               </thead>
@@ -461,25 +442,23 @@
         </div>
       </div>
 
-      <!-- تبويب الطبيب 2: معرض الحالات المتاحة -->
       <div id="docTabMarket" class="doc-tab-content" style="display:none;">
         <div class="card">
-          <h3 class="section-title">🏥 معرض الحالات المتاحة للتقديم</h3>
+          <h3 class="section-title">🏥 معرض الحالات المتاحة في نطاق محافظتك</h3>
           <div id="docCasesList"></div>
         </div>
       </div>
 
-      <!-- تبويب الطبيب 3: سجل الجلسات -->
       <div id="docTabHistory" class="doc-tab-content" style="display:none;">
         <div class="card">
-          <h3 class="section-title">📅 سجل الجلسات وحالة الصرف</h3>
+          <h3 class="section-title">📅 سجل الجلسات والتسويات المالية (بونص / خصم)</h3>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
                   <th>التاريخ</th>
-                  <th>المريض</th>
-                  <th>توقيع المريض</th>
+                  <th>البيان / المريض</th>
+                  <th>التفاصيل / التوقيع</th>
                   <th>الاستحقاق</th>
                   <th>حالة الصرف</th>
                 </tr>
@@ -490,7 +469,6 @@
         </div>
       </div>
 
-      <!-- شريط التنقل السفلي للطبيب -->
       <div class="bottom-nav">
         <button type="button" class="nav-tab active" onclick="switchDocTab('docTabPatients', this)">
           <span class="icon">👥</span><span>مرضاي والحضور</span>
@@ -504,9 +482,7 @@
       </div>
     </div>
 
-    <!-- ========================================================= -->
-    <!-- 4. داش بورد الإدارة الشاملة (Admin View) -->
-    <!-- ========================================================= -->
+    <!-- 4. واجهة الإدارة الشاملة -->
     <div id="adminView" style="display:none;">
       <div class="app-header">
         <div class="app-header-info">
@@ -516,24 +492,29 @@
           </div>
           <div>
             <h2>إدارة «مخضرم صحة»</h2>
-            <small>الإدارة المالية، الباقات، والرسائل</small>
+            <small>الإدارة المالية المزدوجة، الباقات، المحافظات، والرسائل</small>
           </div>
         </div>
         <button type="button" class="logout-btn btn-light">خروج</button>
       </div>
 
-      <!-- لوحة المؤشرات المالية الشاملة (الخزنة والمديونيات والأرباح) -->
+      <!-- الصف الأول: الحسابات الفعلية المحققة بالخزنة -->
       <div class="stats-grid">
         <div class="stat-box success"><h3 id="admCollectedCash">0 ج.م</h3><p>💰 المحصل الفعلي بالخزنة</p></div>
-        <div class="stat-box danger"><h3 id="admClientDebt">0 ج.م</h3><p>⏳ متبقي عند العملاء (لنا)</p></div>
-        <div class="stat-box pink"><h3 id="admUnpaidDocLiability">0 ج.م</h3><p>👨‍⚕️ مستحق للأطباء (علينا)</p></div>
-        <div class="stat-box"><h3 id="admNetProfit">0 ج.م</h3><p>📈 صافي ربح الجلسات المنفذة</p></div>
+        <div class="stat-box danger"><h3 id="admClientDebt">0 ج.م</h3><p>⏳ مديونيات عند العملاء (لنا بره)</p></div>
+        <div class="stat-box pink"><h3 id="admUnpaidDocLiability">0 ج.م</h3><p>👨‍⚕️ مستحق للأطباء جاهز للصرف</p></div>
+        <div class="stat-box"><h3 id="admNetProfit">0 ج.م</h3><p>✅ صافي ربح المركز المحقق (الفعلي)</p></div>
       </div>
 
-      <!-- تبويب الأدمن 1: التأسيس والباقات ودليل العملاء -->
+      <!-- الصف الثاني: التصور المبدئي للباقات السارية -->
+      <div class="stats-grid" style="margin-top:-8px;">
+        <div class="stat-box" style="border-color:#EE63E0;"><h3 id="admProjectedCenterProfit" style="color:#EE63E0;">0 ج.م</h3><p>📊 ربح المركز المبدئي المنتظر</p></div>
+        <div class="stat-box" style="border-color:#3562D4;"><h3 id="admProjectedDoctorCut" style="color:#3562D4;">0 ج.م</h3><p>🩺 مخصص الأطباء المبدئي المنتظر</p></div>
+      </div>
+
       <div id="admTabMain" class="adm-tab-content">
         <div class="grid-2">
-          <!-- إنشاء حساب جديد -->
+          <!-- تسجيل حساب جديد مع اختيار المحافظات للأطباء -->
           <div class="card">
             <h3 class="section-title">➕ تسجيل حساب جديد في النظام</h3>
             <label>الاسم الثلاثي</label>
@@ -543,26 +524,60 @@
             <label>كلمة المرور</label>
             <input type="text" id="newUserPass" placeholder="كلمة المرور">
             <label>نوع الحساب (الصلاحية)</label>
-            <select id="newUserRole">
+            <select id="newUserRole" onchange="toggleGovField()">
               <option value="Client">👤 مريض / عميل (Client)</option>
               <option value="Doctor">👨‍⚕️ طبيب معالج (Doctor)</option>
               <option value="Admin">🛡️ مدير نظام (Admin)</option>
             </select>
-            <button type="button" id="addUserBtn" style="width:100%;">إنشاء الحساب فوراً</button>
+
+            <div id="newUserGovWrap" style="display:none;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
+                <label style="margin:0;">🗺️ محافظات الطبيب (بيد الأدمن حصراً)</label>
+                <button type="button" class="btn-sm btn-pink" onclick="selectGreaterCairo('newUserGovSelect')">⚡ القاهرة الكبرى</button>
+              </div>
+              <select id="newUserGovSelect" multiple style="height:95px;">
+                <option value="الكل">🌐 يغطي جميع المحافظات</option>
+                <option value="القاهرة">القاهرة</option><option value="الجيزة">الجيزة</option><option value="القليوبية">القليوبية</option>
+                <option value="الإسكندرية">الإسكندرية</option><option value="الدقهلية">الدقهلية</option><option value="الشرقية">الشرقية</option>
+                <option value="الغربية">الغربية</option><option value="المنوفية">المنوفية</option><option value="البحيرة">البحيرة</option>
+                <option value="كفر الشيخ">كفر الشيخ</option><option value="دمياط">دمياط</option><option value="بورسعيد">بورسعيد</option>
+                <option value="الإسماعيلية">الإسماعيلية</option><option value="السويس">السويس</option><option value="الفيوم">الفيوم</option>
+                <option value="بني سويف">بني سويف</option><option value="المنيا">المنيا</option><option value="أسيوط">أسيوط</option>
+                <option value="سوهاج">سوهاج</option><option value="قنا">قنا</option><option value="أسوان">أسوان</option>
+                <option value="الأقصر">الأقصر</option><option value="البحر الأحمر">البحر الأحمر</option><option value="الوادي الجديد">الوادي الجديد</option>
+                <option value="مطروح">مطروح</option><option value="شمال سيناء">شمال سيناء</option><option value="جنوب سيناء">جنوب سيناء</option>
+              </select>
+              <small style="color:var(--text-muted); font-weight:700;">اضغط Ctrl أو مطولاً لتحديد أكثر من محافظة</small>
+            </div>
+
+            <button type="button" id="addUserBtn" style="width:100%; margin-top:10px;">إنشاء الحساب فوراً</button>
           </div>
 
-          <!-- تفعيل أو تجديد باقة جلسات لمريض -->
+          <!-- تفعيل باقة أو كشف (مع البحث السريع والدمج التلقائي) -->
           <div class="card">
-            <h3 class="section-title">📦 تفعيل أو تجديد باقة (يدمج تلقائياً لنفس المريض)</h3>
+            <h3 class="section-title">📦 تفعيل أو تجديد باقة / كشف (Smart Merge)</h3>
+            
+            <label>🏷️ نوع الخدمة</label>
+            <select id="admServiceType" onchange="onServiceTypeChange()">
+              <option value="Package">📦 باقة جلسات (لكل 6 جلسات = 20 يوماً)</option>
+              <option value="Consultation">🩺 كشف وتقييم فقط (جلسة واحدة - 5 أيام)</option>
+              <option value="Single">⚡ جلسة فردية (جلسة واحدة - 7 أيام)</option>
+            </select>
+
+            <label>🔍 بحث فوري عن المريض (بالاسم أو الموبايل)</label>
+            <input type="text" id="admClientSearch" placeholder="اكتب للبحث في قائمة المرضى..." oninput="filterClientDropdown()">
             <label>اختر المريض</label>
             <select id="admClientSelect"><option value="">اختر المريض...</option></select>
+
+            <label>🔍 بحث فوري عن الطبيب (بالاسم أو المحافظة)</label>
+            <input type="text" id="admDoctorSearch" placeholder="اكتب للبحث في قائمة الأطباء..." oninput="filterDoctorDropdown()">
             <label>اختر الطبيب المعالج</label>
             <select id="admDoctorSelect"><option value="">اختر الطبيب...</option></select>
 
             <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
               <div>
-                <label>عدد الجلسات</label>
-                <input type="number" id="admTotalSessions" placeholder="12" oninput="calcNewContractSummary()">
+                <label>الجلسات</label>
+                <input type="number" id="admTotalSessions" value="12" placeholder="12" oninput="onSessionsCountInput()">
               </div>
               <div>
                 <label>سعر الجلسة</label>
@@ -574,31 +589,52 @@
               </div>
             </div>
 
-            <label>💵 المبلغ المدفوع فعلياً من العميل الآن (ج.م)</label>
-            <input type="number" id="admPaidAmount" placeholder="اتركه فارغاً لو دفع الباقة كاملة" oninput="calcNewContractSummary()">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <div>
+                <label>المدفوع فعلياً (ج.م)</label>
+                <input type="number" id="admPaidAmount" placeholder="اتركه فارغاً لو كامل" oninput="calcNewContractSummary()">
+              </div>
+              <div>
+                <label>صلاحية الأيام (SLA)</label>
+                <input type="number" id="admValidityDays" value="40" placeholder="أيام الصلاحية">
+              </div>
+            </div>
 
             <div class="calc-summary-box">
               <span>إجمالي الباقة: <strong id="calcTotalPkg" style="color:var(--brand-blue);">0 ج.م</strong></span>
               <span>المتبقي على العميل: <strong id="calcRemDebt" style="color:var(--danger);">0 ج.م</strong></span>
             </div>
 
-            <button type="button" id="addContractBtn" class="btn-gradient" style="width:100%;">حفظ وتفعيل / تجديد الباقة</button>
+            <button type="button" id="addContractBtn" class="btn-gradient" style="width:100%;">حفظ وتفعيل / تجديد الخدمة</button>
           </div>
         </div>
 
-        <!-- دليل الحسابات الشامل مع الفلترة والبحث وبروفايل التحكم -->
+        <!-- دليل العملاء والأطباء -->
         <div class="card">
-          <h3 class="section-title">📇 دليل العملاء والأطباء (بحث، فلترة، وتحكم كامل بالملف)</h3>
+          <h3 class="section-title">📇 الدليل الرئيسي (العملاء، الأطباء، الفلاتر، البونص والجزاءات)</h3>
 
           <div class="filter-bar">
             <div class="filter-pills">
               <button type="button" class="filter-pill active" onclick="setDirFilter('all', this)">الكل</button>
-              <button type="button" class="filter-pill" onclick="setDirFilter('client', this)">👤 المرضى فقط</button>
-              <button type="button" class="filter-pill" onclick="setDirFilter('doctor', this)">👨‍⚕️ الأطباء فقط</button>
+              <button type="button" class="filter-pill" onclick="setDirFilter('client', this)">👤 المرضى</button>
+              <button type="button" class="filter-pill" onclick="setDirFilter('doctor', this)">👨‍⚕️ الأطباء</button>
               <button type="button" class="filter-pill" onclick="setDirFilter('debt', this)">⚠️ عليهم مديونية</button>
+              <button type="button" class="filter-pill" onclick="setDirFilter('expiring', this)">⏳ تنتهي صلاحيتها قريباً</button>
             </div>
-            <div style="flex:1; min-width:200px;">
-              <input type="text" id="dirSearchInput" placeholder="🔍 ابحث بالاسم أو رقم الموبايل..." style="margin-bottom:0;" oninput="renderUsersDirectory()">
+            <div style="display:flex; gap:8px; flex:1; min-width:260px;">
+              <select id="dirGovFilter" style="margin-bottom:0; max-width:150px;" onchange="renderUsersDirectory()">
+                <option value="">🗺️ كل المحافظات</option>
+                <option value="القاهرة">القاهرة</option><option value="الجيزة">الجيزة</option><option value="القليوبية">القليوبية</option>
+                <option value="الإسكندرية">الإسكندرية</option><option value="الدقهلية">الدقهلية</option><option value="الشرقية">الشرقية</option>
+                <option value="الغربية">الغربية</option><option value="المنوفية">المنوفية</option><option value="البحيرة">البحيرة</option>
+                <option value="كفر الشيخ">كفر الشيخ</option><option value="دمياط">دمياط</option><option value="بورسعيد">بورسعيد</option>
+                <option value="الإسماعيلية">الإسماعيلية</option><option value="السويس">السويس</option><option value="الفيوم">الفيوم</option>
+                <option value="بني سويف">بني سويف</option><option value="المنيا">المنيا</option><option value="أسيوط">أسيوط</option>
+                <option value="سوهاج">سوهاج</option><option value="قنا">قنا</option><option value="أسوان">أسوان</option>
+                <option value="الأقصر">الأقصر</option><option value="البحر الأحمر">البحر الأحمر</option><option value="الوادي الجديد">الوادي الجديد</option>
+                <option value="مطروح">مطروح</option><option value="شمال سيناء">شمال سيناء</option><option value="جنوب سيناء">جنوب سيناء</option>
+              </select>
+              <input type="text" id="dirSearchInput" placeholder="🔍 ابحث بالاسم أو الرقم..." style="margin-bottom:0;" oninput="renderUsersDirectory()">
             </div>
           </div>
 
@@ -609,7 +645,7 @@
                   <th>الاسم</th>
                   <th>الدور</th>
                   <th>الموبايل</th>
-                  <th>موقف الباقة / الحساب المالي</th>
+                  <th>موقف الباقة / المحافظة / التقييم</th>
                   <th>تحكم وإجراءات</th>
                 </tr>
               </thead>
@@ -619,10 +655,10 @@
         </div>
       </div>
 
-      <!-- تبويب الأدمن 2: مركز الرسائل والإعلانات -->
+      <!-- مركز الرسائل الشامل -->
       <div id="admTabMessages" class="adm-tab-content" style="display:none;">
         <div class="card" style="border-top: 5px solid var(--brand-pink);">
-          <h3 class="section-title">📢 إرسال إشعارات ورسائل عبر بوت «مخضرم صحة»</h3>
+          <h3 class="section-title">📢 مركز الرسائل والإشعارات عبر بوت «مخضرم صحة»</h3>
           <div class="secret-alert">
             💡 <strong>ميزة ذكية:</strong> يمكنك كتابة <code>{name}</code> داخل نص الرسالة ليقوم البوت باستبدالها تلقائياً باسم كل مريض أو طبيب عند الإرسال!
           </div>
@@ -630,21 +666,35 @@
           <div class="grid-2">
             <div>
               <label>🎯 الفئة المستهدفة بالإرسال</label>
-              <select id="msgTargetType" onchange="toggleSpecificUserSelect()">
+              <select id="msgTargetType" onchange="toggleMessageFields()">
                 <option value="all">🌐 الجميع (كل المرضى والأطباء)</option>
-                <option value="clients">👤 جميع المرضى فقط</option>
-                <option value="doctors">👨‍⚕️ جميع الأطباء فقط</option>
-                <option value="active_clients">✅ المرضى أصحاب الباقات النشطة فقط</option>
-                <option value="active_doctors">🩺 الأطباء أصحاب الباقات النشطة فقط</option>
-                <option value="specific">🎯 مستخدم محدد بعينه (مريض أو طبيب)</option>
+                <option value="clients">👤 المرضى فقط</option>
+                <option value="doctors">👨‍⚕️ الأطباء فقط</option>
+                <option value="active_clients">✅ أصحاب الباقات النشطة</option>
+                <option value="expired_clients">⚠️ أصحاب الباقات المنتهية (حملات التجديد)</option>
+                <option value="gov_doctors">🗺️ أطباء محافظة معينة</option>
+                <option value="specific">🎯 شخص محدد</option>
+              </select>
+            </div>
+
+            <div id="msgGovWrap" style="display:none;">
+              <label>🗺️ اختر المحافظة المستهدفة للأطباء</label>
+              <select id="msgGovSelect">
+                <option value="القاهرة">القاهرة</option><option value="الجيزة">الجيزة</option><option value="القليوبية">القليوبية</option>
+                <option value="الإسكندرية">الإسكندرية</option><option value="الدقهلية">الدقهلية</option><option value="الشرقية">الشرقية</option>
+                <option value="الغربية">الغربية</option><option value="المنوفية">المنوفية</option><option value="البحيرة">البحيرة</option>
+                <option value="كفر الشيخ">كفر الشيخ</option><option value="دمياط">دمياط</option><option value="بورسعيد">بورسعيد</option>
+                <option value="الإسماعيلية">الإسماعيلية</option><option value="السويس">السويس</option><option value="الفيوم">الفيوم</option>
+                <option value="بني سويف">بني سويف</option><option value="المنيا">المنيا</option><option value="أسيوط">أسيوط</option>
+                <option value="سوهاج">سوهاج</option><option value="قنا">قنا</option><option value="أسوان">أسوان</option>
+                <option value="الأقصر">الأقصر</option><option value="البحر الأحمر">البحر الأحمر</option><option value="الوادي الجديد">الوادي الجديد</option>
+                <option value="مطروح">مطروح</option><option value="شمال سيناء">شمال سيناء</option><option value="جنوب سيناء">جنوب سيناء</option>
               </select>
             </div>
 
             <div id="specificUserWrap" style="display:none;">
               <label>👤 اختر المستلم المحدد</label>
-              <select id="msgSpecificUserSelect">
-                <option value="">اختر المستلم...</option>
-              </select>
+              <select id="msgSpecificUserSelect"><option value="">اختر المستلم...</option></select>
             </div>
 
             <div>
@@ -654,7 +704,7 @@
           </div>
 
           <label>✉️ نص الرسالة</label>
-          <textarea id="msgBodyInput" rows="4" placeholder="مثال: أهلاً بك يا {name}، نود تذكيرك بمواعيد العمل أو العروض الجديدة..."></textarea>
+          <textarea id="msgBodyInput" rows="4" placeholder="مثال: أهلاً بك يا {name}، نود إعلامك بانتهاء باقتك العلاجية..."></textarea>
 
           <button type="button" id="sendBroadcastBtn" class="btn-gradient" style="width:100%; padding:13px;">🚀 إرسال الرسالة الآن عبر تليجرام</button>
         </div>
@@ -678,22 +728,38 @@
         </div>
       </div>
 
-      <!-- تبويب الأدمن 3: معرض الحالات -->
+      <!-- معرض الحالات (مع توجيه المحافظة أو عدة محافظات) -->
       <div id="admTabCases" class="adm-tab-content" style="display:none;">
         <div class="card">
-          <h3 class="section-title">🏥 نشر حالة جديدة في معرض الأطباء</h3>
+          <h3 class="section-title">🏥 نشر حالة جديدة في معرض الحالات (توجيه بالمحافظة)</h3>
           <div class="grid-2">
             <div>
-              <label>اختر مريض مسجل (أو اتركه فارغاً لحالة خارجية)</label>
+              <label>اختر مريض مسجل (أو اتركه فارغاً)</label>
               <select id="caseClientSelect"><option value="">-- حالة جديدة / خارجية --</option></select>
-              <label>اسم الحالة (إن لم تكن مسجلة)</label>
+              <label>اسم الحالة</label>
               <input type="text" id="caseCustomClientName" placeholder="اسم المريض">
-              <label>📍 المنطقة السكنية</label>
-              <input type="text" id="caseRegion" placeholder="مثال: مدينة نصر / التجمع الخامس">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
+                <label style="margin:0;">🗺️ المحافظة / المحافظات المستهدفة</label>
+                <button type="button" class="btn-sm btn-pink" onclick="selectGreaterCairo('caseTargetGov')">⚡ القاهرة الكبرى</button>
+              </div>
+              <select id="caseTargetGov" multiple style="height:85px;">
+                <option value="الكل" selected>🌐 مرئي لكل الأطباء (بكل المحافظات)</option>
+                <option value="القاهرة">القاهرة</option><option value="الجيزة">الجيزة</option><option value="القليوبية">القليوبية</option>
+                <option value="الإسكندرية">الإسكندرية</option><option value="الدقهلية">الدقهلية</option><option value="الشرقية">الشرقية</option>
+                <option value="الغربية">الغربية</option><option value="المنوفية">المنوفية</option><option value="البحيرة">البحيرة</option>
+                <option value="كفر الشيخ">كفر الشيخ</option><option value="دمياط">دمياط</option><option value="بورسعيد">بورسعيد</option>
+                <option value="الإسماعيلية">الإسماعيلية</option><option value="السويس">السويس</option><option value="الفيوم">الفيوم</option>
+                <option value="بني سويف">بني سويف</option><option value="المنيا">المنيا</option><option value="أسيوط">أسيوط</option>
+                <option value="سوهاج">سوهاج</option><option value="قنا">قنا</option><option value="أسوان">أسوان</option>
+                <option value="الأقصر">الأقصر</option><option value="البحر الأحمر">البحر الأحمر</option><option value="الوادي الجديد">الوادي الجديد</option>
+                <option value="مطروح">مطروح</option><option value="شمال سيناء">شمال سيناء</option><option value="جنوب سيناء">جنوب سيناء</option>
+              </select>
             </div>
             <div>
-              <label>📋 التشخيص وتفاصيل الحالة</label>
-              <input type="text" id="caseSummary" placeholder="مثال: جلسات علاج طبيعي وتأهيل بعد كسر">
+              <label>📍 المنطقة السكنية بالتفصيل</label>
+              <input type="text" id="caseRegion" placeholder="مثال: مدينة نصر - شارع مكرم عبيد">
+              <label>📋 تفاصيل التشخيص</label>
+              <input type="text" id="caseSummary" placeholder="جلسات علاج طبيعي وتأهيل بعد جراحة">
               <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
                 <div>
                   <label>الجلسات</label>
@@ -710,20 +776,20 @@
               </div>
             </div>
           </div>
-          <button type="button" id="publishCaseBtn" class="btn-gradient" style="width:100%;">📢 نشر الحالة وإشعار جميع الأطباء فوراً</button>
+          <button type="button" id="publishCaseBtn" class="btn-gradient" style="width:100%;">📢 نشر الحالة وإشعار أطباء المحافظة فقط</button>
         </div>
 
         <div class="card">
-          <h3 class="section-title">📋 الحالات المنشورة وطلبات الأطباء المتقدمين</h3>
+          <h3 class="section-title">📋 الحالات المنشورة وطلبات الأطباء</h3>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>الحالة / المنطقة</th>
+                  <th>الحالة / المحافظة</th>
                   <th>التفاصيل</th>
                   <th>الجلسات</th>
                   <th>الحالة</th>
-                  <th>الأطباء المتقدمون (اضغط للقبول والتفعيل)</th>
+                  <th>الأطباء المتقدمون</th>
                 </tr>
               </thead>
               <tbody id="admCasesTable"></tbody>
@@ -732,19 +798,43 @@
         </div>
       </div>
 
-      <!-- تبويب الأدمن 4: الماليات وسجل الجلسات السري -->
+      <!-- قسم الماليات والجلسات والبونص الجماعي -->
       <div id="admTabFinance" class="adm-tab-content" style="display:none;">
+        <!-- بونص جماعي لأصحاب التقييم المرتفع -->
+        <div class="card" style="border-top: 5px solid var(--success);">
+          <h3 class="section-title">🏆 بونص جماعي لأصحاب التقييم المرتفع (أتموا 10 جلسات فأكثر)</h3>
+          <p style="font-size:12.5px; color:var(--text-muted); margin-top:0;">صرف بونص بقيمة محددة لكل طبيب أتم 10 جلسات موقعة وتقييمه يساوي أو يتجاوز الحد المختار بضغطة زر واحدة.</p>
+          <div class="grid-2">
+            <div>
+              <label>⭐ الحد الأدنى للتقييم (بعد إتمام 10 جلسات)</label>
+              <select id="bulkMinRating">
+                <option value="4.5">4.5 ⭐ فأكثر</option>
+                <option value="4.8" selected>4.8 ⭐ فأكثر (ممتاز)</option>
+                <option value="5.0">5.0 ⭐ (العلامة الكاملة)</option>
+              </select>
+            </div>
+            <div>
+              <label>💰 قيمة المكافأة لكل طبيب (ج.م)</label>
+              <input type="number" id="bulkBonusAmount" placeholder="مثال: 500">
+            </div>
+          </div>
+          <label>📝 سبب المكافأة</label>
+          <input type="text" id="bulkBonusReason" value="مكافأة التميز والأداء المرتفع (تقييم ممتاز بعد 10 جلسات)">
+          <button type="button" id="sendBulkBonusBtn" class="btn-success" style="width:100%;">🎁 صرف البونص فوراً لجميع الأطباء المستوفين</button>
+        </div>
+
         <div class="card">
-          <h3 class="section-title">💰 المرتبات الأسبوعية للأطباء (تُحتسب بعد توقيع المريض)</h3>
+          <h3 class="section-title">💰 المرتبات والتسويات الأسبوعية للأطباء (شامل البونص والخصومات)</h3>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>اسم الطبيب</th>
+                  <th>اسم الطبيب والتقييم</th>
                   <th>موقعة غير مدفوعة</th>
                   <th>جلسات معلقة</th>
-                  <th>المبلغ المستحق</th>
-                  <th>تقفيل الأسبوع</th>
+                  <th>التسويات (بونص / خصم)</th>
+                  <th>صافي المستحق</th>
+                  <th>تحكم وتقفيل الأسبوع</th>
                 </tr>
               </thead>
               <tbody id="admPayrollTable"></tbody>
@@ -753,7 +843,7 @@
         </div>
 
         <div class="card">
-          <h3 class="section-title">🔒 سجل الجلسات، التقييم السري، واستعجال التوقيع</h3>
+          <h3 class="section-title">🔒 سجل الجلسات والتقييمات والملاحظات السرية للإدارة</h3>
           <div class="table-wrap">
             <table>
               <thead>
@@ -764,7 +854,7 @@
                   <th>السعر / الطبيب</th>
                   <th>توقيع المريض</th>
                   <th>التقييم السري</th>
-                  <th>ملاحظات</th>
+                  <th>ملاحظات المريض السرية</th>
                   <th>إجراء</th>
                 </tr>
               </thead>
@@ -774,7 +864,6 @@
         </div>
       </div>
 
-      <!-- شريط التنقل السفلي للأدمن -->
       <div class="bottom-nav">
         <button type="button" class="nav-tab active" onclick="switchAdmTab('admTabMain', this)">
           <span class="icon">📦</span><span>الرئيسية والعملاء</span>
@@ -792,21 +881,19 @@
     </div>
   </div>
 
-  <!-- ========================================================= -->
-  <!-- نافذة التحكم الشامل في باقة وحسابات العميل (Client Package & Financial Modal) -->
-  <!-- ========================================================= -->
+  <!-- نافذة بروفايل العميل (📦 الباقة والدفع + تمديد 7 أيام) -->
   <div id="clientProfileModal" class="modal-overlay">
     <div class="modal-box">
-      <h3 class="section-title">⚙️ إدارة باقة وحسابات العميل: <span id="profClientName" style="color:var(--brand-pink-dark);"></span></h3>
+      <h3 class="section-title">📦 إدارة الباقة والدفع للعميل: <span id="profClientName" style="color:var(--brand-pink-dark);"></span></h3>
       <input type="hidden" id="profContractId">
 
       <div class="calc-summary-box" style="background:#EEF2FF; border-color:#C7D2FE;">
         <span>المنفذ: <strong id="profUsedSess">0</strong> جلسة</span>
         <span>المتبقي: <strong id="profRemSess">0</strong> جلسة</span>
-        <span>مديونية حالية: <strong id="profCurrentDebt" style="color:var(--danger);">0 ج.م</strong></span>
+        <span>مديونية: <strong id="profCurrentDebt" style="color:var(--danger);">0 ج.م</strong></span>
       </div>
 
-      <label>👨‍⚕️ الطبيب المعالج المسؤول عن الباقة</label>
+      <label>👨‍⚕️ الطبيب المعالج (نقل الجلسات المتبقية لطبيب آخر عند التغيير)</label>
       <select id="profDoctorSelect"></select>
 
       <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
@@ -826,7 +913,7 @@
 
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
         <div>
-          <label>إجمالي المطلوب للباقة (ج.م)</label>
+          <label>إجمالي قيمة الباقة (ج.م)</label>
           <input type="number" id="profTotalPkgValue" oninput="updateProfileDebtPreview()">
         </div>
         <div>
@@ -835,10 +922,16 @@
         </div>
       </div>
 
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
+        <label style="margin:0;">📅 تاريخ انتهاء الصلاحية (SLA)</label>
+        <button type="button" class="btn-sm btn-warning" onclick="extendContractDays(7)">➕ تمديد 7 أيام</button>
+      </div>
+      <input type="date" id="profExpiryDate">
+
       <div style="background:#ECFDF5; border:1.5px solid #6EE7B7; padding:10px 12px; border-radius:12px; margin-bottom:12px;">
-        <label style="color:#065F46;">➕ تسجيل دفعة مالية جديدة اليوم (سداد مديونية - ج.م)</label>
-        <input type="number" id="profAddedPayment" placeholder="اكتب المبلغ الذي دفعه العميل اليوم (مثال: 500)" style="margin-bottom:4px; background:#fff;" oninput="updateProfileDebtPreview()">
-        <small style="color:#047857; font-weight:700;">المتبقي على العميل بعد هذه الدفعة: <span id="profNewDebtPreview">0</span> ج.م (سيصل إيصال للعميل)</small>
+        <label style="color:#065F46;">➕ تسجيل دفعة مالية جديدة (يرسل إيصال سداد إلكتروني للمريض)</label>
+        <input type="number" id="profAddedPayment" placeholder="المبلغ المدفوع اليوم (ج.م)" style="margin-bottom:4px; background:#fff;" oninput="updateProfileDebtPreview()">
+        <small style="color:#047857; font-weight:700;">المتبقي بعد الدفعة: <span id="profNewDebtPreview">0</span> ج.م</small>
       </div>
 
       <div style="display:flex; gap:8px;">
@@ -848,10 +941,35 @@
     </div>
   </div>
 
-  <!-- نافذة تعديل حساب مستخدم الأساسي (الاسم / الهاتف / كلمة المرور) -->
+  <!-- نافذة مكافأة (بونص) أو خصم فردي لطبيب -->
+  <div id="doctorAdjustmentModal" class="modal-overlay">
+    <div class="modal-box">
+      <h3 class="section-title">⚖️ مكافأة / خصم للطبيب: <span id="adjDoctorName" style="color:var(--brand-blue);"></span></h3>
+      <input type="hidden" id="adjDoctorId">
+
+      <label>نوع الإجراء الإداري والمالي</label>
+      <select id="adjType">
+        <option value="Bonus">➕ إضافة بونص تشجيعي (🎁 مكافأة إدارية)</option>
+        <option value="Penalty">➖ توقيع خصم / جزاء إداري (⚠️ خصم إداري)</option>
+      </select>
+
+      <label>المبلغ (ج.م)</label>
+      <input type="number" id="adjAmount" placeholder="مثال: 300">
+
+      <label>📝 السبب (يصل في إشعار فوري للطبيب ويظهر في جدوله)</label>
+      <textarea id="adjReason" rows="3" placeholder="مثال: التزام ممتاز بالمواعيد أو جزاء تأخير..."></textarea>
+
+      <div style="display:flex; gap:8px;">
+        <button type="button" id="saveAdjustmentBtn" class="btn-gradient" style="flex:2;">💾 تنفيذ وإشعار الطبيب فوراً</button>
+        <button type="button" onclick="closeAdjustmentModal()" style="background:#64748B; flex:1;">إغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- نافذة تعديل بيانات الحساب وتحديد محافظات الطبيب -->
   <div id="editUserModal" class="modal-overlay">
     <div class="modal-box">
-      <h3 class="section-title">✏️ تعديل البيانات الأساسية للحساب</h3>
+      <h3 class="section-title">✏️ تعديل بيانات الحساب</h3>
       <input type="hidden" id="editUserId">
       <label>الاسم</label>
       <input type="text" id="editUserName">
@@ -859,8 +977,28 @@
       <input type="tel" id="editUserPhone">
       <label>كلمة المرور</label>
       <input type="text" id="editUserPass">
-      <div style="display:flex; gap:8px; margin-top:8px;">
-        <button type="button" id="saveUserEditBtn" style="flex:2;">💾 حفظ</button>
+
+      <div id="editUserGovWrap" style="display:none;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
+          <label style="margin:0;">🗺️ محافظات نطاق عمل الطبيب (تحكم الأدمن فقط)</label>
+          <button type="button" class="btn-sm btn-pink" onclick="selectGreaterCairo('editUserGovSelect')">⚡ القاهرة الكبرى</button>
+        </div>
+        <select id="editUserGovSelect" multiple style="height:95px;">
+          <option value="الكل">🌐 يغطي جميع المحافظات</option>
+          <option value="القاهرة">القاهرة</option><option value="الجيزة">الجيزة</option><option value="القليوبية">القليوبية</option>
+          <option value="الإسكندرية">الإسكندرية</option><option value="الدقهلية">الدقهلية</option><option value="الشرقية">الشرقية</option>
+          <option value="الغربية">الغربية</option><option value="المنوفية">المنوفية</option><option value="البحيرة">البحيرة</option>
+          <option value="كفر الشيخ">كفر الشيخ</option><option value="دمياط">دمياط</option><option value="بورسعيد">بورسعيد</option>
+          <option value="الإسماعيلية">الإسماعيلية</option><option value="السويس">السويس</option><option value="الفيوم">الفيوم</option>
+          <option value="بني سويف">بني سويف</option><option value="المنيا">المنيا</option><option value="أسيوط">أسيوط</option>
+          <option value="سوهاج">سوهاج</option><option value="قنا">قنا</option><option value="أسوان">أسوان</option>
+          <option value="الأقصر">الأقصر</option><option value="البحر الأحمر">البحر الأحمر</option><option value="الوادي الجديد">الوادي الجديد</option>
+          <option value="مطروح">مطروح</option><option value="شمال سيناء">شمال سيناء</option><option value="جنوب سيناء">جنوب سيناء</option>
+        </select>
+      </div>
+
+      <div style="display:flex; gap:8px; margin-top:10px;">
+        <button type="button" id="saveUserEditBtn" style="flex:2;">💾 حفظ التعديلات</button>
         <button type="button" id="deleteUserBtn" class="btn-danger" style="flex:1;">🗑️ حذف</button>
         <button type="button" onclick="closeEditModal()" style="background:#64748B;">إلغاء</button>
       </div>
@@ -875,10 +1013,11 @@
     let adminUsersCache = [];
     let adminContractsCache = [];
     let adminSessionsCache = [];
+    let adminAdjustmentsCache = [];
+    let adminDoctorRatingsCache = {};
     let currentDirFilter = 'all';
     let tgUser = { id: '', username: '', firstName: '' };
 
-    // تهيئة Telegram WebApp
     if (window.Telegram && window.Telegram.WebApp) {
       const webapp = window.Telegram.WebApp;
       webapp.ready();
@@ -907,13 +1046,41 @@
       } catch (e) {}
     }
 
+    // تنسيق مؤشر تقييم الطبيب وفق قاعدة الـ 10 جلسات
+    function formatDoctorRatingText(ratingObj) {
+      if (!ratingObj) return '⭐⭐⭐⭐⭐ 5.0 (تقييم مبدئي — 0/10 جلسات)';
+      const count = Number(ratingObj.signedCount || 0);
+      const val = Number(ratingObj.displayRating || 5.0).toFixed(1);
+      if (count < 10) {
+        return `⭐⭐⭐⭐⭐ 5.0 (تقييم مبدئي — ${count}/10 جلسات)`;
+      }
+      return `⭐ ${val} من 5 (بناءً على ${count} جلسة)`;
+    }
+
+    // زر سريع لاختيار محافظات القاهرة الكبرى (القاهرة، الجيزة، القليوبية)
+    function selectGreaterCairo(selectId) {
+      const sel = document.getElementById(selectId);
+      if (!sel) return;
+      const gc = ['القاهرة', 'الجيزة', 'القليوبية'];
+      Array.from(sel.options).forEach(opt => {
+        opt.selected = gc.includes(opt.value);
+      });
+      triggerHaptic('light');
+    }
+
     async function callServer(payload) {
       const response = await fetch(SCRIPT_URL, {
         method: 'POST',
+        redirect: 'follow',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
         body: JSON.stringify(payload)
       });
-      return await response.json();
+      const text = await response.text();
+      try {
+        return JSON.parse(text);
+      } catch (err) {
+        throw new Error('استجابة غير صالحة من السيرفر - تأكد من تحديث الـ Deployment');
+      }
     }
 
     function showNotice(msg, isSuccess = true) {
@@ -960,6 +1127,10 @@
         renderAdminState(state);
       } else if (role === 'doctor') {
         document.getElementById('docNameTitle').innerText = user.name;
+        document.getElementById('docGovSubtitle').innerText = user.governorate
+          ? ('محافظتي المسجلة: ' + user.governorate)
+          : 'محافظتي المسجلة: غير محدد';
+        document.getElementById('docRatingBadge').innerText = formatDoctorRatingText(state.myRating);
         switchView('doctorView');
         renderDoctorState(state);
       } else {
@@ -969,7 +1140,6 @@
       }
     }
 
-    // الدخول التلقائي عند فتح التطبيق من تليجرام
     window.addEventListener('DOMContentLoaded', async () => {
       if (tgUser.id) {
         switchView('loadingScreen');
@@ -988,7 +1158,6 @@
       }
     });
 
-    // تسجيل الدخول الموحد
     document.getElementById('loginBtn').addEventListener('click', async function() {
       const phone = document.getElementById('loginPhone').value.trim();
       const password = document.getElementById('loginPass').value.trim();
@@ -1025,7 +1194,6 @@
       }
     });
 
-    // الخروج
     document.querySelectorAll('.logout-btn').forEach(btn => {
       btn.addEventListener('click', async function() {
         this.disabled = true;
@@ -1039,9 +1207,6 @@
       });
     });
 
-    // ==========================================
-    // 1. رندر وتفاعل واجهة المريض (Client)
-    // ==========================================
     function renderClientState(state) {
       const contracts = state.contracts || [];
       const sessions = state.sessions || [];
@@ -1089,19 +1254,19 @@
             <div style="background:#fff; padding:12px; border-radius:12px; border:1.5px dashed #cbd5e1;">
               <label>✍️ اكتب اسمك للتوقيع الإلكتروني على الجلسة:</label>
               <input type="text" id="sig_${s.Session_ID}" placeholder="اكتب اسمك الثلاثي هنا">
-              <label>⭐ مقياس الرضا السري عن الجلسة:</label>
+              <label>⭐ تقييمك السري للجلسة (سري 100% للإدارة فقط ولا يظهر للطبيب):</label>
               <select id="rate_${s.Session_ID}">
-                <option value="5">⭐⭐⭐⭐⭐ (5/5) راضٍ جداً - ممتاز</option>
+                <option value="5">⭐⭐⭐⭐⭐ (5/5) ممتاز</option>
                 <option value="4">⭐⭐⭐⭐ (4/5) جيد جداً</option>
                 <option value="3">⭐⭐⭐ (3/5) مقبول</option>
                 <option value="2">⭐⭐ (2/5) غير راضٍ</option>
-                <option value="1">⭐ (1/5) سيئ جداً</option>
+                <option value="1">⭐ (1/5) سيئ</option>
               </select>
-              <input type="text" id="note_${s.Session_ID}" placeholder="ملاحظات سرية للإدارة (اختياري)...">
-              <button type="button" class="cli-sign-btn btn-gradient" data-sid="${s.Session_ID}" style="width:100%;">تأكيد التوقيع وإرسال التقييم</button>
+              <input type="text" id="note_${s.Session_ID}" placeholder="🔒 ملاحظات سرية للإدارة فقط لضمان جودة الخدمة...">
+              <button type="button" class="cli-sign-btn btn-gradient" data-sid="${s.Session_ID}" style="width:100%;">تأكيد التوقيع وإرسال التقييم السري</button>
             </div>
           ` : `
-            <small style="color:#475569;">التوقيع: <strong>${s.Client_Sign}</strong> | التقييم: ${'⭐'.repeat(Number(s.Satisfaction || 5))}</small>
+            <small style="color:#475569;">التوقيع: <strong>${s.Client_Sign}</strong> | تم إرسال تقييمك السري للإدارة ✓</small>
           `}
         `;
         list.appendChild(div);
@@ -1134,23 +1299,25 @@
             });
             showNotice(res.message, res.success);
             if (res.success && res.state) renderClientState(res.state);
-            else { this.disabled = false; this.innerText = 'تأكيد التوقيع وإرسال التقييم'; }
+            else { this.disabled = false; this.innerText = 'تأكيد التوقيع وإرسال التقييم السري'; }
           } catch (e) {
             showNotice('❌ خطأ في الاتصال', false);
             this.disabled = false;
-            this.innerText = 'تأكيد التوقيع وإرسال التقييم';
+            this.innerText = 'تأكيد التوقيع وإرسال التقييم السري';
           }
         });
       });
     }
 
-    // ==========================================
-    // 2. رندر وتفاعل واجهة الطبيب (Doctor)
-    // ==========================================
     function renderDoctorState(state) {
       docContractsCache = state.contracts || [];
       const sessions = state.sessions || [];
       const cases = state.cases || [];
+      const adjustments = state.adjustments || [];
+
+      if (state.myRating) {
+        document.getElementById('docRatingBadge').innerText = formatDoctorRatingText(state.myRating);
+      }
 
       let confirmedUnpaid = 0, pendingCount = 0, wallet = 0;
       sessions.forEach(s => {
@@ -1158,6 +1325,13 @@
         else if (String(s.Payout_Status).trim() === 'Unpaid') {
           confirmedUnpaid++;
           wallet += Number(s.Doctor_Cut || 0);
+        }
+      });
+
+      // إضافة تسويات الأسبوع (بونص وخصومات) لمحفظة الدكتور الجاهزة للصرف
+      adjustments.forEach(a => {
+        if (String(a.Status || '').trim() === 'Unpaid') {
+          wallet += Number(a.Amount || 0);
         }
       });
 
@@ -1181,7 +1355,17 @@
           const totalUsed = cSessions.length;
           const totalPkg = Number(c.Total_Sessions || 0);
           const rem = Math.max(0, totalPkg - totalUsed);
-          const isFinished = totalUsed >= totalPkg;
+          const isSessionsDone = totalUsed >= totalPkg;
+          const isExpiredDate = Boolean(c.Is_Expired_Date);
+          const isFinished = isSessionsDone || isExpiredDate;
+
+          let lockLabel = '✍️ إمضاء حضور';
+          if (isSessionsDone) lockLabel = '🔒 انتهت الجلسات';
+          else if (isExpiredDate) lockLabel = '⌛ انتهت المدة';
+
+          const statusText = isExpiredDate
+            ? `⌛ انتهت الصلاحية (${c.Expiry_Date || ''})`
+            : `${rem} متبقي ${c.Expiry_Date ? '<br><small>صلاحية: ' + c.Expiry_Date + '</small>' : ''}`;
 
           const tr = document.createElement('tr');
           tr.innerHTML = `
@@ -1189,10 +1373,10 @@
             <td><span class="badge-brand">${totalPkg} جلسة</span></td>
             <td><span class="badge-ok">${done}</span></td>
             <td><span class="badge-wait">${pend}</span></td>
-            <td><strong style="color:${rem <= 1 ? 'var(--danger)' : 'var(--brand-blue)'};">${rem}</strong></td>
+            <td><strong style="color:${isExpiredDate || rem <= 1 ? 'var(--danger)' : 'var(--brand-blue)'};">${statusText}</strong></td>
             <td>
               <button type="button" class="doc-sign-btn btn-sm" data-idx="${idx}" ${isFinished ? 'disabled' : ''}>
-                ${isFinished ? '🔒 انتهت الباقة' : '✍️ إمضاء حضور'}
+                ${lockLabel}
               </button>
             </td>
           `;
@@ -1227,11 +1411,10 @@
         });
       }
 
-      // معرض الحالات المتاحة للطبيب
       const casesList = document.getElementById('docCasesList');
       casesList.innerHTML = '';
       if (cases.length === 0) {
-        casesList.innerHTML = '<p style="text-align:center; color:#64748b;">لا توجد حالات متاحة في المعرض حالياً.</p>';
+        casesList.innerHTML = '<p style="text-align:center; color:#64748b;">لا توجد حالات متاحة في نطاق محافظتك حالياً.</p>';
       } else {
         cases.forEach(c => {
           const alreadyApplied = String(c.Applied_Doctors || '').includes(currentUser.id);
@@ -1239,7 +1422,7 @@
           div.className = 'session-item';
           div.innerHTML = `
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
-              <strong style="color:var(--brand-blue-dark);">📍 المنطقة: ${c.Region}</strong>
+              <strong style="color:var(--brand-blue-dark);">📍 المنطقة: ${c.Region} (${c.Target_Governorates || 'الكل'})</strong>
               <span class="badge-brand">${c.Total_Sessions} جلسة</span>
             </div>
             <p style="margin:4px 0 10px; font-size:13.5px;">📋 <strong>التفاصيل:</strong> ${c.Condition_Summary}</p>
@@ -1276,9 +1459,25 @@
         });
       }
 
-      // سجل الجلسات للطبيب
+      // جدول الطبيب: يعرض المكافآت والخصومات الإدارية كبند واضح + سجل الجلسات
       const sTable = document.getElementById('docSessionsTable');
       sTable.innerHTML = '';
+
+      adjustments.slice().reverse().forEach(a => {
+        const amt = Number(a.Amount || 0);
+        const isBonus = amt >= 0;
+        const isPaid = String(a.Status || '').trim() === 'Paid';
+        sTable.innerHTML += `
+          <tr style="background:${isBonus ? '#ECFDF5' : '#FEF2F2'};">
+            <td>${a.Date || ''}</td>
+            <td><strong>${isBonus ? '🎁 مكافأة إدارية' : '⚠️ خصم إداري'}</strong></td>
+            <td>${a.Reason || '—'}</td>
+            <td><strong style="color:${isBonus ? '#059669' : 'var(--danger)'};">${isBonus ? '+' + amt : amt} ج.م</strong></td>
+            <td>${isPaid ? '<span class="badge-ok">تمت التسوية ✓</span>' : '<span class="badge-brand">في حساب الأسبوع</span>'}</td>
+          </tr>
+        `;
+      });
+
       sessions.slice().reverse().forEach(s => {
         const isSigned = String(s.Client_Sign).trim() !== 'Pending';
         sTable.innerHTML += `
@@ -1298,9 +1497,33 @@
       });
     }
 
-    // ==========================================
-    // 3. رندر وتفاعل واجهة الإدارة (Admin)
-    // ==========================================
+    // حساب صلاحية الأيام تلقائياً (لكل 6 جلسات = 20 يوماً)
+    function onServiceTypeChange() {
+      const type = document.getElementById('admServiceType').value;
+      const sessInput = document.getElementById('admTotalSessions');
+      const daysInput = document.getElementById('admValidityDays');
+      if (type === 'Consultation') {
+        sessInput.value = 1;
+        daysInput.value = 5;
+      } else if (type === 'Single') {
+        sessInput.value = 1;
+        daysInput.value = 7;
+      } else {
+        const sess = Number(sessInput.value || 6);
+        daysInput.value = Math.max(5, Math.ceil((sess / 6) * 20));
+      }
+      calcNewContractSummary();
+    }
+
+    function onSessionsCountInput() {
+      const type = document.getElementById('admServiceType').value;
+      const sess = Number(document.getElementById('admTotalSessions').value || 0);
+      if (type === 'Package' && sess > 0) {
+        document.getElementById('admValidityDays').value = Math.max(5, Math.ceil((sess / 6) * 20));
+      }
+      calcNewContractSummary();
+    }
+
     function calcNewContractSummary() {
       const sess = Number(document.getElementById('admTotalSessions').value || 0);
       const price = Number(document.getElementById('admSessionPrice').value || 0);
@@ -1313,17 +1536,47 @@
       document.getElementById('calcRemDebt').innerText = rem + ' ج.م';
     }
 
+    function filterClientDropdown() {
+      const query = document.getElementById('admClientSearch').value.toLowerCase();
+      const sel = document.getElementById('admClientSelect');
+      for (let i = 0; i < sel.options.length; i++) {
+        const txt = sel.options[i].text.toLowerCase();
+        sel.options[i].style.display = (i === 0 || txt.includes(query)) ? '' : 'none';
+      }
+    }
+
+    function filterDoctorDropdown() {
+      const query = document.getElementById('admDoctorSearch').value.toLowerCase();
+      const sel = document.getElementById('admDoctorSelect');
+      for (let i = 0; i < sel.options.length; i++) {
+        const txt = sel.options[i].text.toLowerCase();
+        sel.options[i].style.display = (i === 0 || txt.includes(query)) ? '' : 'none';
+      }
+    }
+
+    function toggleGovField() {
+      const role = document.getElementById('newUserRole').value;
+      document.getElementById('newUserGovWrap').style.display = (role === 'Doctor') ? 'block' : 'none';
+    }
+
+    function toggleMessageFields() {
+      const val = document.getElementById('msgTargetType').value;
+      document.getElementById('msgGovWrap').style.display = (val === 'gov_doctors') ? 'block' : 'none';
+      document.getElementById('specificUserWrap').style.display = (val === 'specific') ? 'block' : 'none';
+    }
+
     function renderAdminState(state) {
       adminUsersCache = state.users || [];
       adminContractsCache = state.contracts || [];
       adminSessionsCache = state.sessions || [];
+      adminAdjustmentsCache = state.adjustments || [];
+      adminDoctorRatingsCache = state.doctorRatings || {};
       const cases = state.cases || [];
       const messages = state.messages || [];
 
       const doctors = adminUsersCache.filter(u => String(u.Role).trim().toLowerCase() === 'doctor');
       const clients = adminUsersCache.filter(u => String(u.Role).trim().toLowerCase() === 'client');
 
-      // ملء القوائم المنسدلة
       const cSel = document.getElementById('admClientSelect');
       const dSel = document.getElementById('admDoctorSelect');
       const caseCSel = document.getElementById('caseClientSelect');
@@ -1341,7 +1594,8 @@
         caseCSel.innerHTML += `<option value="${c.User_ID}|${c.Name}">${c.Name} (${c.Phone})</option>`;
       });
       doctors.forEach(d => {
-        dSel.innerHTML += `<option value="${d.User_ID}|${d.Name}">د. ${d.Name} (${d.Phone})</option>`;
+        const ratingObj = adminDoctorRatingsCache[d.User_ID] || { displayRating: 5.0, signedCount: 0 };
+        dSel.innerHTML += `<option value="${d.User_ID}|${d.Name}">د. ${d.Name} (⭐ ${ratingObj.displayRating}) - ${d.Governorate || 'بدون محافظة'}</option>`;
         profDocSel.innerHTML += `<option value="${d.User_ID}|${d.Name}">د. ${d.Name}</option>`;
       });
       adminUsersCache.forEach(u => {
@@ -1349,7 +1603,7 @@
         msgSpecSel.innerHTML += `<option value="${u.User_ID}">${u.Name} (${u.Role}) - ${hasTg}</option>`;
       });
 
-      // حساب المؤشرات المالية للخزنة والمديونيات والأرباح
+      // الصف الأول: الحسابات الفعلية المحققة بالخزنة
       let totalCollectedCash = 0;
       let totalClientDebt = 0;
       adminContractsCache.forEach(c => {
@@ -1368,15 +1622,42 @@
         }
       });
 
+      // مراعاة البونص والخصم في مستحقات الأطباء وصافي ربح المركز المحقق
+      let totalAdjustmentsNet = 0;
+      adminAdjustmentsCache.forEach(a => {
+        const amt = Number(a.Amount || 0);
+        totalAdjustmentsNet += amt;
+        if (String(a.Status || '').trim() === 'Unpaid') {
+          unpaidDocLiability += amt;
+        }
+      });
+
+      const realizedNetProfit = (executedGross - executedDocCut) - totalAdjustmentsNet;
+
+      // الصف الثاني: التصور المبدئي للباقات السارية (جلسات لم تنفذ بعد)
+      let projectedDoctorCut = 0;
+      let projectedCenterProfit = 0;
+      adminContractsCache.forEach(c => {
+        const cSessCount = adminSessionsCache.filter(s => String(s.Contract_ID).trim() === String(c.Contract_ID).trim()).length;
+        const remainingPkgSess = Math.max(0, Number(c.Total_Sessions || 0) - cSessCount);
+        if (remainingPkgSess > 0) {
+          const cutPerSess = Number(c.Doctor_Cut || 0);
+          const pricePerSess = Number(c.Session_Price || 0);
+          const profitPerSess = pricePerSess - cutPerSess;
+          projectedDoctorCut += remainingPkgSess * cutPerSess;
+          projectedCenterProfit += remainingPkgSess * profitPerSess;
+        }
+      });
+
       document.getElementById('admCollectedCash').innerText = totalCollectedCash + ' ج.م';
       document.getElementById('admClientDebt').innerText = totalClientDebt + ' ج.م';
       document.getElementById('admUnpaidDocLiability').innerText = unpaidDocLiability + ' ج.م';
-      document.getElementById('admNetProfit').innerText = (executedGross - executedDocCut) + ' ج.م';
+      document.getElementById('admNetProfit').innerText = realizedNetProfit + ' ج.م';
+      document.getElementById('admProjectedCenterProfit').innerText = projectedCenterProfit + ' ج.م';
+      document.getElementById('admProjectedDoctorCut').innerText = projectedDoctorCut + ' ج.م';
 
-      // رندر دليل العملاء والأطباء مع الفلترة والبحث
       renderUsersDirectory();
 
-      // أرشيف الرسائل المرسلة
       const msgTable = document.getElementById('admMessagesLogTable');
       msgTable.innerHTML = '';
       if (messages.length === 0) {
@@ -1395,7 +1676,6 @@
         });
       }
 
-      // جدول معرض الحالات
       const casesTable = document.getElementById('admCasesTable');
       casesTable.innerHTML = '';
       if (cases.length === 0) {
@@ -1417,7 +1697,7 @@
 
           casesTable.innerHTML += `
             <tr>
-              <td><strong>${c.Client_Name}</strong><br><small style="color:#64748b;">📍 ${c.Region}</small></td>
+              <td><strong>${c.Client_Name}</strong><br><small style="color:#64748b;">🗺️ ${c.Target_Governorates || 'الكل'} | 📍 ${c.Region}</small></td>
               <td>${c.Condition_Summary}</td>
               <td>${c.Total_Sessions} جلسة<br><small>(${c.Session_Price} / ${c.Doctor_Cut} ج.م)</small></td>
               <td><span class="${isOpen ? 'badge-wait' : 'badge-ok'}">${isOpen ? 'مفتوحة' : 'تم الإسناد'}</span></td>
@@ -1445,22 +1725,32 @@
         });
       }
 
-      // جدول المرتبات الأسبوعية
+      // جدول المرتبات الأسبوعية والتسويات (بونص / خصم)
       const payTable = document.getElementById('admPayrollTable');
       payTable.innerHTML = '';
       doctors.forEach(d => {
         const docSessions = adminSessionsCache.filter(s => String(s.Doctor_ID).trim() === String(d.User_ID).trim() || String(s.Doctor_Name).trim() === String(d.Name).trim());
         const unpaidConfirmed = docSessions.filter(s => String(s.Client_Sign).trim() !== 'Pending' && String(s.Payout_Status).trim() === 'Unpaid');
         const pendingClient = docSessions.filter(s => String(s.Client_Sign).trim() === 'Pending');
-        const amountDue = unpaidConfirmed.reduce((sum, s) => sum + Number(s.Doctor_Cut || 0), 0);
+        const sessionsAmount = unpaidConfirmed.reduce((sum, s) => sum + Number(s.Doctor_Cut || 0), 0);
+
+        const docAdjs = adminAdjustmentsCache.filter(a => String(a.Doctor_ID || '').trim() === String(d.User_ID).trim() && String(a.Status || '').trim() === 'Unpaid');
+        const adjsSum = docAdjs.reduce((sum, a) => sum + Number(a.Amount || 0), 0);
+        const netDue = sessionsAmount + adjsSum;
+
+        const ratingText = formatDoctorRatingText(adminDoctorRatingsCache[d.User_ID]);
 
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td><strong>د. ${d.Name}</strong></td>
+          <td><strong>د. ${d.Name}</strong><br><small>${ratingText}<br>🗺️ ${d.Governorate || 'بدون محافظة'}</small></td>
           <td><span class="badge-ok">${unpaidConfirmed.length} جلسة</span></td>
           <td><span class="badge-wait">${pendingClient.length} جلسة</span></td>
-          <td><strong style="color:var(--brand-blue);">${amountDue} ج.م</strong></td>
-          <td><button type="button" class="adm-pay-btn btn-sm" data-docid="${d.User_ID}">💸 صرف وتصفير الأسبوع</button></td>
+          <td><strong style="color:${adjsSum >= 0 ? '#059669' : 'var(--danger)'};">${adjsSum >= 0 ? '+' + adjsSum : adjsSum} ج.م</strong></td>
+          <td><strong style="color:var(--brand-blue);">${netDue} ج.م</strong></td>
+          <td style="white-space:nowrap;">
+            <button type="button" class="btn-sm btn-pink" onclick="openAdjustmentModal('${d.User_ID}', '${d.Name}')">⚖️ مكافأة / خصم</button>
+            <button type="button" class="adm-pay-btn btn-sm" data-docid="${d.User_ID}">💸 صرف وتصفير</button>
+          </td>
         `;
         payTable.appendChild(tr);
       });
@@ -1474,16 +1764,15 @@
             const res = await callServer({ action: 'payDoctorWeekly', doctorId: docId });
             showNotice(res.message, res.success);
             if (res.success && res.state) renderAdminState(res.state);
-            else { this.disabled = false; this.innerText = '💸 صرف وتصفير الأسبوع'; }
+            else { this.disabled = false; this.innerText = '💸 صرف وتصفير'; }
           } catch (e) {
             showNotice('❌ خطأ في الاتصال', false);
             this.disabled = false;
-            this.innerText = '💸 صرف وتصفير الأسبوع';
+            this.innerText = '💸 صرف وتصفير';
           }
         });
       });
 
-      // سجل الجلسات والتقييم السري + زر تذكير المريض + زر حذف الجلسة
       const logTable = document.getElementById('admSessionsLogTable');
       logTable.innerHTML = '';
       adminSessionsCache.slice().reverse().forEach(s => {
@@ -1529,7 +1818,6 @@
       });
     }
 
-    // فلترة وبحث جدول الدليل الرئيسي
     function setDirFilter(filterVal, btnEl) {
       currentDirFilter = filterVal;
       document.querySelectorAll('.filter-pill').forEach(b => b.classList.remove('active'));
@@ -1540,12 +1828,20 @@
     function renderUsersDirectory() {
       const dirTable = document.getElementById('admUsersDirectoryTable');
       const query = (document.getElementById('dirSearchInput').value || '').trim().toLowerCase();
+      const govFilter = (document.getElementById('dirGovFilter').value || '').trim();
       dirTable.innerHTML = '';
+
+      const today = new Date();
 
       const filtered = adminUsersCache.slice().reverse().filter(u => {
         const role = String(u.Role).trim().toLowerCase();
         const nameMatch = String(u.Name || '').toLowerCase().includes(query) || String(u.Phone || '').includes(query);
         if (!nameMatch) return false;
+
+        if (govFilter) {
+          const uGov = String(u.Governorate || '');
+          if (!uGov.includes(govFilter) && !uGov.includes('الكل')) return false;
+        }
 
         if (currentDirFilter === 'client') return role === 'client';
         if (currentDirFilter === 'doctor') return role === 'doctor';
@@ -1554,6 +1850,19 @@
           const clientContracts = adminContractsCache.filter(c => String(c.Client_ID).trim() === String(u.User_ID).trim() || String(c.Client_Name).trim() === String(u.Name).trim());
           const debtSum = clientContracts.reduce((s, c) => s + Number(c.Remaining_Debt || 0), 0);
           return debtSum > 0;
+        }
+        if (currentDirFilter === 'expiring') {
+          if (role !== 'client') return false;
+          const c = adminContractsCache.find(x => String(x.Client_ID).trim() === String(u.User_ID).trim() || String(x.Client_Name).trim() === String(u.Name).trim());
+          if (!c) return false;
+          const cSess = adminSessionsCache.filter(s => String(s.Contract_ID).trim() === String(c.Contract_ID).trim());
+          const remSess = Math.max(0, Number(c.Total_Sessions || 0) - cSess.length);
+          let daysLeft = 999;
+          if (c.Expiry_Date) {
+            const exp = new Date(c.Expiry_Date);
+            daysLeft = Math.ceil((exp - today) / (1000 * 60 * 60 * 24));
+          }
+          return (remSess > 0 && remSess <= 2) || (daysLeft <= 5);
         }
         return true;
       });
@@ -1580,7 +1889,7 @@
             const remSess = Math.max(0, Number(clientContract.Total_Sessions) - cSess.length);
             const debt = Number(clientContract.Remaining_Debt || 0);
             finSummaryHtml = `
-              <div><small>👨‍⚕️ د. ${clientContract.Doctor_Name} | باقي: <strong>${remSess}</strong>/${clientContract.Total_Sessions} جلسة</small></div>
+              <div><small>👨‍⚕️ د. ${clientContract.Doctor_Name} | باقي: <strong>${remSess}</strong>/${clientContract.Total_Sessions} جلسة ${clientContract.Expiry_Date ? '(صلاحية: ' + clientContract.Expiry_Date + ')' : ''}</small></div>
               <div>
                 <span class="badge-ok">دفع: ${clientContract.Paid_Amount} ج</span>
                 ${debt > 0 ? `<span class="badge-danger">عليه: ${debt} ج.م</span>` : `<span class="badge-brand">خالص ✓</span>`}
@@ -1589,6 +1898,12 @@
           } else {
             finSummaryHtml = '<small style="color:#64748b;">بدون باقة مفعلة</small>';
           }
+        } else if (role === 'doctor') {
+          const rText = formatDoctorRatingText(adminDoctorRatingsCache[u.User_ID]);
+          finSummaryHtml = `
+            <div><small style="color:var(--brand-blue); font-weight:700;">🗺️ ${u.Governorate || 'المحافظة غير محددة'}</small></div>
+            <div><span class="badge-brand">${rText}</span></div>
+          `;
         }
 
         const tr = document.createElement('tr');
@@ -1599,6 +1914,7 @@
           <td>${finSummaryHtml}</td>
           <td style="white-space:nowrap;">
             ${clientContract ? `<button type="button" class="btn-sm btn-success" onclick="openClientProfileModal('${clientContract.Contract_ID}')">📦 الباقة والدفع</button>` : ''}
+            ${role === 'doctor' ? `<button type="button" class="btn-sm btn-warning" onclick="openAdjustmentModal('${u.User_ID}', '${u.Name}')">⚖️ مكافأة / خصم</button>` : ''}
             <button type="button" class="btn-sm btn-pink" onclick="openQuickDM('${u.User_ID}')">💬 مراسلة</button>
             <button type="button" class="btn-sm" onclick="openEditUser('${u.User_ID}')">✏️ بياناته</button>
           </td>
@@ -1607,7 +1923,6 @@
       });
     }
 
-    // نافذة بروفايل التحكم في باقة وحسابات العميل
     function openClientProfileModal(contractId) {
       const c = adminContractsCache.find(x => String(x.Contract_ID).trim() === String(contractId).trim());
       if (!c) return;
@@ -1634,10 +1949,20 @@
       document.getElementById('profDoctorCut').value = c.Doctor_Cut;
       document.getElementById('profTotalPkgValue').value = c.Total_Package_Value;
       document.getElementById('profPaidAmount').value = c.Paid_Amount;
+      document.getElementById('profExpiryDate').value = c.Expiry_Date || '';
       document.getElementById('profAddedPayment').value = '';
       updateProfileDebtPreview();
 
       document.getElementById('clientProfileModal').style.display = 'flex';
+    }
+
+    // زر تمديد الصلاحية (+7 أيام) في نافذة بروفايل العميل
+    function extendContractDays(days) {
+      const expInput = document.getElementById('profExpiryDate');
+      const baseDate = expInput.value ? new Date(expInput.value) : new Date();
+      baseDate.setDate(baseDate.getDate() + Number(days));
+      expInput.value = baseDate.toISOString().split('T')[0];
+      showNotice(`📅 تم تمديد تاريخ الصلاحية ${days} أيام — اضغط حفظ لتأكيد التعديل`);
     }
 
     function updateProfileDebtPreview() {
@@ -1652,6 +1977,92 @@
       document.getElementById('clientProfileModal').style.display = 'none';
     }
 
+    // نافذة إضافة بونص أو خصم إداري لطبيب
+    function openAdjustmentModal(docId, docName) {
+      document.getElementById('adjDoctorId').value = docId;
+      document.getElementById('adjDoctorName').innerText = docName;
+      document.getElementById('adjAmount').value = '';
+      document.getElementById('adjReason').value = '';
+      document.getElementById('doctorAdjustmentModal').style.display = 'flex';
+    }
+
+    function closeAdjustmentModal() {
+      document.getElementById('doctorAdjustmentModal').style.display = 'none';
+    }
+
+    document.getElementById('saveAdjustmentBtn').addEventListener('click', async function() {
+      const doctorId = document.getElementById('adjDoctorId').value;
+      const doctorName = document.getElementById('adjDoctorName').innerText;
+      const adjType = document.getElementById('adjType').value;
+      const amount = Number(document.getElementById('adjAmount').value || 0);
+      const reason = document.getElementById('adjReason').value.trim();
+
+      if (amount <= 0 || !reason) {
+        showNotice('⚠️ يرجى إدخال مبلغ صحيح وسبب واضح', false);
+        return;
+      }
+
+      const btn = this;
+      btn.disabled = true;
+      btn.innerText = '⏳ جاري الحفظ...';
+
+      try {
+        const res = await callServer({
+          action: 'addDoctorAdjustment',
+          doctorId,
+          doctorName,
+          adjType,
+          amount,
+          reason
+        });
+        btn.disabled = false;
+        btn.innerText = '💾 تنفيذ وإشعار الطبيب فوراً';
+        closeAdjustmentModal();
+        showNotice(res.message, res.success);
+        if (res.success && res.state) renderAdminState(res.state);
+      } catch (e) {
+        btn.disabled = false;
+        btn.innerText = '💾 تنفيذ وإشعار الطبيب فوراً';
+        showNotice('❌ خطأ في الاتصال', false);
+      }
+    });
+
+    // بونص الأداء الجماعي لأصحاب التقييم المرتفع (بعد 10 جلسات)
+    document.getElementById('sendBulkBonusBtn').addEventListener('click', async function() {
+      const minRating = Number(document.getElementById('bulkMinRating').value);
+      const amount = Number(document.getElementById('bulkBonusAmount').value || 0);
+      const reason = document.getElementById('bulkBonusReason').value.trim();
+
+      if (amount <= 0) {
+        showNotice('⚠️ يرجى إدخال مبلغ صحيح للبونص', false);
+        return;
+      }
+
+      if (!confirm(`هل أنت متأكد من صرف بونص بقيمة (${amount} ج.م) لكل طبيب أتم 10 جلسات موقعة وتقييمه (${minRating}⭐) فأكثر؟`)) return;
+
+      const btn = this;
+      btn.disabled = true;
+      btn.innerText = '⏳ جاري الصرف الجماعي...';
+
+      try {
+        const res = await callServer({
+          action: 'addBulkRatingBonus',
+          minRating,
+          requireTenSessions: true,
+          amount,
+          reason
+        });
+        btn.disabled = false;
+        btn.innerText = '🎁 صرف البونص فوراً لجميع الأطباء المستوفين';
+        showNotice(res.message, res.success);
+        if (res.success && res.state) renderAdminState(res.state);
+      } catch (e) {
+        btn.disabled = false;
+        btn.innerText = '🎁 صرف البونص فوراً لجميع الأطباء المستوفين';
+        showNotice('❌ خطأ في الاتصال بالسيرفر', false);
+      }
+    });
+
     document.getElementById('saveContractProfileBtn').addEventListener('click', async function() {
       const contractId = document.getElementById('profContractId').value;
       const dVal = document.getElementById('profDoctorSelect').value;
@@ -1663,6 +2074,7 @@
       const oldPaid = Number(document.getElementById('profPaidAmount').value || 0);
       const addedPayment = Number(document.getElementById('profAddedPayment').value || 0);
       const paidAmount = oldPaid + addedPayment;
+      const expiryDate = document.getElementById('profExpiryDate').value;
 
       const btn = this;
       btn.disabled = true;
@@ -1679,7 +2091,8 @@
           doctorCut,
           totalPackageValue,
           paidAmount,
-          addedPayment
+          addedPayment,
+          expiryDate
         });
         btn.disabled = false;
         btn.innerText = '💾 حفظ التعديلات والدفعة';
@@ -1693,39 +2106,34 @@
       }
     });
 
-    // استعجال توقيع المريض
     async function remindClient(sessionId, btnEl) {
       btnEl.disabled = true;
+      const oldText = btnEl.innerText;
       btnEl.innerText = '⏳...';
       try {
-        const res = await callServer({ action: 'remindClientSign', sessionId });
-        showNotice(res.message, res.success);
-        btnEl.innerText = res.success ? '✓ تم التذكير' : '🔔 تذكير';
+        const res = await callServer({ action: 'remindClientSign', sessionId: String(sessionId).trim() });
+        showNotice(res.message || 'تم الإرسال', res.success);
+        btnEl.innerText = res.success ? '✓ تم التذكير' : oldText;
         if (!res.success) btnEl.disabled = false;
       } catch (e) {
-        showNotice('❌ خطأ في الاتصال', false);
+        showNotice('❌ ' + (e.message || 'خطأ في الاتصال بالسيرفر'), false);
         btnEl.disabled = false;
-        btnEl.innerText = '🔔 تذكير';
+        btnEl.innerText = oldText;
       }
-    }
-
-    function toggleSpecificUserSelect() {
-      const val = document.getElementById('msgTargetType').value;
-      document.getElementById('specificUserWrap').style.display = (val === 'specific') ? 'block' : 'none';
     }
 
     function openQuickDM(userId) {
       const navBtns = document.querySelectorAll('#adminView .nav-tab');
       switchAdmTab('admTabMessages', navBtns[1]);
       document.getElementById('msgTargetType').value = 'specific';
-      toggleSpecificUserSelect();
+      toggleMessageFields();
       document.getElementById('msgSpecificUserSelect').value = userId;
       document.getElementById('msgBodyInput').focus();
     }
 
-    // إرسال الرسائل الجماعية والفردية
     document.getElementById('sendBroadcastBtn').addEventListener('click', async function() {
       const targetType = document.getElementById('msgTargetType').value;
+      const targetGovernorate = document.getElementById('msgGovSelect').value;
       const specificUserId = document.getElementById('msgSpecificUserSelect').value;
       const title = document.getElementById('msgTitleInput').value.trim();
       const messageText = document.getElementById('msgBodyInput').value.trim();
@@ -1736,7 +2144,7 @@
         return;
       }
       if (targetType === 'specific' && !specificUserId) {
-        showNotice('⚠️ يرجى اختيار المستلم المحدد من القائمة', false);
+        showNotice('⚠️ يرجى اختيار المستلم المحدد', false);
         return;
       }
 
@@ -1747,6 +2155,7 @@
         const res = await callServer({
           action: targetType === 'specific' ? 'sendDirectMessage' : 'sendBroadcast',
           targetType,
+          targetGovernorate,
           targetId: specificUserId,
           title,
           messageText
@@ -1765,10 +2174,12 @@
       }
     });
 
-    // نشر حالة جديدة في المعرض
+    // نشر حالة جديدة في معرض الحالات (مع دعم اختيار محافظة أو عدة محافظات)
     document.getElementById('publishCaseBtn').addEventListener('click', async function() {
       const cVal = document.getElementById('caseClientSelect').value;
       const customName = document.getElementById('caseCustomClientName').value.trim();
+      const govSelect = document.getElementById('caseTargetGov');
+      const targetGovernorates = Array.from(govSelect.selectedOptions).map(o => o.value).join('، ') || 'الكل';
       const region = document.getElementById('caseRegion').value.trim();
       const conditionSummary = document.getElementById('caseSummary').value.trim();
       const totalSessions = document.getElementById('caseTotalSessions').value;
@@ -1781,46 +2192,171 @@
         return;
       }
 
-      let clientId = '', clientName = customName || 'حالة خارجية';
+      let clientId = '', clientName = customName;
       if (cVal) {
         const parts = cVal.split('|');
         clientId = parts[0];
         clientName = parts[1];
       }
+      if (!clientName) {
+        showNotice('⚠️ يرجى اختيار مريض أو كتابة اسم الحالة', false);
+        return;
+      }
 
       btn.disabled = true;
-      btn.innerText = '⏳ جاري النشر وإشعار الأطباء...';
+      btn.innerText = '⏳ جاري النشر وإرسال الإشعارات...';
 
       try {
         const res = await callServer({
           action: 'publishCase',
-          clientId, clientName, region, conditionSummary,
-          totalSessions, sessionPrice, doctorCut
+          clientId,
+          clientName,
+          targetGovernorates,
+          region,
+          conditionSummary,
+          totalSessions: Number(totalSessions),
+          sessionPrice: Number(sessionPrice),
+          doctorCut: Number(doctorCut)
         });
         btn.disabled = false;
-        btn.innerText = '📢 نشر الحالة وإشعار جميع الأطباء فوراً';
+        btn.innerText = '📢 نشر الحالة وإشعار أطباء المحافظة فقط';
         showNotice(res.message, res.success);
-        if (res.success && res.state) {
+        if (res.success) {
           document.getElementById('caseCustomClientName').value = '';
           document.getElementById('caseRegion').value = '';
           document.getElementById('caseSummary').value = '';
-          renderAdminState(res.state);
+          document.getElementById('caseTotalSessions').value = '';
+          document.getElementById('caseSessionPrice').value = '';
+          document.getElementById('caseDoctorCut').value = '';
+          if (res.state) renderAdminState(res.state);
         }
       } catch (e) {
         btn.disabled = false;
-        btn.innerText = '📢 نشر الحالة وإشعار جميع الأطباء فوراً';
-        showNotice('❌ خطأ في الاتصال', false);
+        btn.innerText = '📢 نشر الحالة وإشعار أطباء المحافظة فقط';
+        showNotice('❌ خطأ في الاتصال بالسيرفر', false);
       }
     });
 
-    // نافذة تعديل/حذف بيانات المستخدم الأساسية
+    // إنشاء حساب جديد
+    document.getElementById('addUserBtn').addEventListener('click', async function() {
+      const name = document.getElementById('newUserName').value.trim();
+      const phone = document.getElementById('newUserPhone').value.trim();
+      const password = document.getElementById('newUserPass').value.trim();
+      const role = document.getElementById('newUserRole').value;
+      const govSelect = document.getElementById('newUserGovSelect');
+      const selectedGovs = Array.from(govSelect.selectedOptions).map(o => o.value).join('، ');
+      const governorate = (role === 'Doctor') ? (selectedGovs || 'الكل') : '';
+      const btn = this;
+
+      if (!name || !phone || !password) {
+        showNotice('⚠️ يرجى إدخال الاسم ورقم الموبايل وكلمة المرور', false);
+        return;
+      }
+
+      btn.disabled = true;
+      btn.innerText = '⏳ جاري إنشاء الحساب...';
+
+      try {
+        const res = await callServer({
+          action: 'addUser',
+          name,
+          phone,
+          password,
+          role,
+          governorate
+        });
+        btn.disabled = false;
+        btn.innerText = 'إنشاء الحساب فوراً';
+        showNotice(res.message, res.success);
+        if (res.success) {
+          document.getElementById('newUserName').value = '';
+          document.getElementById('newUserPhone').value = '';
+          document.getElementById('newUserPass').value = '';
+          Array.from(govSelect.options).forEach(o => o.selected = false);
+          if (res.state) renderAdminState(res.state);
+        }
+      } catch (e) {
+        btn.disabled = false;
+        btn.innerText = 'إنشاء الحساب فوراً';
+        showNotice('❌ خطأ في الاتصال بالسيرفر', false);
+      }
+    });
+
+    // تفعيل أو تجديد باقة / كشف (مع الدمج التلقائي Smart Merge)
+    document.getElementById('addContractBtn').addEventListener('click', async function() {
+      const serviceType = document.getElementById('admServiceType').value;
+      const cVal = document.getElementById('admClientSelect').value;
+      const dVal = document.getElementById('admDoctorSelect').value;
+      const totalSessions = Number(document.getElementById('admTotalSessions').value || 0);
+      const sessionPrice = Number(document.getElementById('admSessionPrice').value || 0);
+      const doctorCut = Number(document.getElementById('admDoctorCut').value || 0);
+      const paidRaw = document.getElementById('admPaidAmount').value;
+      const validityDays = Number(document.getElementById('admValidityDays').value || 20);
+      const btn = this;
+
+      if (!cVal || !dVal || totalSessions <= 0 || sessionPrice <= 0) {
+        showNotice('⚠️ يرجى اختيار المريض والطبيب وإدخال عدد الجلسات والسعر', false);
+        return;
+      }
+
+      const [clientId, clientName] = cVal.split('|');
+      const [doctorId, doctorName] = dVal.split('|');
+      const totalPackageValue = totalSessions * sessionPrice;
+      const paidAmount = paidRaw === '' ? totalPackageValue : Number(paidRaw);
+
+      btn.disabled = true;
+      btn.innerText = '⏳ جاري التفعيل والحفظ...';
+
+      try {
+        const res = await callServer({
+          action: 'addContract',
+          serviceType,
+          clientId,
+          clientName,
+          doctorId,
+          doctorName,
+          totalSessions,
+          sessionPrice,
+          doctorCut,
+          paidAmount,
+          validityDays
+        });
+        btn.disabled = false;
+        btn.innerText = 'حفظ وتفعيل / تجديد الخدمة';
+        showNotice(res.message, res.success);
+        if (res.success) {
+          document.getElementById('admPaidAmount').value = '';
+          if (res.state) renderAdminState(res.state);
+        }
+      } catch (e) {
+        btn.disabled = false;
+        btn.innerText = 'حفظ وتفعيل / تجديد الخدمة';
+        showNotice('❌ خطأ في الاتصال بالسيرفر', false);
+      }
+    });
+
+    // تعديل وحذف بيانات الحساب
     function openEditUser(userId) {
       const u = adminUsersCache.find(x => String(x.User_ID).trim() === String(userId).trim());
       if (!u) return;
+
       document.getElementById('editUserId').value = u.User_ID;
-      document.getElementById('editUserName').value = u.Name;
-      document.getElementById('editUserPhone').value = u.Phone;
-      document.getElementById('editUserPass').value = u.Password;
+      document.getElementById('editUserName').value = u.Name || '';
+      document.getElementById('editUserPhone').value = u.Phone || '';
+      document.getElementById('editUserPass').value = u.Password || '';
+
+      const isDoc = String(u.Role).trim().toLowerCase() === 'doctor';
+      const govWrap = document.getElementById('editUserGovWrap');
+      govWrap.style.display = isDoc ? 'block' : 'none';
+
+      if (isDoc) {
+        const govStr = String(u.Governorate || '');
+        const govSelect = document.getElementById('editUserGovSelect');
+        Array.from(govSelect.options).forEach(opt => {
+          opt.selected = govStr.includes(opt.value);
+        });
+      }
+
       document.getElementById('editUserModal').style.display = 'flex';
     }
 
@@ -1833,110 +2369,60 @@
       const name = document.getElementById('editUserName').value.trim();
       const phone = document.getElementById('editUserPhone').value.trim();
       const password = document.getElementById('editUserPass').value.trim();
-      this.disabled = true;
+      const govWrapVisible = document.getElementById('editUserGovWrap').style.display !== 'none';
+      const govSelect = document.getElementById('editUserGovSelect');
+      const governorate = govWrapVisible
+        ? (Array.from(govSelect.selectedOptions).map(o => o.value).join('، ') || 'الكل')
+        : '';
+
+      if (!name || !phone) {
+        showNotice('⚠️ الاسم ورقم الموبايل مطلوبان', false);
+        return;
+      }
+
+      const btn = this;
+      btn.disabled = true;
+      btn.innerText = '⏳ جاري الحفظ...';
+
       try {
-        const res = await callServer({ action: 'adminUpdateUser', userId, name, phone, password, deleteUser: false });
-        this.disabled = false;
+        const res = await callServer({
+          action: 'adminUpdateUser',
+          userId,
+          name,
+          phone,
+          password,
+          governorate
+        });
+        btn.disabled = false;
+        btn.innerText = '💾 حفظ التعديلات';
         closeEditModal();
         showNotice(res.message, res.success);
         if (res.success && res.state) renderAdminState(res.state);
       } catch (e) {
-        this.disabled = false;
+        btn.disabled = false;
+        btn.innerText = '💾 حفظ التعديلات';
         showNotice('❌ خطأ في الاتصال', false);
       }
     });
 
     document.getElementById('deleteUserBtn').addEventListener('click', async function() {
-      if (!confirm('هل أنت متأكد من حذف هذا الحساب نهائياً؟')) return;
       const userId = document.getElementById('editUserId').value;
-      this.disabled = true;
+      if (!confirm('هل أنت متأكد من حذف هذا الحساب نهائياً؟')) return;
+
+      const btn = this;
+      btn.disabled = true;
+      btn.innerText = '⏳...';
+
       try {
-        const res = await callServer({ action: 'adminUpdateUser', userId, deleteUser: true });
-        this.disabled = false;
+        const res = await callServer({ action: 'adminDeleteUser', userId });
+        btn.disabled = false;
+        btn.innerText = '🗑️ حذف';
         closeEditModal();
         showNotice(res.message, res.success);
         if (res.success && res.state) renderAdminState(res.state);
       } catch (e) {
-        this.disabled = false;
-        showNotice('❌ خطأ في الاتصال', false);
-      }
-    });
-
-    // إضافة مستخدم جديد
-    document.getElementById('addUserBtn').addEventListener('click', async function() {
-      const name = document.getElementById('newUserName').value.trim();
-      const phone = document.getElementById('newUserPhone').value.trim();
-      const password = document.getElementById('newUserPass').value.trim();
-      const role = document.getElementById('newUserRole').value;
-      const btn = this;
-
-      if (!name || !phone || !password) {
-        showNotice('⚠️ يرجى ملء الاسم ورقم الموبايل وكلمة المرور', false);
-        return;
-      }
-
-      btn.disabled = true;
-      btn.innerText = '⏳ جاري إنشاء الحساب...';
-
-      try {
-        const res = await callServer({ action: 'addUser', name, phone, password, role });
         btn.disabled = false;
-        btn.innerText = 'إنشاء الحساب فوراً';
-        showNotice(res.message, res.success);
-        if (res.success && res.state) {
-          document.getElementById('newUserName').value = '';
-          document.getElementById('newUserPhone').value = '';
-          document.getElementById('newUserPass').value = '';
-          renderAdminState(res.state);
-        }
-      } catch (e) {
-        btn.disabled = false;
-        btn.innerText = 'إنشاء الحساب فوراً';
-        showNotice('❌ خطأ في الاتصال', false);
-      }
-    });
-
-    // تفعيل أو تجديد باقة جديدة من الأدمن
-    document.getElementById('addContractBtn').addEventListener('click', async function() {
-      const cVal = document.getElementById('admClientSelect').value;
-      const dVal = document.getElementById('admDoctorSelect').value;
-      const totalSessions = document.getElementById('admTotalSessions').value;
-      const sessionPrice = document.getElementById('admSessionPrice').value;
-      const doctorCut = document.getElementById('admDoctorCut').value;
-      const paidAmount = document.getElementById('admPaidAmount').value;
-      const btn = this;
-
-      if (!cVal || !dVal || !totalSessions || !sessionPrice || !doctorCut) {
-        showNotice('⚠️ يرجى ملء جميع بيانات الباقة والتسعير', false);
-        return;
-      }
-
-      btn.disabled = true;
-      btn.innerText = '⏳ جاري الحفظ وإرسال الإشعارات...';
-
-      const [clientId, clientName] = cVal.split('|');
-      const [doctorId, doctorName] = dVal.split('|');
-
-      try {
-        const res = await callServer({
-          action: 'addContract',
-          clientId, clientName, doctorId, doctorName,
-          totalSessions, sessionPrice, doctorCut, paidAmount
-        });
-        btn.disabled = false;
-        btn.innerText = 'حفظ وتفعيل / تجديد الباقة';
-        showNotice(res.message, res.success);
-        if (res.success && res.state) {
-          document.getElementById('admTotalSessions').value = '';
-          document.getElementById('admSessionPrice').value = '';
-          document.getElementById('admDoctorCut').value = '';
-          document.getElementById('admPaidAmount').value = '';
-          calcNewContractSummary();
-          renderAdminState(res.state);
-        }
-      } catch (e) {
-        btn.disabled = false;
-        btn.innerText = 'حفظ وتفعيل / تجديد الباقة';
+        btn.innerText = '🗑️ حذف';
         showNotice('❌ خطأ في الاتصال', false);
       }
     });
