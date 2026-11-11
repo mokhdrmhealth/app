@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <title>مخضرم صحة | النظام الإداري والمحاسبي المتكامل</title>
+  <title>مخضرم صحة | النظام الإداري والمحاسبي المتكامل v6.0</title>
   <script src="https://telegram.org/js/telegram-web-app.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
   <style>
@@ -17,8 +17,8 @@
       --warning: #F59E0B; --danger: #EF4444;
     }
     * { box-sizing: border-box; font-family: 'Cairo', sans-serif; -webkit-tap-highlight-color: transparent; }
-    body { background: var(--bg-main); margin: 0; padding: 12px 12px 95px 12px; color: var(--text-main); overflow-x: hidden; }
-    .container { max-width: 980px; margin: auto; }
+    body { background: var(--bg-main); margin: 0; padding: 12px 12px 98px 12px; color: var(--text-main); overflow-x: hidden; }
+    .container { max-width: 1020px; margin: auto; }
 
     .brand-logo { width: 68px; height: 68px; border-radius: 18px; overflow: hidden; display: inline-flex; flex-direction: column; box-shadow: 0 8px 20px rgba(53, 98, 212, 0.25); border: 2px solid #fff; flex-shrink: 0; user-select: none; }
     .brand-logo.sm { width: 46px; height: 46px; border-radius: 12px; }
@@ -32,7 +32,7 @@
     .app-header h2 { margin: 0; font-size: 16.5px; font-weight: 800; color: #fff; }
     .app-header small { color: rgba(255,255,255,0.92); font-size: 12px; font-weight: 600; display: block; }
 
-    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(135px, 1fr)); gap: 10px; margin-bottom: 16px; }
+    .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 10px; margin-bottom: 14px; }
     .stat-box { background: #fff; padding: 12px 10px; border-radius: 16px; text-align: center; position: relative; overflow: hidden; border: 1px solid var(--border-color); box-shadow: 0 2px 10px rgba(0,0,0,0.03); }
     .stat-box::after { content: ''; position: absolute; bottom: 0; right: 0; left: 0; height: 4px; background: var(--brand-gradient); }
     .stat-box h3 { margin: 0; font-size: 17.5px; font-weight: 800; color: var(--brand-blue); }
@@ -54,27 +54,26 @@
     button.btn-success { background: #059669; }
     button.btn-warning { background: #D97706; }
     button.btn-light { background: rgba(255,255,255,0.2); color: #fff; border: 1px solid rgba(255,255,255,0.35); padding: 7px 12px; font-size: 12px; }
-    button.btn-sm { padding: 6px 10px; font-size: 11.5px; border-radius: 8px; }
+    button.btn-sm { padding: 5px 9px; font-size: 11px; border-radius: 8px; }
     button:disabled { background: #94A3B8 !important; box-shadow: none !important; cursor: not-allowed; transform: none; }
 
-    /* شريط البحث الذكي المدمج (Smart Unified Combobox) */
     .smart-combo { position: relative; margin-bottom: 11px; }
     .smart-combo input { margin-bottom: 0; padding-left: 32px; }
     .smart-combo .clear-pick { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); color: #94A3B8; cursor: pointer; font-size: 14px; font-weight: 900; display: none; }
-    .smart-results { display: none; position: absolute; top: calc(100% + 4px); right: 0; left: 0; background: #fff; border: 1.5px solid var(--brand-blue); border-radius: 12px; max-height: 210px; overflow-y: auto; z-index: 1500; box-shadow: 0 12px 28px rgba(15, 23, 42, 0.16); }
-    .smart-item { padding: 9px 12px; border-bottom: 1px solid var(--border-color); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 13px; transition: 0.15s; }
+    .smart-results { display: none; position: absolute; top: calc(100% + 4px); right: 0; left: 0; background: #fff; border: 1.5px solid var(--brand-blue); border-radius: 12px; max-height: 220px; overflow-y: auto; z-index: 1500; box-shadow: 0 12px 28px rgba(15, 23, 42, 0.16); }
+    .smart-item { padding: 9px 12px; border-bottom: 1px solid var(--border-color); cursor: pointer; display: flex; justify-content: space-between; align-items: center; gap: 8px; font-size: 12.5px; transition: 0.15s; }
     .smart-item:last-child { border-bottom: none; }
     .smart-item:hover, .smart-item:active { background: #EEF2FF; }
 
     .filter-bar { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 12px; align-items: center; justify-content: space-between; }
     .filter-pills { display: flex; gap: 6px; flex-wrap: wrap; }
-    .filter-pill { background: #F1F5F9; color: #475569; border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 20px; font-size: 12px; font-weight: 700; cursor: pointer; }
+    .filter-pill { background: #F1F5F9; color: #475569; border: 1px solid var(--border-color); padding: 6px 12px; border-radius: 20px; font-size: 11.5px; font-weight: 700; cursor: pointer; }
     .filter-pill.active { background: var(--brand-blue); color: #fff; border-color: var(--brand-blue); }
 
     .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--border-color); }
-    table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 520px; background: #fff; }
+    table { width: 100%; border-collapse: collapse; font-size: 12.5px; min-width: 540px; background: #fff; }
     th, td { padding: 10px 9px; border-bottom: 1px solid var(--border-color); text-align: right; vertical-align: middle; }
-    th { background: #F8FAFC; color: var(--brand-blue-dark); font-weight: 800; font-size: 12px; white-space: nowrap; }
+    th { background: #F8FAFC; color: var(--brand-blue-dark); font-weight: 800; font-size: 11.5px; white-space: nowrap; }
     tr:last-child td { border-bottom: none; }
 
     .badge-ok { background: #DCFCE7; color: #166534; padding: 3px 8px; border-radius: 8px; font-size: 11px; font-weight: 700; display: inline-block; }
@@ -89,18 +88,28 @@
     .calc-summary-box { background: #F8FAFC; border: 1.5px dashed #CBD5E1; border-radius: 12px; padding: 10px 12px; margin-bottom: 12px; font-size: 12.5px; display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; }
     .session-item { border: 1px solid var(--border-color); padding: 14px; border-radius: 14px; margin-bottom: 12px; background: #F8FAFC; }
 
+    /* شريط السعر العادل التفاعلي للطبيب */
+    .price-slider-box { background: #fff; border: 1.5px solid #CBD5E1; border-radius: 14px; padding: 12px; margin: 10px 0; }
+    .price-slider-track { position: relative; padding: 6px 0; }
+    .price-slider-track input[type="range"] { -webkit-appearance: none; appearance: none; width: 100%; height: 8px; border-radius: 99px; background: linear-gradient(90deg, #10B981 0%, #3562D4 50%, #F59E0B 100%); outline: none; padding: 0; margin: 6px 0; border: none; }
+    .price-slider-track input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 22px; height: 22px; border-radius: 50%; background: #fff; border: 3px solid var(--brand-blue); cursor: pointer; box-shadow: 0 2px 8px rgba(0,0,0,0.25); }
+    .price-slider-labels { display: flex; justify-content: space-between; font-size: 11px; font-weight: 700; color: var(--text-muted); }
+
+    /* كارت الموعد القادم البارز */
+    .next-appt-hero { background: linear-gradient(135deg, #EFF6FF 0%, #FDF4FF 100%); border: 2px solid var(--brand-blue); border-radius: 16px; padding: 15px; margin-bottom: 12px; position: relative; }
+
     .bottom-nav { position: fixed; bottom: 0; left: 0; right: 0; background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(12px); display: flex; justify-content: space-around; padding: 8px 6px 12px; box-shadow: 0 -4px 20px rgba(15, 23, 42, 0.08); border-top: 1px solid var(--border-color); z-index: 900; }
     .nav-tab { background: transparent; color: var(--text-muted); border: none; padding: 6px 10px; border-radius: 12px; font-size: 11.5px; font-weight: 700; display: flex; flex-direction: column; align-items: center; gap: 3px; flex: 1; }
     .nav-tab span.icon { font-size: 18px; }
     .nav-tab.active { color: var(--brand-blue); background: rgba(53, 98, 212, 0.09); }
 
     .modal-overlay { display: none; position: fixed; inset: 0; background: rgba(15, 23, 42, 0.6); backdrop-filter: blur(3px); z-index: 2000; align-items: center; justify-content: center; padding: 14px; overflow-y: auto; }
-    .modal-box { background: #fff; width: 100%; max-width: 480px; border-radius: 20px; padding: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); max-height: 92vh; overflow-y: auto; }
+    .modal-box { background: #fff; width: 100%; max-width: 500px; border-radius: 20px; padding: 20px; box-shadow: 0 20px 40px rgba(0,0,0,0.25); max-height: 92vh; overflow-y: auto; }
 
     .progress-wrap { background: #E2E8F0; height: 10px; border-radius: 99px; overflow: hidden; margin: 10px 0 6px; }
     .progress-fill { height: 100%; background: var(--brand-gradient); border-radius: 99px; transition: width 0.4s ease; }
-    .section-title { margin: 0 0 12px 0; font-size: 15px; font-weight: 800; color: var(--brand-blue-dark); display: flex; align-items: center; gap: 6px; }
-    .day-chip { display: inline-flex; align-items: center; gap: 4px; background: #F1F5F9; padding: 6px 10px; border-radius: 10px; font-size: 12px; font-weight: 700; cursor: pointer; border: 1px solid var(--border-color); margin: 3px; }
+    .section-title { margin: 0 0 12px 0; font-size: 15px; font-weight: 800; color: var(--brand-blue-dark); display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+    .day-chip { display: inline-flex; align-items: center; gap: 4px; background: #F1F5F9; padding: 5px 9px; border-radius: 10px; font-size: 11.5px; font-weight: 700; cursor: pointer; border: 1px solid var(--border-color); margin: 2px; user-select: none; }
     .day-chip input { width: auto; margin: 0; }
   </style>
 </head>
@@ -114,7 +123,9 @@
       <p style="color:var(--text-muted); font-size:13px; margin:0;">يتم التحقق من حسابك عبر تليجرام تلقائياً</p>
     </div>
 
+    <!-- ========================================================= -->
     <!-- 1. بوابة تسجيل الدخول -->
+    <!-- ========================================================= -->
     <div id="loginView" class="card" style="max-width:420px; margin: 20px auto; border-top: 6px solid var(--brand-blue);">
       <div style="text-align:center; margin-bottom:16px;">
         <div class="brand-logo" style="margin-bottom:12px;"><div class="brand-logo-top">مخضرم</div><div class="brand-logo-bottom">صحة</div></div>
@@ -129,7 +140,9 @@
       <button type="button" id="loginBtn" class="btn-gradient" style="width:100%; padding:13px; font-size:15px;">تسجيل الدخول</button>
     </div>
 
-    <!-- 2. واجهة المريض -->
+    <!-- ========================================================= -->
+    <!-- 2. واجهة المريض (Client View) -->
+    <!-- ========================================================= -->
     <div id="clientView" style="display:none;">
       <div class="app-header">
         <div class="app-header-info">
@@ -147,7 +160,26 @@
         <div class="stat-box"><h3 id="cliDoneSess">0</h3><p>الجلسات المنفذة</p></div>
         <div class="stat-box pink"><h3 id="cliRemSess">0</h3><p>الجلسات المتبقية</p></div>
         <div class="stat-box"><h3 id="cliFinStatus">0 ج.م</h3><p>المتبقي للسداد</p></div>
-        <div class="stat-box success"><h3 id="cliWalletBalance">0 ج.م</h3><p>🎁 رصيد محفظة الكاش باك</p></div>
+        <div class="stat-box success">
+          <h3 id="cliWalletBalance">0 ج.م</h3>
+          <p>🎁 رصيد محفظة الكاش باك</p>
+          <div id="cliWalletCountdown" style="font-size:10.5px; font-weight:800; margin-top:3px; color:#059669;"></div>
+        </div>
+      </div>
+
+      <!-- بانر: رشح لنا حالة واكسب جلسة كاش باك -->
+      <div class="promo-banner">
+        <div>
+          <h3 style="margin:0 0 4px; font-size:15px; font-weight:900;">🎁 رشّح لنا مريضاً واكسب ثمن جلسة كاش باك!</h3>
+          <small style="color:rgba(255,255,255,0.95); font-weight:600;">رشّح صديقاً أو قريباً يحتاج جلسات علاج طبيعي، وفور تعاقده مع المركز يضاف رصيد جلسة كاش باك في محفظتك فوراً!</small>
+        </div>
+        <button type="button" class="btn-light" style="background:#fff; color:var(--brand-blue-dark); font-weight:900;" onclick="openClientReferralModal()">🤝 رشّح حالة الآن</button>
+      </div>
+
+      <!-- قائمة متابعة ترشيحات العميل إن وجدت -->
+      <div id="cliMyReferralsCard" class="card" style="display:none; border-right:4px solid var(--brand-pink);">
+        <h3 class="section-title">🤝 متابعة الحالات التي رشحتها</h3>
+        <div id="cliMyReferralsList"></div>
       </div>
 
       <div class="card">
@@ -158,33 +190,38 @@
         <div class="progress-wrap"><div id="cliProgressBar" class="progress-fill" style="width:0%;"></div></div>
       </div>
 
-      <!-- مواعيد المريض القادمة والجدول الثابت -->
+      <!-- الموعد القادم فقط (اللي عليه الدور) باليوم والتاريخ والساعة 12س -->
       <div class="card" style="border-right: 4px solid var(--brand-blue);">
-        <h3 class="section-title">📅 مواعيد جلساتي القادمة وجدولي الثابت</h3>
+        <h3 class="section-title">⏭️ موعد جلستك القادم (اللي عليه الدور)</h3>
         <div id="cliFixedSchedulesBox" style="margin-bottom:10px;"></div>
-        <div id="cliAppointmentsList"></div>
+        <div id="cliNextAppointmentBox"></div>
       </div>
 
       <div class="card">
         <h3 class="section-title">📋 سجل الجلسات والتوقيع الإلكتروني</h3>
         <div class="secret-alert">
-          🔒 <strong>ضمان السرية التامة (100%):</strong> تقييمك بالنجوم وملاحظاتك المكتوبة عن الجلسة <u>سرية تماماً وتصل للإدارة فقط</u> لضمان جودة الخدمة وتقييم الأطباء بموضوعية، ولا تظهر للطبيب.
+          🔒 <strong>ضمان السرية التامة:</strong> تقييمك بالنجوم وملاحظاتك المكتوبة عن الجلسة <u>سرية وتصل للإدارة فقط</u> لضمان جودة الخدمة وتقييم الأطباء بموضوعية، ولا تظهر للطبيب.
         </div>
         <div id="cliSessionsList"></div>
       </div>
     </div>
 
-    <!-- 3. واجهة الطبيب -->
+    <!-- ========================================================= -->
+    <!-- 3. واجهة الطبيب (Doctor View) -->
+    <!-- ========================================================= -->
     <div id="doctorView" style="display:none;">
       <div class="app-header">
         <div class="app-header-info">
           <div class="brand-logo sm"><div class="brand-logo-top">مخضرم</div><div class="brand-logo-bottom">صحة</div></div>
           <div>
             <h2>👨‍⚕️ د. <span id="docNameTitle"></span> <span id="docRatingBadge" class="badge-brand" style="margin-right:6px; font-size:11px;">⭐⭐⭐⭐⭐ 5.0</span></h2>
-            <small id="docGovSubtitle">محافظتي (بإشراف الإدارة): —</small>
+            <small id="docGovSubtitle">نطاق التغطية: —</small>
           </div>
         </div>
-        <button type="button" class="logout-btn btn-light">خروج</button>
+        <div style="display:flex; gap:6px; flex-wrap:wrap;">
+          <button type="button" class="btn-light" onclick="openDoctorProfileUpdateModal()">🗺️🧰 مناطقي وأدواتي</button>
+          <button type="button" class="logout-btn btn-light">خروج</button>
+        </div>
       </div>
 
       <div class="stats-grid">
@@ -193,16 +230,23 @@
         <div class="stat-box success"><h3 id="docWeeklyWallet">0 ج.م</h3><p>مستحقات جاهزة للصرف</p></div>
       </div>
 
-      <!-- شريط طلب صرف المستحقات للطبيب -->
+      <!-- شريط حالة طلب تحديث المناطق والأدوات + طلب صرف المستحقات -->
       <div class="card" style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px; background:#F8FAFC; border:1.5px solid #CBD5E1;">
         <div>
           <strong style="color:var(--brand-blue-dark); font-size:13.5px;">🏦 سحب وصرف المستحقات الجاهزة</strong>
           <div id="docPayoutStatusText" style="font-size:12px; color:var(--text-muted); font-weight:700;">يمكنك إرسال طلب صرف للإدارة لتحويل رصيدك الجاهز</div>
+          <div id="docProfileStatusBanner" style="margin-top:4px; font-size:11.5px;"></div>
         </div>
         <button type="button" id="docOpenPayoutModalBtn" class="btn-gradient" onclick="openPayoutRequestModal()">🏦 طلب صرف المستحقات</button>
       </div>
 
       <div id="docTabPatients" class="doc-tab-content">
+        <!-- الموعد القادم اللي عليه الدور عند الطبيب -->
+        <div id="docNextApptCard" class="card" style="display:none; border-right:4px solid var(--success);">
+          <h3 class="section-title">⏭️ الجلسة القادمة التي عليها الدور</h3>
+          <div id="docNextApptContent"></div>
+        </div>
+
         <div class="card">
           <h3 class="section-title">👥 المرضى المسجلين معك (الحضور والمواعيد والجدول الثابت)</h3>
           <div class="table-wrap">
@@ -222,13 +266,12 @@
         </div>
 
         <div class="card">
-          <h3 class="section-title">📅 المواعيد المقترحة والجدول الثابت لمرضاك</h3>
+          <h3 class="section-title">📅 جدول مواعيد مرضاك (بنظام 12 ساعة واليوم)</h3>
           <div id="docAppointmentsList"></div>
         </div>
       </div>
 
       <div id="docTabMarket" class="doc-tab-content" style="display:none;">
-        <!-- بانر ترشيح حالة واكسب ثمن جلسة -->
         <div class="promo-banner">
           <div>
             <h3 style="margin:0 0 4px; font-size:15px; font-weight:900;">🎁 اعرض حالة واكسب ثمن جلسة كاملة!</h3>
@@ -238,7 +281,7 @@
         </div>
 
         <div class="card">
-          <h3 class="section-title">🏥 معرض الحالات المتاحة في نطاق محافظتك</h3>
+          <h3 class="section-title">🏥 معرض الحالات المتاحة (اختر سعرك المقترح على مؤشر السعر العادل)</h3>
           <div id="docCasesList"></div>
         </div>
       </div>
@@ -276,14 +319,16 @@
       </div>
     </div>
 
-    <!-- 4. واجهة الإدارة الشاملة -->
+    <!-- ========================================================= -->
+    <!-- 4. واجهة الإدارة الشاملة (Admin View) -->
+    <!-- ========================================================= -->
     <div id="adminView" style="display:none;">
       <div class="app-header">
         <div class="app-header-info">
           <div class="brand-logo sm"><div class="brand-logo-top">مخضرم</div><div class="brand-logo-bottom">صحة</div></div>
           <div>
-            <h2>إدارة «مخضرم صحة»</h2>
-            <small>الإدارة المالية المزدوجة، الباقات، الكاش باك، والمواعيد</small>
+            <h2>إدارة «مخضرم صحة» v6.0</h2>
+            <small>المحاسبة الشهرية، الخزنة الحرة، الفلوس العايمة، والأطباء المشاركون</small>
           </div>
         </div>
         <div style="display:flex; gap:6px; flex-wrap:wrap;">
@@ -292,20 +337,39 @@
         </div>
       </div>
 
-      <!-- الصف الأول: الحسابات الفعلية المحققة بالخزنة -->
+      <!-- شريط فلتر الشهر المحاسبي (Monthly Filter) -->
+      <div class="card" style="padding:12px 16px; background:#EEF2FF; border:1.5px solid #C7D2FE; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+        <div>
+          <strong style="color:var(--brand-blue-dark); font-size:13.5px;">🗓️ شهر التقفيل والملخص المالي:</strong>
+          <small style="color:var(--text-muted); display:block;">يعرض ملخص الشهر المختار بدون خلط العقود الخلصانة من الشهور السابقة، مع إظهار الفلوس العايمة في السوق حالياً</small>
+        </div>
+        <select id="admMonthFilterSelect" style="width:auto; min-width:210px; margin:0; font-weight:800; background:#fff;" onchange="recalculateAdminFinancials()">
+          <option value="ALL">🌐 كل الشهور (إجمالي تراكمي)</option>
+        </select>
+      </div>
+
+      <!-- الصف الأول: ملخص الشهر المختار (أو الإجمالي) بالخزنة -->
       <div class="stats-grid">
-        <div class="stat-box success"><h3 id="admCollectedCash">0 ج.م</h3><p>💰 المحصل الفعلي بالخزنة</p></div>
-        <div class="stat-box danger"><h3 id="admClientDebt">0 ج.م</h3><p>⏳ مديونيات عند العملاء (لنا بره)</p></div>
-        <div class="stat-box pink"><h3 id="admUnpaidDocLiability">0 ج.م</h3><p>👨‍⚕️ مستحق للأطباء جاهز للصرف</p></div>
-        <div class="stat-box"><h3 id="admNetProfit">0 ج.م</h3><p>✅ صافي ربح المركز المحقق (الفعلي)</p></div>
+        <div class="stat-box success"><h3 id="admCollectedCash">0 ج.م</h3><p id="admCollectedLabel">💰 صافي محصل الخزنة (عقود + حر)</p></div>
+        <div class="stat-box"><h3 id="admNetProfit">0 ج.م</h3><p id="admNetProfitLabel">✅ صافي ربح المركز المحقق فعلياً</p></div>
+        <div class="stat-box danger"><h3 id="admClientDebt">0 ج.م</h3><p>⏳ فلوس عايمة: مديونيات لنا بره</p></div>
+        <div class="stat-box pink"><h3 id="admUnpaidDocLiability">0 ج.م</h3><p>👨‍⚕️ فلوس عايمة: مستحق أطباء لم يُصرف</p></div>
       </div>
 
-      <!-- الصف الثاني: التصور المبدئي للباقات السارية -->
-      <div class="stats-grid" style="margin-top:-8px;">
-        <div class="stat-box" style="border-color:#EE63E0;"><h3 id="admProjectedCenterProfit" style="color:#EE63E0;">0 ج.م</h3><p>📊 ربح المركز المبدئي المنتظر</p></div>
-        <div class="stat-box" style="border-color:#3562D4;"><h3 id="admProjectedDoctorCut" style="color:#3562D4;">0 ج.م</h3><p>🩺 مخصص الأطباء المبدئي المنتظر</p></div>
+      <!-- الصف الثاني: الفلوس العايمة للباقات السارية غير الخلصانة -->
+      <div class="stats-grid" style="margin-top:-6px;">
+        <div class="stat-box" style="border-color:#EE63E0;"><h3 id="admProjectedCenterProfit" style="color:#EE63E0;">0 ج.م</h3><p>📊 فلوس عايمة: ربح المركز من جلسات متبقية</p></div>
+        <div class="stat-box" style="border-color:#3562D4;"><h3 id="admProjectedDoctorCut" style="color:#3562D4;">0 ج.م</h3><p>🩺 فلوس عايمة: مخصص أطباء لجلسات متبقية</p></div>
+        <div class="stat-box" style="border-color:#10B981;"><h3 id="admFreeTreasuryNet" style="color:#059669;">0 ج.م</h3><p>💵 صافي الخزنة الحرة (طياري - مصروفات)</p></div>
       </div>
 
+      <!-- تنبيه طلبات اعتماد مناطق وأدوات الأطباء المعلقة -->
+      <div id="admPendingProfilesCard" class="card" style="display:none; border:2px solid var(--warning); background:#FFFBEB;">
+        <h3 class="section-title" style="color:#92400E;">🧰 طلبات اعتماد المناطق والأدوات الطبية من الأطباء</h3>
+        <div id="admPendingProfilesList"></div>
+      </div>
+
+      <!-- التبويب 1: الرئيسية والعملاء والدليل -->
       <div id="admTabMain" class="adm-tab-content">
         <div class="grid-2">
           <!-- تسجيل حساب جديد -->
@@ -326,10 +390,10 @@
 
             <div id="newUserGovWrap" style="display:none;">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
-                <label style="margin:0;">🗺️ محافظات الطبيب (بيد الأدمن حصراً)</label>
+                <label style="margin:0;">🗺️ محافظات الطبيب</label>
                 <button type="button" class="btn-sm btn-pink" onclick="selectGreaterCairo('newUserGovSelect')">⚡ القاهرة الكبرى</button>
               </div>
-              <select id="newUserGovSelect" multiple style="height:95px;">
+              <select id="newUserGovSelect" multiple style="height:80px;">
                 <option value="الكل">🌐 يغطي جميع المحافظات</option>
                 <option value="القاهرة">القاهرة</option><option value="الجيزة">الجيزة</option><option value="القليوبية">القليوبية</option>
                 <option value="الإسكندرية">الإسكندرية</option><option value="الدقهلية">الدقهلية</option><option value="الشرقية">الشرقية</option>
@@ -341,15 +405,19 @@
                 <option value="الأقصر">الأقصر</option><option value="البحر الأحمر">البحر الأحمر</option><option value="الوادي الجديد">الوادي الجديد</option>
                 <option value="مطروح">مطروح</option><option value="شمال سيناء">شمال سيناء</option><option value="جنوب سيناء">جنوب سيناء</option>
               </select>
-              <small style="color:var(--text-muted); font-weight:700;">اضغط Ctrl أو مطولاً لتحديد أكثر من محافظة</small>
+
+              <label>📍 المناطق والأحياء الدقيقة (مثل: مدينتي، الدقي، التجمع...)</label>
+              <input type="text" id="newUserRegions" placeholder="مثال: مدينتي، التجمع الخامس، مدينة نصر، الدقي">
+              <label>🧰 الأدوات والأجهزة التي يمتلكها الطبيب (تظهر للإدارة فقط)</label>
+              <input type="text" id="newUserEquipment" placeholder="مثال: TENS، Ultrasound، إبر جافة، حجامة">
             </div>
 
-            <button type="button" id="addUserBtn" style="width:100%; margin-top:10px;">إنشاء الحساب فوراً</button>
+            <button type="button" id="addUserBtn" style="width:100%; margin-top:6px;">إنشاء الحساب فوراً</button>
           </div>
 
-          <!-- تفعيل باقة أو كشف (مع شريط البحث الذكي المدمج والكاش باك 5%) -->
+          <!-- تفعيل باقة أو كشف (تقبل بدون طبيب!) -->
           <div class="card">
-            <h3 class="section-title">📦 تفعيل أو تجديد باقة / كشف (Smart Merge & Cashback)</h3>
+            <h3 class="section-title">📦 تفعيل أو تجديد باقة / كشف (طبيب اختياري + كاش باك 90 يوم)</h3>
 
             <label>🏷️ نوع الخدمة</label>
             <select id="admServiceType" onchange="onServiceTypeChange()">
@@ -358,8 +426,7 @@
               <option value="Single">⚡ جلسة فردية (جلسة واحدة - 7 أيام)</option>
             </select>
 
-            <!-- شريط البحث الذكي المدمج للمريض -->
-            <label>👤 ابحث واختر المريض (بالاسم أو رقم الموبايل — الأقرب للنتيجة)</label>
+            <label>👤 ابحث واختر المريض (بالاسم أو رقم الموبايل)</label>
             <div class="smart-combo">
               <input type="text" id="admClientSmartInput" placeholder="🔍 اكتب اسم المريض أو جزء من رقمه..." autocomplete="off" oninput="onSmartComboInput('client')" onfocus="onSmartComboInput('client')">
               <span id="admClientClearBtn" class="clear-pick" onclick="clearSmartCombo('client')">✕</span>
@@ -367,18 +434,16 @@
               <div id="admClientSmartResults" class="smart-results"></div>
             </div>
 
-            <!-- صندوق استخدام محفظة الكاش باك المتاحة للمريض -->
             <div id="admClientWalletBox" style="display:none; background:#ECFDF5; border:1.5px solid #6EE7B7; padding:9px 12px; border-radius:12px; margin-bottom:11px;">
               <label style="margin:0; color:#065F46; display:flex; align-items:center; gap:8px; cursor:pointer;">
                 <input type="checkbox" id="admUseWalletCheckbox" style="width:18px; height:18px; margin:0;" onchange="calcNewContractSummary()">
-                <span>💳 استخدام رصيد محفظة الكاش باك المتاح (<strong id="admAvailableWalletSpan">0</strong> ج.م) وخصمه من المطلوب</span>
+                <span>💳 خصم رصيد محفظة الكاش باك المتاح (<strong id="admAvailableWalletSpan">0</strong> ج.م)</span>
               </label>
             </div>
 
-            <!-- شريط البحث الذكي المدمج للطبيب -->
-            <label>👨‍⚕️ ابحث واختر الطبيب المعالج (بالاسم أو الرقم أو المحافظة)</label>
+            <label>👨‍⚕️ الطبيب المعالج <span class="badge-wait">اختياري — اتركه فارغاً لتعيين الطبيب لاحقاً</span></label>
             <div class="smart-combo">
-              <input type="text" id="admDoctorSmartInput" placeholder="🔍 اكتب اسم الطبيب أو المحافظة..." autocomplete="off" oninput="onSmartComboInput('doctor')" onfocus="onSmartComboInput('doctor')">
+              <input type="text" id="admDoctorSmartInput" placeholder="🔍 ابحث بالاسم أو المنطقة (مدينتي/الدقي) أو الأداة — أو اتركه فارغاً..." autocomplete="off" oninput="onSmartComboInput('doctor')" onfocus="onSmartComboInput('doctor')">
               <span id="admDoctorClearBtn" class="clear-pick" onclick="clearSmartCombo('doctor')">✕</span>
               <input type="hidden" id="admDoctorSelect">
               <div id="admDoctorSmartResults" class="smart-results"></div>
@@ -405,7 +470,7 @@
                 <input type="number" id="admPaidAmount" placeholder="كامل القيمة" oninput="calcNewContractSummary()">
               </div>
               <div>
-                <label>صلاحية (أيام)</label>
+                <label>صلاحية الباقة</label>
                 <input type="number" id="admValidityDays" value="40">
               </div>
               <div>
@@ -417,7 +482,7 @@
             <div class="calc-summary-box">
               <span>إجمالي الباقة: <strong id="calcTotalPkg" style="color:var(--brand-blue);">0 ج.م</strong></span>
               <span>المتبقي: <strong id="calcRemDebt" style="color:var(--danger);">0 ج.م</strong></span>
-              <span>كاش باك للمحفظة: <strong id="calcCashbackEarned" style="color:#059669;">+0 ج.م</strong></span>
+              <span>كاش باك (90 يوم): <strong id="calcCashbackEarned" style="color:#059669;">+0 ج.م</strong></span>
             </div>
 
             <button type="button" id="addContractBtn" class="btn-gradient" style="width:100%;">حفظ وتفعيل / تجديد الخدمة</button>
@@ -426,15 +491,16 @@
 
         <!-- الدليل الرئيسي الذكي -->
         <div class="card">
-          <h3 class="section-title">📇 الدليل الرئيسي الذكي (يرتب تلقائياً حسب الأقرب للاسم أو الرقم)</h3>
+          <h3 class="section-title">📇 الدليل الرئيسي الذكي (ابحث بالاسم، الموبايل، المنطقة مثل "مدينتي/الدقي"، أو الأداة الطبية)</h3>
 
           <div class="filter-bar">
             <div class="filter-pills">
               <button type="button" class="filter-pill active" onclick="setDirFilter('all', this)">الكل</button>
               <button type="button" class="filter-pill" onclick="setDirFilter('client', this)">👤 المرضى</button>
+              <button type="button" class="filter-pill" onclick="setDirFilter('unassigned', this)">⏳ باقات بدون طبيب</button>
               <button type="button" class="filter-pill" onclick="setDirFilter('doctor', this)">👨‍⚕️ الأطباء</button>
               <button type="button" class="filter-pill" onclick="setDirFilter('debt', this)">⚠️ عليهم مديونية</button>
-              <button type="button" class="filter-pill" onclick="setDirFilter('expiring', this)">⏳ تنتهي قريباً</button>
+              <button type="button" class="filter-pill" onclick="setDirFilter('expiring', this)">⌛ تنتهي قريباً</button>
             </div>
             <div style="display:flex; gap:8px; flex:1; min-width:260px;">
               <select id="dirGovFilter" style="margin-bottom:0; max-width:145px;" onchange="renderUsersDirectory()">
@@ -449,7 +515,7 @@
                 <option value="الأقصر">الأقصر</option><option value="البحر الأحمر">البحر الأحمر</option><option value="الوادي الجديد">الوادي الجديد</option>
                 <option value="مطروح">مطروح</option><option value="شمال سيناء">شمال سيناء</option><option value="جنوب سيناء">جنوب سيناء</option>
               </select>
-              <input type="text" id="dirSearchInput" placeholder="🔍 بحث ذكي بالاسم أو الرقم (يرتب بالأقرب)..." style="margin-bottom:0;" oninput="renderUsersDirectory()">
+              <input type="text" id="dirSearchInput" placeholder="🔍 ابحث بالاسم أو الرقم أو المنطقة (مدينتي، الدقي) أو الأداة..." style="margin-bottom:0;" oninput="renderUsersDirectory()">
             </div>
           </div>
 
@@ -460,7 +526,7 @@
                   <th>الاسم</th>
                   <th>الدور</th>
                   <th>الموبايل</th>
-                  <th>موقف الباقة / الكاش باك / التقييم</th>
+                  <th>موقف الباقة / الكاش باك / المناطق والأدوات السرية</th>
                   <th>تحكم وإجراءات</th>
                 </tr>
               </thead>
@@ -470,7 +536,7 @@
         </div>
       </div>
 
-      <!-- مركز الرسائل الشامل -->
+      <!-- التبويب 2: مركز الرسائل -->
       <div id="admTabMessages" class="adm-tab-content" style="display:none;">
         <div class="card" style="border-top: 5px solid var(--brand-pink);">
           <h3 class="section-title">📢 مركز الرسائل والإشعارات عبر بوت «مخضرم صحة»</h3>
@@ -487,7 +553,7 @@
                 <option value="doctors">👨‍⚕️ الأطباء فقط</option>
                 <option value="active_clients">✅ أصحاب الباقات النشطة</option>
                 <option value="expired_clients">⚠️ أصحاب الباقات المنتهية (حملات التجديد)</option>
-                <option value="gov_doctors">🗺️ أطباء محافظة معينة</option>
+                <option value="gov_doctors">🗺️ أطباء محافظة أو منطقة معينة</option>
                 <option value="specific">🎯 شخص محدد (بحث ذكي)</option>
               </select>
             </div>
@@ -508,7 +574,7 @@
             </div>
 
             <div id="specificUserWrap" style="display:none;">
-              <label>👤 ابحث واختر المستلم المحدد (بالاسم أو الرقم)</label>
+              <label>👤 ابحث واختر المستلم المحدد</label>
               <div class="smart-combo">
                 <input type="text" id="msgSpecificSmartInput" placeholder="🔍 اكتب اسم أو رقم المستلم..." autocomplete="off" oninput="onSmartComboInput('msgUser')" onfocus="onSmartComboInput('msgUser')">
                 <span id="msgUserClearBtn" class="clear-pick" onclick="clearSmartCombo('msgUser')">✕</span>
@@ -548,20 +614,40 @@
         </div>
       </div>
 
-      <!-- معرض الحالات ومراجعة ترشيحات الأطباء -->
+      <!-- التبويب 3: معرض الحالات + ترشيحات العملاء والأطباء -->
       <div id="admTabCases" class="adm-tab-content" style="display:none;">
+        <!-- 1. قسم ترشيحات العملاء (رشح لنا حالة واكسب كاش باك) -->
+        <div class="card" style="border-top: 5px solid var(--brand-pink);">
+          <h3 class="section-title">🤝 طلبات ترشيحات العملاء («رشّح لنا حالة واكسب كاش باك»)</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>العميل الداعي</th>
+                  <th>الحالة المرشحة ورقم الموبايل</th>
+                  <th>المنطقة والتفاصيل</th>
+                  <th>حالة الطلب</th>
+                  <th>قرار الإدارة بعد التواصل</th>
+                </tr>
+              </thead>
+              <tbody id="admClientReferralsTable"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 2. نشر حالة جديدة في المعرض -->
         <div class="card">
-          <h3 class="section-title">🏥 نشر حالة جديدة في معرض الحالات (توجيه بالمحافظة)</h3>
+          <h3 class="section-title">🏥 نشر حالة في معرض الأطباء (يربطها تلقائياً بعقد المريض الحالي إن وجد بدون تكرار!)</h3>
           <div class="grid-2">
             <div>
-              <label>ابحث عن مريض مسجل (أو اتركه فارغاً لحالة خارجية)</label>
+              <label>ابحث عن مريض مسجل (لو المريض له باقة حالية وتبحث له عن طبيب أو طبيب ثانٍ)</label>
               <div class="smart-combo">
                 <input type="text" id="caseClientSmartInput" placeholder="🔍 ابحث عن مريض مسجل (اختياري)..." autocomplete="off" oninput="onSmartComboInput('caseClient')" onfocus="onSmartComboInput('caseClient')">
                 <span id="caseClientClearBtn" class="clear-pick" onclick="clearSmartCombo('caseClient')">✕</span>
                 <input type="hidden" id="caseClientSelect">
                 <div id="caseClientSmartResults" class="smart-results"></div>
               </div>
-              <label>اسم الحالة (لو حالة جديدة / خارجية)</label>
+              <label>اسم الحالة (أو يملأ تلقائياً عند اختيار المريض)</label>
               <input type="text" id="caseCustomClientName" placeholder="اسم المريض">
               <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
                 <label style="margin:0;">🗺️ المحافظة / المحافظات المستهدفة</label>
@@ -581,10 +667,10 @@
               </select>
             </div>
             <div>
-              <label>📍 المنطقة السكنية بالتفصيل</label>
-              <input type="text" id="caseRegion" placeholder="مثال: مدينة نصر - شارع مكرم عبيد">
-              <label>📋 تفاصيل التشخيص</label>
-              <input type="text" id="caseSummary" placeholder="جلسات علاج طبيعي وتأهيل بعد جراحة">
+              <label>📍 المنطقة السكنية بالتفصيل (مثل: مدينتي، الدقي، مدينة نصر...)</label>
+              <input type="text" id="caseRegion" placeholder="مثال: مدينتي / الدقي / التجمع الخامس">
+              <label>📋 تفاصيل التشخيص والأدوات المطلوبة</label>
+              <input type="text" id="caseSummary" placeholder="مثال: تأهيل بعد جراحة — يفضل وجود Ultrasound">
               <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
                 <div>
                   <label>الجلسات</label>
@@ -595,26 +681,27 @@
                   <input type="number" id="caseSessionPrice" placeholder="500">
                 </div>
                 <div>
-                  <label>نصيب الطبيب</label>
+                  <label>⚖️ السعر العادل للطبيب</label>
                   <input type="number" id="caseDoctorCut" placeholder="250">
                 </div>
               </div>
             </div>
           </div>
-          <button type="button" id="publishCaseBtn" class="btn-gradient" style="width:100%;">📢 نشر الحالة وإشعار أطباء المحافظة فقط</button>
+          <button type="button" id="publishCaseBtn" class="btn-gradient" style="width:100%;">📢 نشر الحالة وإشعار أطباء المحافظة والمنطقة</button>
         </div>
 
+        <!-- 3. جدول التحكم الكامل في الحالات المنشورة وعروض أسعار الأطباء -->
         <div class="card">
-          <h3 class="section-title">📋 الحالات المنشورة، ترشيحات الأطباء، وطلبات التقديم</h3>
+          <h3 class="section-title">🎛️ إدارة الحالات المنشورة، العروض السعرية للأطباء، والتحكم الكامل (إخفاء / إلغاء / تعديل / حذف)</h3>
           <div class="table-wrap">
             <table>
               <thead>
                 <tr>
-                  <th>الحالة / المحافظة</th>
+                  <th>الحالة / المنطقة</th>
                   <th>التفاصيل والمرشِّح</th>
-                  <th>الجلسات والتسعير</th>
-                  <th>الحالة</th>
-                  <th>إجراءات الإدارة / الأطباء المتقدمون</th>
+                  <th>الجلسات والسعر العادل</th>
+                  <th>الحالة والتحكم</th>
+                  <th>الأطباء المتقدمون (بالسعر المقترح والأدوات)</th>
                 </tr>
               </thead>
               <tbody id="admCasesTable"></tbody>
@@ -623,9 +710,71 @@
         </div>
       </div>
 
-      <!-- قسم الماليات وطلبات الصرف والجلسات -->
+      <!-- التبويب 4: الماليات، الخزنة الحرة، المراجعة المالية، وطلبات الصرف -->
       <div id="admTabFinance" class="adm-tab-content" style="display:none;">
-        <!-- كارت طلبات صرف المستحقات المعلقة من الأطباء -->
+        <div class="grid-2">
+          <!-- 1. كارت الخزنة الحرة (كشوفات طياري / مصروفات بدون باقة) -->
+          <div class="card" style="border-top: 5px solid #059669;">
+            <h3 class="section-title">💵 إضافة حركة مالية حرة بالخزنة (بدون باقة)</h3>
+            <label>نوع الحركة المالية</label>
+            <select id="trsTypeSelect" onchange="toggleTreasuryDocFields()">
+              <option value="Income">➕ إيراد خارجي / كشف طياري يدخل الخزنة</option>
+              <option value="Expense">➖ مصروف إداري / تشغيلي يخرج من الخزنة</option>
+            </select>
+            <label>📌 مسمى الحركة الاختياري</label>
+            <input type="text" id="trsTitleInput" placeholder="مثال: كشف طياري مستعجل / إعلانات ممولة / مستلزمات">
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <div>
+                <label>💰 إجمالي المبلغ (ج.م)</label>
+                <input type="number" id="trsAmountInput" placeholder="400">
+              </div>
+              <div>
+                <label>📅 التاريخ</label>
+                <input type="date" id="trsDateInput">
+              </div>
+            </div>
+            <div id="trsDocWrap" style="display:grid; grid-template-columns:2fr 1fr; gap:8px;">
+              <div>
+                <label>👨‍⚕️ الطبيب (اختياري لو كشف طياري)</label>
+                <select id="trsDoctorSelect"><option value="">— بدون طبيب (صافي للمركز) —</option></select>
+              </div>
+              <div>
+                <label>نصيب الطبيب</label>
+                <input type="number" id="trsDocCutInput" value="0" placeholder="0">
+              </div>
+            </div>
+            <button type="button" id="addTreasuryBtn" class="btn-success" style="width:100%;">💾 تسجيل الحركة في الخزنة فوراً</button>
+          </div>
+
+          <!-- 2. كارت المراجعة المالية الذكية (Financial Audit) -->
+          <div class="card" style="border-top: 5px solid var(--warning);">
+            <h3 class="section-title">🔍 المراجعة المالية الذكية (كشف التجاوزات والفلوس العايمة)</h3>
+            <div id="admFinancialAuditBox" style="max-height:290px; overflow-y:auto; font-size:12.5px;"></div>
+          </div>
+        </div>
+
+        <!-- سجل حركات الخزنة الحرة -->
+        <div class="card">
+          <h3 class="section-title">🧾 سجل حركات الخزنة الحرة (كشوفات طياري ومصروفات)</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>التاريخ (الشهر)</th>
+                  <th>النوع</th>
+                  <th>المسمى / البيان</th>
+                  <th>المبلغ الإجمالي</th>
+                  <th>نصيب الطبيب</th>
+                  <th>صافي الخزنة</th>
+                  <th>حذف</th>
+                </tr>
+              </thead>
+              <tbody id="admTreasuryTable"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- طلبات صرف المستحقات المعلقة من الأطباء -->
         <div class="card" style="border-top: 5px solid var(--brand-blue);">
           <h3 class="section-title">🏦 طلبات صرف المستحقات المعلقة من الأطباء</h3>
           <div class="table-wrap">
@@ -716,23 +865,23 @@
           <span class="icon">📢</span><span>مركز الرسائل</span>
         </button>
         <button type="button" class="nav-tab" onclick="switchAdmTab('admTabCases', this)">
-          <span class="icon">🏥</span><span>معرض الحالات</span>
+          <span class="icon">🏥</span><span>المعرض والترشيحات</span>
         </button>
         <button type="button" class="nav-tab" onclick="switchAdmTab('admTabFinance', this)">
-          <span class="icon">💰</span><span>الماليات وطلبات الصرف</span>
+          <span class="icon">💰</span><span>الماليات والخزنة</span>
         </button>
       </div>
     </div>
   </div>
 
   <!-- ========================================================= -->
-  <!-- النوافذ المنبثقة (Modals) -->
+  <!-- النوافذ المنبثقة الشاملة (Modals v6.0) -->
   <!-- ========================================================= -->
 
-  <!-- 1. نافذة بروفايل العميل (📦 الباقة والدفع + محفظة الكاش باك + تمديد 7 أيام) -->
+  <!-- 1. نافذة بروفايل العميل (📦 الباقة والدفع + أطباء مشاركون 3 أيام و 3 أيام + عداد الكاش باك 90 يوم) -->
   <div id="clientProfileModal" class="modal-overlay">
     <div class="modal-box">
-      <h3 class="section-title">📦 إدارة الباقة والدفع للعميل: <span id="profClientName" style="color:var(--brand-pink-dark);"></span></h3>
+      <h3 class="section-title">📦 إدارة الباقة والأطباء والدفع: <span id="profClientName" style="color:var(--brand-pink-dark);"></span></h3>
       <input type="hidden" id="profContractId">
 
       <div class="calc-summary-box" style="background:#EEF2FF; border-color:#C7D2FE;">
@@ -741,23 +890,45 @@
         <span>مديونية: <strong id="profCurrentDebt" style="color:var(--danger);">0 ج.م</strong></span>
       </div>
 
-      <label>👨‍⚕️ الطبيب المعالج (نقل الجلسات المتبقية لطبيب آخر عند التغيير)</label>
+      <label>👨‍⚕️ الطبيب الأساسي (أو اختر طبيباً لتعيينه / نقل باقي الجلسات له)</label>
       <select id="profDoctorSelect"></select>
+
+      <!-- قسم إضافة طبيب ثانٍ مشارك في نفس الباقة (مثلاً 3 أيام و 3 أيام) -->
+      <div style="background:#F8FAFC; border:1.5px dashed #94A3B8; padding:10px 12px; border-radius:12px; margin-bottom:12px;">
+        <label style="color:var(--brand-blue-dark);">🤝 الأطباء المشاركون في نفس الباقة (يسحبون من نفس رصيد الجلسات)</label>
+        <div id="profPartnersList" style="margin-bottom:8px;"></div>
+        <div style="display:grid; grid-template-columns:2fr 1fr auto; gap:6px; align-items:center;">
+          <select id="profAddPartnerSelect" style="margin:0;"></select>
+          <input type="number" id="profAddPartnerCut" placeholder="نصيبه بالجلسة" style="margin:0;">
+          <button type="button" class="btn-sm btn-pink" onclick="addPartnerDoctorToModal()">➕ إضافة مشارك</button>
+        </div>
+      </div>
 
       <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
         <div><label>إجمالي الجلسات</label><input type="number" id="profTotalSessions"></div>
         <div><label>سعر الجلسة</label><input type="number" id="profSessionPrice"></div>
-        <div><label>نصيب الطبيب</label><input type="number" id="profDoctorCut"></div>
+        <div><label>نصيب الطبيب الأساسي</label><input type="number" id="profDoctorCut"></div>
       </div>
 
-      <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
-        <div><label>إجمالي الباقة</label><input type="number" id="profTotalPkgValue" oninput="updateProfileDebtPreview()"></div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+        <div><label>إجمالي قيمة الباقة</label><input type="number" id="profTotalPkgValue" oninput="updateProfileDebtPreview()"></div>
         <div><label>المدفوع سابقاً</label><input type="number" id="profPaidAmount" oninput="updateProfileDebtPreview()"></div>
-        <div><label>🎁 محفظة الكاش باك</label><input type="number" id="profClientWallet"></div>
+      </div>
+
+      <!-- التحكم في رصيد وأيام عداد الكاش باك (90 يوم) -->
+      <div style="background:#FDF4FF; border:1.5px solid #F5D0FE; padding:10px 12px; border-radius:12px; margin-bottom:12px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px;">
+          <label style="margin:0; color:#86198F;">🎁 محفظة الكاش باك وعداد الأيام (افتراضياً 90 يوم)</label>
+          <button type="button" class="btn-sm btn-pink" onclick="document.getElementById('profWalletExpiryDays').value = 90">🔄 ضبط 90 يوم</button>
+        </div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <div><label>رصيد الكاش باك (ج.م)</label><input type="number" id="profClientWallet" style="margin:0; background:#fff;"></div>
+          <div><label>⏳ عداد الأيام المتبقية</label><input type="number" id="profWalletExpiryDays" placeholder="90" style="margin:0; background:#fff;"></div>
+        </div>
       </div>
 
       <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
-        <label style="margin:0;">📅 تاريخ انتهاء الصلاحية (SLA)</label>
+        <label style="margin:0;">📅 تاريخ انتهاء صلاحية الباقة (SLA)</label>
         <button type="button" class="btn-sm btn-warning" onclick="extendContractDays(7)">➕ تمديد 7 أيام</button>
       </div>
       <input type="date" id="profExpiryDate">
@@ -775,7 +946,99 @@
     </div>
   </div>
 
-  <!-- 2. نافذة طلب صرف المستحقات للطبيب -->
+  <!-- 2. نافذة قبول طبيب في حالة بالمعرض (تخير الأدمن بين استبدال الطبيب أو إضافته كطبيب مشارك في نفس العقد) -->
+  <div id="approveDoctorCaseModal" class="modal-overlay">
+    <div class="modal-box">
+      <h3 class="section-title">✅ تعيين وقبول الطبيب للحالة</h3>
+      <input type="hidden" id="appDocCaseId">
+      <input type="hidden" id="appDocId">
+      <input type="hidden" id="appDocName">
+
+      <div id="appDocSummaryBox" class="calc-summary-box" style="background:#EEF2FF;"></div>
+
+      <label>💰 نصيب الطبيب المعتمد للجلسة الواحدة (ج.م)</label>
+      <input type="number" id="appDocAgreedCut">
+
+      <label>🔗 طريقة ربط الطبيب بباقة المريض (لمنع تكرار العقود ولخبطة الحسابات)</label>
+      <select id="appDocAssignMode">
+        <option value="Replace">🔄 استبدال / تعيين كطبيب أساسي (يكمل باقي الجلسات في نفس العقد)</option>
+        <option value="Partner">🤝 إضافته كطبيب ثانٍ مشارك في نفس الباقة (مثلاً 3 أيام و 3 أيام)</option>
+      </select>
+
+      <div style="display:flex; gap:8px; margin-top:10px;">
+        <button type="button" id="confirmApproveDocCaseBtn" class="btn-gradient" style="flex:2;">🚀 اعتماد وتفعيل الطبيب</button>
+        <button type="button" onclick="document.getElementById('approveDoctorCaseModal').style.display='none'" style="background:#64748B; flex:1;">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. نافذة اقتراح المناطق والأدوات الطبية للطبيب -->
+  <div id="doctorProfileUpdateModal" class="modal-overlay">
+    <div class="modal-box">
+      <h3 class="section-title">🗺️🧰 تحديث مناطق التغطية والأدوات الطبية</h3>
+      <div class="secret-alert">
+        🔒 <strong>ملاحظة هامة:</strong> الأدوات والأجهزة التي تضيفها تظهر للإدارة فقط لترشيحك للحالات المناسبة، وتُعتمد بعد مراجعة الإدارة.
+      </div>
+
+      <label>📍 اختر المناطق والأحياء التي تغطيها (أو اكتب مناطق إضافية بالأسفل)</label>
+      <div id="docRegionChipsBox" style="margin-bottom:8px;">
+        <label class="day-chip"><input type="checkbox" class="doc-reg-cb" value="مدينتي"> مدينتي</label>
+        <label class="day-chip"><input type="checkbox" class="doc-reg-cb" value="التجمع الخامس"> التجمع الخامس</label>
+        <label class="day-chip"><input type="checkbox" class="doc-reg-cb" value="الشروق والرحاب"> الشروق والرحاب</label>
+        <label class="day-chip"><input type="checkbox" class="doc-reg-cb" value="مدينة نصر"> مدينة نصر</label>
+        <label class="day-chip"><input type="checkbox" class="doc-reg-cb" value="مصر الجديدة"> مصر الجديدة</label>
+        <label class="day-chip"><input type="checkbox" class="doc-reg-cb" value="المعادي والمقطم"> المعادي والمقطم</label>
+        <label class="day-chip"><input type="checkbox" class="doc-reg-cb" value="الدقي والمهندسين"> الدقي والمهندسين</label>
+        <label class="day-chip"><input type="checkbox" class="doc-reg-cb" value="الهرم وفيصل"> الهرم وفيصل</label>
+        <label class="day-chip"><input type="checkbox" class="doc-reg-cb" value="6 أكتوبر والشيخ زايد"> 6 أكتوبر والشيخ زايد</label>
+        <label class="day-chip"><input type="checkbox" class="doc-reg-cb" value="شبرا ووسط البلد"> شبرا ووسط البلد</label>
+      </div>
+      <input type="text" id="docCustomRegionsInput" placeholder="اكتب أي مناطق أو أحياء أخرى تغطيها...">
+
+      <label>🧰 اختر الأدوات والأجهزة المتوفرة معك للجلسات المنزلية</label>
+      <div id="docEquipChipsBox" style="margin-bottom:8px;">
+        <label class="day-chip"><input type="checkbox" class="doc-eq-cb" value="TENS"> جهاز TENS</label>
+        <label class="day-chip"><input type="checkbox" class="doc-eq-cb" value="Ultrasound"> Ultrasound</label>
+        <label class="day-chip"><input type="checkbox" class="doc-eq-cb" value="Laser"> جهاز Laser</label>
+        <label class="day-chip"><input type="checkbox" class="doc-eq-cb" value="إبر جافة Dry Needling"> إبر جافة</label>
+        <label class="day-chip"><input type="checkbox" class="doc-eq-cb" value="أدوات حجامة"> أدوات حجامة</label>
+        <label class="day-chip"><input type="checkbox" class="doc-eq-cb" value="IASTM / Graston"> أدوات IASTM / Graston</label>
+        <label class="day-chip"><input type="checkbox" class="doc-eq-cb" value="Kinesio Tape"> Kinesio Tape</label>
+        <label class="day-chip"><input type="checkbox" class="doc-eq-cb" value="Massage Gun"> Massage Gun</label>
+        <label class="day-chip"><input type="checkbox" class="doc-eq-cb" value="أثقال وأربطة مقاومة"> أثقال وأربطة مقاومة</label>
+      </div>
+      <input type="text" id="docCustomEquipInput" placeholder="اكتب أي أجهزة أو أدوات أخرى معك...">
+
+      <div style="display:flex; gap:8px; margin-top:8px;">
+        <button type="button" id="submitDocProfileUpdateBtn" class="btn-gradient" style="flex:2;">🚀 إرسال للإدارة للموافقة والاعتماد</button>
+        <button type="button" onclick="document.getElementById('doctorProfileUpdateModal').style.display='none'" style="background:#64748B; flex:1;">إغلاق</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. نافذة ترشيح حالة من العميل («رشح لنا حالة واكسب كاش باك») -->
+  <div id="clientReferralModal" class="modal-overlay">
+    <div class="modal-box">
+      <h3 class="section-title">🎁 رشّح لنا مريضاً واكسب كاش باك في محفظتك!</h3>
+      <div class="secret-alert">
+        🤝 بمجرد تواصلنا مع الحالة المرشحة وتعاقدها، سيصلك إشعار فوري على تليجرام بإضافة الكاش باك في رصيد محفظتك!
+      </div>
+      <label>👤 اسم المريض الذي ترشحه</label>
+      <input type="text" id="cliRefNameInput" placeholder="الاسم الثلاثي أو الثنائي">
+      <label>📱 رقم موبايل المريض للتواصل معه</label>
+      <input type="tel" id="cliRefPhoneInput" placeholder="01xxxxxxxxx">
+      <label>📍 المنطقة السكنية</label>
+      <input type="text" id="cliRefRegionInput" placeholder="مثال: مدينتي / مدينة نصر / الدقي">
+      <label>📋 نبذة سريعة عن حالته (اختياري)</label>
+      <textarea id="cliRefSummaryInput" rows="2" placeholder="مثال: يحتاج جلسات علاج طبيعي للركبة أو الظهر..."></textarea>
+      <div style="display:flex; gap:8px;">
+        <button type="button" id="submitClientReferralBtn" class="btn-gradient" style="flex:2;">🚀 إرسال الترشيح للإدارة</button>
+        <button type="button" onclick="document.getElementById('clientReferralModal').style.display='none'" style="background:#64748B; flex:1;">إلغاء</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. نافذة طلب صرف المستحقات للطبيب -->
   <div id="payoutRequestModal" class="modal-overlay">
     <div class="modal-box">
       <h3 class="section-title">🏦 طلب صرف مستحقاتك المالية</h3>
@@ -789,14 +1052,14 @@
     </div>
   </div>
 
-  <!-- 3. نافذة اقتراح موعد منفرد للمريض -->
+  <!-- 6. نافذة اقتراح موعد منفرد للمريض -->
   <div id="proposeApptModal" class="modal-overlay">
     <div class="modal-box">
-      <h3 class="section-title">📅 اقتراح موعد جلسة للمريض: <span id="apptClientNameSpan" style="color:var(--brand-blue);"></span></h3>
+      <h3 class="section-title">📅 تحديد موعد الجلسة القادمة للمريض: <span id="apptClientNameSpan" style="color:var(--brand-blue);"></span></h3>
       <input type="hidden" id="apptContractIdx">
-      <label>📆 تاريخ الجلسة المقترح</label>
+      <label>📆 تاريخ الجلسة</label>
       <input type="date" id="apptDateInput">
-      <label>⏰ ساعة الجلسة</label>
+      <label>⏰ ساعة الجلسة (تظهر للمريض بنظام 12 ساعة صباحاً/مساءً)</label>
       <input type="time" id="apptTimeInput" value="18:00">
       <div style="display:flex; gap:8px; margin-top:8px;">
         <button type="button" id="submitProposeApptBtn" class="btn-gradient" style="flex:2;">📲 إرسال الموعد وإشعار المريض</button>
@@ -805,12 +1068,12 @@
     </div>
   </div>
 
-  <!-- 4. نافذة تحديد جدول مواعيد أسبوعي ثابت -->
+  <!-- 7. نافذة تحديد جدول مواعيد أسبوعي ثابت -->
   <div id="fixedScheduleModal" class="modal-overlay">
     <div class="modal-box">
       <h3 class="section-title">🔄 تحديد جدول مواعيد أسبوعي ثابت: <span id="schClientNameSpan" style="color:var(--brand-pink-dark);"></span></h3>
       <input type="hidden" id="schContractIdx">
-      <label>📅 اختر أيام الجلسات الثابتة في الأسبوع</label>
+      <label>📅 اختر أيام الجلسات الثابتة الخاصة بك في الأسبوع</label>
       <div style="margin-bottom:12px;">
         <label class="day-chip"><input type="checkbox" class="sch-day-cb" value="السبت"> السبت</label>
         <label class="day-chip"><input type="checkbox" class="sch-day-cb" value="الأحد"> الأحد</label>
@@ -823,7 +1086,7 @@
       <label>⏰ الساعة الثابتة للجلسات</label>
       <input type="time" id="schTimeInput" value="18:00">
       <div class="secret-alert">
-        🔔 سيقوم النظام بتوليد المواعيد تلقائياً وإرسال إشعار للمريض قبل كل جلسة بـ 24 ساعة للتأكيد، وتذكير إضافي قبلها بـ 3 ساعات!
+        🔔 سيظهر للمريض دائماً <strong>الموعد القادم الذي عليه الدور فقط</strong> باليوم والتاريخ والساعة (12س)!
       </div>
       <div style="display:flex; gap:8px;">
         <button type="button" id="submitFixedScheduleBtn" class="btn-gradient" style="flex:2;">💾 حفظ الجدول الثابت وتوليد المواعيد</button>
@@ -832,7 +1095,7 @@
     </div>
   </div>
 
-  <!-- 5. نافذة عرض حالة جديدة من الطبيب (اعرض حالة واكسب ثمن جلسة) -->
+  <!-- 8. نافذة عرض حالة جديدة من الطبيب -->
   <div id="doctorSubmitCaseModal" class="modal-overlay">
     <div class="modal-box">
       <h3 class="section-title">🎁 اعرض حالة جديدة واكسب ثمن جلسة كاملة!</h3>
@@ -864,7 +1127,7 @@
         </div>
       </div>
       <label>📍 المنطقة بالتفصيل</label>
-      <input type="text" id="docRefRegion" placeholder="مثال: المعادي / المهندسين">
+      <input type="text" id="docRefRegion" placeholder="مثال: مدينتي / المعادي / الدقي">
       <label>📋 التشخيص وتفاصيل الحالة</label>
       <textarea id="docRefSummary" rows="2" placeholder="تفاصيل الحالة الطبية..."></textarea>
       <div style="display:flex; gap:8px;">
@@ -874,11 +1137,12 @@
     </div>
   </div>
 
-  <!-- 6. نافذة تسعير وموافقة الإدارة على حالة مرشحة من طبيب -->
+  <!-- 9. نافذة تسعير/تعديل حالة في المعرض للأدمن -->
   <div id="adminApproveCaseModal" class="modal-overlay">
     <div class="modal-box">
-      <h3 class="section-title">✅ تسعير ونشر الحالة المرشحة: <span id="admRevCaseClientName" style="color:var(--brand-blue);"></span></h3>
+      <h3 class="section-title">✏️ تسعير وتعديل بيانات الحالة: <span id="admRevCaseClientName" style="color:var(--brand-blue);"></span></h3>
       <input type="hidden" id="admRevCaseId">
+      <input type="hidden" id="admRevCaseIsEditOnly">
       <label>📍 المنطقة</label>
       <input type="text" id="admRevCaseRegion">
       <label>📋 تفاصيل الحالة</label>
@@ -886,18 +1150,18 @@
       <div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px;">
         <div><label>الجلسات</label><input type="number" id="admRevCaseSessions" value="6"></div>
         <div><label>سعر الجلسة</label><input type="number" id="admRevCasePrice" placeholder="500"></div>
-        <div><label>نصيب الطبيب</label><input type="number" id="admRevCaseCut" placeholder="250"></div>
+        <div><label>⚖️ السعر العادل للطبيب</label><input type="number" id="admRevCaseCut" placeholder="250"></div>
       </div>
       <label>🗺️ المحافظة المستهدفة للنشر</label>
       <input type="text" id="admRevCaseGov">
       <div style="display:flex; gap:8px; margin-top:8px;">
-        <button type="button" id="confirmApproveSubmittedCaseBtn" class="btn-success" style="flex:2;">📢 موافقة ونشر في المعرض</button>
+        <button type="button" id="confirmApproveSubmittedCaseBtn" class="btn-success" style="flex:2;">💾 حفظ ونشر في المعرض</button>
         <button type="button" onclick="document.getElementById('adminApproveCaseModal').style.display='none'" style="background:#64748B; flex:1;">إغلاق</button>
       </div>
     </div>
   </div>
 
-  <!-- 7. نافذة مكافأة (بونص) أو خصم فردي لطبيب -->
+  <!-- 10. نافذة مكافأة (بونص) أو خصم فردي لطبيب -->
   <div id="doctorAdjustmentModal" class="modal-overlay">
     <div class="modal-box">
       <h3 class="section-title">⚖️ مكافأة / خصم للطبيب: <span id="adjDoctorName" style="color:var(--brand-blue);"></span></h3>
@@ -909,7 +1173,7 @@
       </select>
       <label>المبلغ (ج.م)</label>
       <input type="number" id="adjAmount" placeholder="مثال: 300">
-      <label>📝 السبب (يصل في إشعار فوري للطبيب ويظهر في جدوله)</label>
+      <label>📝 السبب</label>
       <textarea id="adjReason" rows="3" placeholder="مثال: التزام ممتاز بالمواعيد أو جزاء تأخير..."></textarea>
       <div style="display:flex; gap:8px;">
         <button type="button" id="saveAdjustmentBtn" class="btn-gradient" style="flex:2;">💾 تنفيذ وإشعار الطبيب فوراً</button>
@@ -918,7 +1182,7 @@
     </div>
   </div>
 
-  <!-- 8. نافذة تعديل بيانات الحساب وتحديد محافظات الطبيب -->
+  <!-- 11. نافذة تعديل بيانات الحساب والمناطق والأدوات السرية -->
   <div id="editUserModal" class="modal-overlay">
     <div class="modal-box">
       <h3 class="section-title">✏️ تعديل بيانات الحساب</h3>
@@ -932,10 +1196,10 @@
 
       <div id="editUserGovWrap" style="display:none;">
         <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:5px;">
-          <label style="margin:0;">🗺️ محافظات نطاق عمل الطبيب (تحكم الأدمن فقط)</label>
+          <label style="margin:0;">🗺️ محافظات نطاق عمل الطبيب</label>
           <button type="button" class="btn-sm btn-pink" onclick="selectGreaterCairo('editUserGovSelect')">⚡ القاهرة الكبرى</button>
         </div>
-        <select id="editUserGovSelect" multiple style="height:95px;">
+        <select id="editUserGovSelect" multiple style="height:85px;">
           <option value="الكل">🌐 يغطي جميع المحافظات</option>
           <option value="القاهرة">القاهرة</option><option value="الجيزة">الجيزة</option><option value="القليوبية">القليوبية</option>
           <option value="الإسكندرية">الإسكندرية</option><option value="الدقهلية">الدقهلية</option><option value="الشرقية">الشرقية</option>
@@ -947,6 +1211,18 @@
           <option value="الأقصر">الأقصر</option><option value="البحر الأحمر">البحر الأحمر</option><option value="الوادي الجديد">الوادي الجديد</option>
           <option value="مطروح">مطروح</option><option value="شمال سيناء">شمال سيناء</option><option value="جنوب سيناء">جنوب سيناء</option>
         </select>
+
+        <label>📍 المناطق والأحياء المعتمدة للطبيب</label>
+        <input type="text" id="editUserRegions" placeholder="مثال: مدينتي، التجمع، الدقي، مدينة نصر">
+        <label>🧰 الأدوات والأجهزة المعتمدة للطبيب (سرية للإدارة)</label>
+        <input type="text" id="editUserEquipment" placeholder="مثال: TENS, Ultrasound, Dry Needling">
+      </div>
+
+      <div id="editClientWalletWrap" style="display:none; background:#FDF4FF; padding:10px; border-radius:12px; margin-bottom:10px;">
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+          <div><label>🎁 رصيد الكاش باك</label><input type="number" id="editUserWalletBal" style="margin:0;"></div>
+          <div><label>⏳ عداد الأيام المتبقية</label><input type="number" id="editUserWalletDays" placeholder="90" style="margin:0;"></div>
+        </div>
       </div>
 
       <div style="display:flex; gap:8px; margin-top:10px;">
@@ -963,14 +1239,18 @@
     let currentUser = null;
     let docContractsCache = [];
     let docMyPaymentInfo = '';
+    let docLastStateCache = null;
+
     let adminUsersCache = [];
     let adminContractsCache = [];
     let adminSessionsCache = [];
     let adminAdjustmentsCache = [];
     let adminPayoutsCache = [];
     let adminCasesCache = [];
+    let adminTreasuryCache = [];
     let adminDoctorRatingsCache = {};
     let currentDirFilter = 'all';
+    let modalPartnerDoctorsTemp = [];
     let tgUser = { id: '', username: '', firstName: '' };
 
     if (window.Telegram && window.Telegram.WebApp) {
@@ -1002,7 +1282,7 @@
     }
 
     // =========================================================
-    // محرك البحث الذكي المدمج (Smart Arabic & Phone Fuzzy Engine)
+    // محرك البحث الذكي المدمج (يبحث في الاسم، الرقم، المحافظة، المنطقة، والأدوات!)
     // =========================================================
     function normalizeSmartText(str) {
       if (!str) return '';
@@ -1020,36 +1300,31 @@
       const name = normalizeSmartText(userObj.Name || '');
       const phone = normalizeSmartText(userObj.Phone || '').replace(/[\s\-+]/g, '');
       const gov = normalizeSmartText(userObj.Governorate || '');
-      const combined = `${name} ${phone} ${gov}`;
+      const regs = normalizeSmartText(userObj.Regions || '');
+      const equip = normalizeSmartText(userObj.Equipment || '');
+      const combined = `${name} ${phone} ${gov} ${regs} ${equip}`;
       const qDigits = q.replace(/\D/g, '');
 
-      // 1. تطابق البداية في الاسم أو رقم الهاتف (أعلى أولوية)
       if (name.startsWith(q) || (qDigits.length >= 2 && phone.includes(qDigits) && phone.indexOf(qDigits) <= 2)) {
         return 100;
       }
-      // 2. تطابق مباشر داخل الاسم أو الهاتف
-      if (name.includes(q) || (qDigits.length >= 3 && phone.includes(qDigits))) {
-        return 90;
+      if (name.includes(q) || regs.includes(q) || equip.includes(q) || (qDigits.length >= 3 && phone.includes(qDigits))) {
+        return 92;
       }
-      // 3. تطابق الكلمات المتفرقة (مثلاً كتابة الاسم الأول والأخير وتخطي الأوسط)
       const qTokens = q.split(/\s+/).filter(Boolean);
       if (qTokens.length > 0 && qTokens.every(t => combined.includes(t))) {
-        return 82;
+        return 84;
       }
-      // 4. تطابق جزئي في بعض الكلمات أو المحافظة
       let partialHits = 0;
       qTokens.forEach(t => { if (combined.includes(t)) partialHits++; });
       if (partialHits > 0) {
         return 60 + Math.min(20, partialHits * 10);
       }
-      // 5. تقريب الأحرف المتسلسلة (Subsequence Fuzzy Match للأخطاء الإملائية السريعة)
       let qIdx = 0;
       for (let i = 0; i < combined.length && qIdx < q.length; i++) {
         if (combined[i] === q[qIdx]) qIdx++;
       }
       if (q.length >= 2 && qIdx === q.length) return 45;
-      if (q.length >= 3 && (qIdx / q.length) >= 0.75) return Math.round((qIdx / q.length) * 40);
-
       return 0;
     }
 
@@ -1112,14 +1387,18 @@
           let badgeHtml = '';
           if (role === 'doctor') {
             const r = adminDoctorRatingsCache[u.User_ID] || { displayRating: 5.0 };
-            badgeHtml = `<span class="badge-brand">⭐ ${r.displayRating} | ${u.Governorate || 'عام'}</span>`;
+            const regInfo = u.Regions ? `📍 ${u.Regions}` : (u.Governorate || 'عام');
+            badgeHtml = `<span class="badge-brand">⭐ ${r.displayRating} | ${regInfo}</span>`;
           } else if (role === 'client') {
             const wBal = Number(u.Wallet_Balance || 0);
-            badgeHtml = wBal > 0 ? `<span class="badge-ok">🎁 كاش باك: ${wBal} ج</span>` : `<span class="badge-brand">👤 مريض</span>`;
+            badgeHtml = wBal > 0 ? `<span class="badge-ok">🎁 ${wBal} ج (${u.Wallet_Days_Left || 90} يوم)</span>` : `<span class="badge-brand">👤 مريض</span>`;
           }
 
           div.innerHTML = `
-            <div><strong>${u.Name}</strong> <small style="color:#64748b;">(${u.Phone})</small></div>
+            <div>
+              <strong>${u.Name}</strong> <small style="color:#64748b;">(${u.Phone})</small>
+              ${role === 'doctor' && u.Equipment ? `<div style="font-size:10.5px; color:#6B21A8;">🧰 ${u.Equipment}</div>` : ''}
+            </div>
             <div>${badgeHtml}</div>
           `;
           div.addEventListener('click', () => selectSmartComboItem(type, u));
@@ -1138,10 +1417,11 @@
 
       if (type === 'client') {
         const wBal = Number(u.Wallet_Balance || 0);
+        const isExp = Boolean(u.Is_Wallet_Expired);
         const wBox = document.getElementById('admClientWalletBox');
         const wSpan = document.getElementById('admAvailableWalletSpan');
         const wCb = document.getElementById('admUseWalletCheckbox');
-        if (wBal > 0) {
+        if (wBal > 0 && !isExp) {
           wBox.style.display = 'block';
           wSpan.innerText = wBal;
           wCb.checked = true;
@@ -1153,6 +1433,15 @@
       }
       if (type === 'caseClient') {
         document.getElementById('caseCustomClientName').value = u.Name;
+        // إذا كان للمريض عقد حالي، نملأ عدد الجلسات المتبقية والسعر تلقائياً للتسهيل!
+        const existingCnt = adminContractsCache.find(c => String(c.Client_ID).trim() === String(u.User_ID).trim());
+        if (existingCnt) {
+          const used = adminSessionsCache.filter(s => String(s.Contract_ID).trim() === String(existingCnt.Contract_ID).trim()).length;
+          const rem = Math.max(1, Number(existingCnt.Total_Sessions || 6) - used);
+          document.getElementById('caseTotalSessions').value = rem;
+          document.getElementById('caseSessionPrice').value = existingCnt.Session_Price || '';
+          document.getElementById('caseDoctorCut').value = existingCnt.Doctor_Cut || '';
+        }
       }
     }
 
@@ -1182,7 +1471,7 @@
       if (count < 10) {
         return `⭐⭐⭐⭐⭐ 5.0 (تقييم مبدئي — ${count}/10 جلسات)`;
       }
-      return `⭐ ${val} من 5 (بناءً على ${count} جلسة)`;
+      return `⭐ ${val} من 5 (${count} جلسة)`;
     }
 
     function selectGreaterCairo(selectId) {
@@ -1218,7 +1507,7 @@
       bar.style.color = isSuccess ? '#166534' : '#991B1B';
       bar.style.border = isSuccess ? '1px solid #86EFAC' : '1px solid #FCA5A5';
       bar.innerText = msg;
-      setTimeout(() => { bar.style.display = 'none'; }, 4500);
+      setTimeout(() => { bar.style.display = 'none'; }, 4800);
     }
 
     function switchView(viewId) {
@@ -1254,10 +1543,6 @@
         renderAdminState(state);
       } else if (role === 'doctor') {
         document.getElementById('docNameTitle').innerText = user.name;
-        document.getElementById('docGovSubtitle').innerText = user.governorate
-          ? ('محافظتي المسجلة: ' + user.governorate)
-          : 'محافظتي المسجلة: غير محدد';
-        document.getElementById('docRatingBadge').innerText = formatDoctorRatingText(state.myRating);
         switchView('doctorView');
         renderDoctorState(state);
       } else {
@@ -1268,6 +1553,7 @@
     }
 
     window.addEventListener('DOMContentLoaded', async () => {
+      document.getElementById('trsDateInput').value = new Date().toISOString().split('T')[0];
       if (tgUser.id) {
         switchView('loadingScreen');
         try {
@@ -1335,21 +1621,27 @@
     });
 
     // ==========================================
-    // 1. رندر وتفاعل واجهة المريض (Client)
+    // 1. رندر وتفاعل واجهة المريض (Client View)
     // ==========================================
     function renderClientState(state) {
       const contracts = state.contracts || [];
       const sessions = state.sessions || [];
       const schedules = state.schedules || [];
-      const appointments = state.appointments || [];
+      const nextAppt = state.nextAppointment || null;
+      const myReferrals = state.myReferrals || [];
+
       const walletBalance = Number(state.walletBalance !== undefined ? state.walletBalance : (currentUser.walletBalance || 0));
+      const walletDaysLeft = Number(state.walletDaysLeft !== undefined ? state.walletDaysLeft : 0);
+      const isWalletExpired = Boolean(state.isWalletExpired);
 
       let total = 0, totalDebt = 0;
-      let docNames = [];
+      let docDisplays = [];
       contracts.forEach(c => {
         total += Number(c.Total_Sessions || 0);
         totalDebt += Number(c.Remaining_Debt || 0);
-        if (c.Doctor_Name && !docNames.includes(c.Doctor_Name)) docNames.push(c.Doctor_Name);
+        if (c.All_Doctors_Display && !docDisplays.includes(c.All_Doctors_Display)) {
+          docDisplays.push(c.All_Doctors_Display);
+        }
       });
 
       const confirmed = sessions.filter(s => String(s.Client_Sign).trim() !== 'Pending').length;
@@ -1361,51 +1653,94 @@
       document.getElementById('cliRemSess').innerText = rem;
       document.getElementById('cliFinStatus').innerText = totalDebt > 0 ? (totalDebt + ' ج.م') : 'خالص ✓';
       document.getElementById('cliWalletBalance').innerText = walletBalance + ' ج.م';
+
+      // عداد أيام الكاش باك (90 يوم) أمام العميل
+      const cdEl = document.getElementById('cliWalletCountdown');
+      if (walletBalance > 0) {
+        if (isWalletExpired) {
+          cdEl.style.color = 'var(--danger)';
+          cdEl.innerText = '⌛ انتهت مهلة الكاش باك — راجع الإدارة للتمديد';
+        } else {
+          cdEl.style.color = walletDaysLeft <= 15 ? 'var(--danger)' : '#059669';
+          cdEl.innerText = `⏳ متبقي ${walletDaysLeft} يوم للاستفادة من الرصيد!`;
+        }
+      } else {
+        cdEl.innerText = 'صلاحية الكاش باك 90 يوماً عند التفعيل';
+      }
+
       document.getElementById('cliProgressPct').innerText = pct + '%';
       document.getElementById('cliProgressBar').style.width = pct + '%';
-      document.getElementById('cliDocSubtitle').innerText = docNames.length
-        ? 'الطبيب المعالج: د. ' + docNames.join(' ، ')
+      document.getElementById('cliDocSubtitle').innerText = docDisplays.length
+        ? 'الطبيب المعالج: ' + docDisplays.join(' ، ')
         : 'لم يتم ربط باقة علاجية بعد';
 
-      // عرض الجدول الأسبوعي الثابت والمواعيد المقترحة للمريض
+      // عرض ترشيحات العميل («رشح لنا حالة واكسب كاش باك»)
+      const refCard = document.getElementById('cliMyReferralsCard');
+      const refList = document.getElementById('cliMyReferralsList');
+      if (myReferrals.length === 0) {
+        refCard.style.display = 'none';
+      } else {
+        refCard.style.display = 'block';
+        refList.innerHTML = myReferrals.slice().reverse().map(r => {
+          let stBadge = '<span class="badge-wait">⏳ الطلب تحت المراجعة والتواصل</span>';
+          if (r.Status === 'Client_Referral_Contracted') {
+            stBadge = `<span class="badge-ok">🎉 تم التعاقد وأضيف +${r.Reward} ج.م لمحفظتك!</span>`;
+          } else if (r.Status === 'Client_Referral_Declined') {
+            stBadge = `<span class="badge-danger">ℹ️ اعتذر عن التعاقد — تواصل معه مجدداً لو هناك خطأ</span>`;
+          }
+          return `
+            <div style="padding:9px 10px; border-bottom:1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; font-size:12.5px;">
+              <span>👤 <strong>${r.Client_Name}</strong> <small style="color:#64748b;">(${r.Region || ''})</small></span>
+              ${stBadge}
+            </div>
+          `;
+        }).join('');
+      }
+
+      // عرض الجدول الأسبوعي الثابت (إن وجد)
       const schBox = document.getElementById('cliFixedSchedulesBox');
       schBox.innerHTML = '';
       schedules.forEach(sch => {
         schBox.innerHTML += `
-          <div style="background:#EEF2FF; border:1px solid #C7D2FE; padding:10px 12px; border-radius:12px; margin-bottom:8px; font-size:12.5px;">
-            🔄 <strong>جدولك الأسبوعي الثابت مع د. ${sch.Doctor_Name}:</strong> أيام (<strong>${sch.Days_Of_Week}</strong>) الساعة (<strong>${sch.Time_Str}</strong>)
+          <div style="background:#EEF2FF; border:1px solid #C7D2FE; padding:9px 12px; border-radius:12px; margin-bottom:8px; font-size:12px;">
+            🔄 <strong>مواعيدك الثابتة مع د. ${sch.Doctor_Name}:</strong> أيام (<strong>${sch.Days_Of_Week}</strong>) — الساعة (<strong>${sch.Time_12h_Ar || sch.Time_Str}</strong>)
           </div>
         `;
       });
 
-      const apptList = document.getElementById('cliAppointmentsList');
-      apptList.innerHTML = '';
-      if (appointments.length === 0) {
-        apptList.innerHTML = '<small style="color:#64748b;">لا توجد مواعيد قادمة مسجلة حالياً.</small>';
+      // عرض الموعد القادم فقط (اللي عليه الدور) باليوم والتاريخ والساعة 12س
+      const nextBox = document.getElementById('cliNextAppointmentBox');
+      if (!nextAppt) {
+        nextBox.innerHTML = '<div style="text-align:center; padding:12px; color:#64748b; font-size:13px;">لا يوجد موعد قادم محدد حالياً — سيظهر لك هنا الموعد القادم فور تحديده مع الطبيب.</div>';
       } else {
-        appointments.slice().reverse().slice(0, 8).forEach(ap => {
-          const st = String(ap.Status || 'Pending').trim();
-          const stBadge = st === 'Confirmed'
-            ? '<span class="badge-ok">مؤكد من طرفك ✓</span>'
-            : (st === 'Declined' ? '<span class="badge-danger">تم الاعتذار</span>' : '<span class="badge-wait">⏳ بانتظار تأكيدك</span>');
+        const st = String(nextAppt.Status || 'Pending').trim();
+        const stBadge = st === 'Confirmed'
+          ? '<span class="badge-ok">✅ مؤكد من طرفك</span>'
+          : '<span class="badge-wait">⏳ بانتظار تأكيد حضورك</span>';
 
-          apptList.innerHTML += `
-            <div class="session-item" style="margin-bottom:8px; padding:11px;">
-              <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
-                <strong>📆 موعد جلسة: ${ap.Appt_Date} — الساعة ${ap.Appt_Time} (د. ${ap.Doctor_Name})</strong>
-                ${stBadge}
-              </div>
-              ${st === 'Pending' ? `
-                <div style="display:flex; gap:8px; margin-top:8px;">
-                  <button type="button" class="btn-sm btn-success" style="flex:1;" onclick="respondToAppt('${ap.Appt_ID}', true, this)">✅ موافق وتأكيد حضوري</button>
-                  <button type="button" class="btn-sm btn-danger" style="flex:1;" onclick="respondToAppt('${ap.Appt_ID}', false, this)">❌ اعتذار / طلب تعديل</button>
-                </div>
-              ` : ''}
+        nextBox.innerHTML = `
+          <div class="next-appt-hero">
+            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-bottom:8px;">
+              <span class="badge-brand" style="font-size:12px;">${nextAppt.Relative_Label || 'الموعد القادم'}</span>
+              ${stBadge}
             </div>
-          `;
-        });
+            <div style="font-size:15px; font-weight:900; color:var(--brand-blue-dark); margin-bottom:4px;">
+              🗓️ يوم ${nextAppt.Day_Name_Ar} — الموافق ${nextAppt.Appt_Date_ISO}
+            </div>
+            <div style="font-size:14px; font-weight:800; color:var(--brand-pink-dark); margin-bottom:6px;">
+              ⏰ الساعة: ${nextAppt.Time_12h_Ar} — مع د. ${nextAppt.Doctor_Name}
+            </div>
+            ${st === 'Pending' ? `
+              <div style="display:flex; gap:8px; margin-top:10px;">
+                <button type="button" class="btn-sm btn-success" style="flex:1; padding:9px;" onclick="respondToAppt('${nextAppt.Appt_ID}', true, this)">✅ تأكيد حضوري للموعد</button>
+                <button type="button" class="btn-sm btn-danger" style="flex:1; padding:9px;" onclick="respondToAppt('${nextAppt.Appt_ID}', false, this)">❌ اعتذار / طلب تعديل</button>
+              </div>
+            ` : ''}
+          </div>
+        `;
       }
 
+      // سجل الجلسات
       const list = document.getElementById('cliSessionsList');
       list.innerHTML = '';
 
@@ -1427,7 +1762,7 @@
             <div style="background:#fff; padding:12px; border-radius:12px; border:1.5px dashed #cbd5e1;">
               <label>✍️ اكتب اسمك للتوقيع الإلكتروني على الجلسة:</label>
               <input type="text" id="sig_${s.Session_ID}" placeholder="اكتب اسمك الثلاثي هنا">
-              <label>⭐ تقييمك السري للجلسة (سري 100% للإدارة فقط ولا يظهر للطبيب):</label>
+              <label>⭐ تقييمك السري للجلسة (سري للإدارة فقط ولا يظهر للطبيب):</label>
               <select id="rate_${s.Session_ID}">
                 <option value="5">⭐⭐⭐⭐⭐ (5/5) ممتاز</option>
                 <option value="4">⭐⭐⭐⭐ (4/5) جيد جداً</option>
@@ -1435,7 +1770,7 @@
                 <option value="2">⭐⭐ (2/5) غير راضٍ</option>
                 <option value="1">⭐ (1/5) سيئ</option>
               </select>
-              <input type="text" id="note_${s.Session_ID}" placeholder="🔒 ملاحظات سرية للإدارة فقط لضمان جودة الخدمة...">
+              <input type="text" id="note_${s.Session_ID}" placeholder="🔒 ملاحظات سرية للإدارة فقط...">
               <button type="button" class="cli-sign-btn btn-gradient" data-sid="${s.Session_ID}" style="width:100%;">تأكيد التوقيع وإرسال التقييم السري</button>
             </div>
           ` : `
@@ -1482,6 +1817,50 @@
       });
     }
 
+    function openClientReferralModal() {
+      document.getElementById('cliRefNameInput').value = '';
+      document.getElementById('cliRefPhoneInput').value = '';
+      document.getElementById('cliRefRegionInput').value = '';
+      document.getElementById('cliRefSummaryInput').value = '';
+      document.getElementById('clientReferralModal').style.display = 'flex';
+    }
+
+    document.getElementById('submitClientReferralBtn').addEventListener('click', async function() {
+      const referredName = document.getElementById('cliRefNameInput').value.trim();
+      const referredPhone = document.getElementById('cliRefPhoneInput').value.trim();
+      const region = document.getElementById('cliRefRegionInput').value.trim();
+      const conditionSummary = document.getElementById('cliRefSummaryInput').value.trim();
+
+      if (!referredName || !referredPhone || !region) {
+        showNotice('⚠️ يرجى إدخال اسم المريض ورقم هاتفه والمنطقة', false);
+        return;
+      }
+
+      const btn = this;
+      btn.disabled = true;
+      btn.innerText = '⏳ جاري الإرسال...';
+      try {
+        const res = await callServer({
+          action: 'clientSubmitReferral',
+          clientId: currentUser.id,
+          clientName: currentUser.name,
+          referredName,
+          referredPhone,
+          region,
+          conditionSummary
+        });
+        btn.disabled = false;
+        btn.innerText = '🚀 إرسال الترشيح للإدارة';
+        document.getElementById('clientReferralModal').style.display = 'none';
+        showNotice(res.message, res.success);
+        if (res.success && res.state) renderClientState(res.state);
+      } catch (e) {
+        btn.disabled = false;
+        btn.innerText = '🚀 إرسال الترشيح للإدارة';
+        showNotice('❌ خطأ في الاتصال', false);
+      }
+    });
+
     async function respondToAppt(apptId, confirmFlag, btnEl) {
       let note = '';
       if (!confirmFlag) {
@@ -1504,23 +1883,44 @@
     }
 
     // ==========================================
-    // 2. رندر وتفاعل واجهة الطبيب (Doctor)
+    // 2. رندر وتفاعل واجهة الطبيب (Doctor View)
     // ==========================================
     function renderDoctorState(state) {
+      docLastStateCache = state;
       docContractsCache = state.contracts || [];
       docMyPaymentInfo = state.myPaymentInfo || (currentUser && currentUser.paymentInfo) || '';
-      const sessions = state.sessions || [];
+      const allContractSessions = state.sessions || [];
       const cases = state.cases || [];
       const adjustments = state.adjustments || [];
       const payouts = state.payouts || [];
       const appointments = state.appointments || [];
+      const nextAppt = state.nextAppointment || null;
 
       if (state.myRating) {
         document.getElementById('docRatingBadge').innerText = formatDoctorRatingText(state.myRating);
       }
 
+      const govTxt = state.myGovernorate || 'غير محدد';
+      const regTxt = state.myRegions ? ` (${state.myRegions})` : '';
+      document.getElementById('docGovSubtitle').innerText = `نطاق التغطية المعتمد: ${govTxt}${regTxt}`;
+
+      const profBanner = document.getElementById('docProfileStatusBanner');
+      if (state.myProfileStatus === 'Pending') {
+        profBanner.innerHTML = `<span class="badge-wait">⏳ طلب تحديث مناطقك وأدواتك قيد مراجعة الإدارة (${state.myPendingRegions || ''} | ${state.myPendingEquipment || ''})</span>`;
+      } else if (state.myEquipment || state.myRegions) {
+        profBanner.innerHTML = `<span class="badge-ok">✅ أدواتي المعتمدة: ${state.myEquipment || '—'}</span>`;
+      } else {
+        profBanner.innerHTML = `<span style="color:#64748b;">💡 اضغط على (🗺️🧰 مناطقي وأدواتي) بالأعلى لتحديد المناطق والأجهزة المتوفرة معك.</span>`;
+      }
+
+      // حساب محفظة الطبيب (فقط الجلسات التي وقعها هذا الطبيب تحديداً)
+      const myOwnSessions = allContractSessions.filter(s =>
+        String(s.Doctor_ID).trim() === String(currentUser.id).trim() ||
+        String(s.Doctor_Name).trim() === String(currentUser.name).trim()
+      );
+
       let confirmedUnpaid = 0, pendingCount = 0, wallet = 0;
-      sessions.forEach(s => {
+      myOwnSessions.forEach(s => {
         if (String(s.Client_Sign).trim() === 'Pending') pendingCount++;
         else if (String(s.Payout_Status).trim() === 'Unpaid') {
           confirmedUnpaid++;
@@ -1538,7 +1938,25 @@
       document.getElementById('docPendingCount').innerText = pendingCount;
       document.getElementById('docWeeklyWallet').innerText = wallet + ' ج.م';
 
-      // تحديث حالة زر طلب صرف المستحقات
+      // الموعد القادم اللي عليه الدور عند الطبيب
+      const docNextCard = document.getElementById('docNextApptCard');
+      const docNextContent = document.getElementById('docNextApptContent');
+      if (nextAppt) {
+        docNextCard.style.display = 'block';
+        docNextContent.innerHTML = `
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div>
+              <strong style="font-size:14px; color:var(--brand-blue-dark);">👤 المريض: ${nextAppt.Client_Name}</strong>
+              <div style="font-size:13px; font-weight:800; color:var(--brand-pink-dark);">🗓️ ${nextAppt.Day_Name_Ar} (${nextAppt.Appt_Date_ISO}) — ⏰ الساعة ${nextAppt.Time_12h_Ar}</div>
+            </div>
+            <span class="${nextAppt.Status === 'Confirmed' ? 'badge-ok' : 'badge-wait'}">${nextAppt.Status === 'Confirmed' ? 'مؤكد من المريض ✓' : 'بانتظار التأكيد'} (${nextAppt.Relative_Label})</span>
+          </div>
+        `;
+      } else {
+        docNextCard.style.display = 'none';
+      }
+
+      // حالة زر طلب الصرف
       const pendingPayout = payouts.find(p => String(p.Status || '').trim() === 'Pending_Approval');
       const lastRejected = payouts.slice().reverse().find(p => String(p.Status || '').trim() === 'Rejected');
       const payoutBtn = document.getElementById('docOpenPayoutModalBtn');
@@ -1552,12 +1970,13 @@
         payoutBtn.disabled = wallet <= 0;
         payoutBtn.innerText = '🏦 طلب صرف المستحقات';
         if (lastRejected && wallet > 0) {
-          payoutStatusTxt.innerHTML = `<span class="badge-danger">آخر طلب تأجل بسبب: ${lastRejected.Rejection_Reason || 'مراجعة البيانات'}</span> — يمكنك إرسال طلب جديد الآن`;
+          payoutStatusTxt.innerHTML = `<span class="badge-danger">آخر طلب تأجل بسبب: ${lastRejected.Rejection_Reason || 'مراجعة البيانات'}</span>`;
         } else {
           payoutStatusTxt.innerText = wallet > 0 ? `رصيدك الجاهز للسحب الآن: ${wallet} ج.م` : 'لا يوجد رصيد جاهز للصرف حالياً';
         }
       }
 
+      // جدول المرضى (يدعم الطبيب الأساسي والطبيب المشارك)
       const cTable = document.getElementById('docClientsTable');
       cTable.innerHTML = '';
 
@@ -1565,9 +1984,8 @@
         cTable.innerHTML = '<tr><td colspan="5" style="text-align:center; color:#64748b;">لا يوجد مرضى مرتبطين بحسابك حالياً.</td></tr>';
       } else {
         docContractsCache.forEach((c, idx) => {
-          const cSessions = sessions.filter(s =>
-            (c.Contract_ID && String(s.Contract_ID).trim() === String(c.Contract_ID).trim()) ||
-            String(s.Client_Name).trim() === String(c.Client_Name).trim()
+          const cSessions = allContractSessions.filter(s =>
+            String(s.Contract_ID).trim() === String(c.Contract_ID).trim()
           );
           const done = cSessions.filter(s => String(s.Client_Sign).trim() !== 'Pending').length;
           const pend = cSessions.filter(s => String(s.Client_Sign).trim() === 'Pending').length;
@@ -1582,13 +2000,16 @@
           if (isSessionsDone) lockLabel = '🔒 انتهت الجلسات';
           else if (isExpiredDate) lockLabel = '⌛ انتهت المدة';
 
+          const isShared = (c.Partner_Doctors_List && c.Partner_Doctors_List.length > 0);
+          const sharedNote = isShared ? `<br><span class="badge-brand">🤝 باقة مشتركة (${c.All_Doctors_Display})</span>` : '';
+
           const statusText = isExpiredDate
             ? `⌛ انتهت الصلاحية (${c.Expiry_Date || ''})`
             : `${rem} متبقي ${c.Expiry_Date ? '<br><small>صلاحية: ' + c.Expiry_Date + '</small>' : ''}`;
 
           const tr = document.createElement('tr');
           tr.innerHTML = `
-            <td><strong>${c.Client_Name}</strong></td>
+            <td><strong>${c.Client_Name}</strong>${sharedNote}<br><small style="color:#059669;">نصيبك: ${c.My_Doctor_Cut || c.Doctor_Cut} ج/جلسة</small></td>
             <td><span class="badge-brand">${totalPkg} جلسة</span></td>
             <td><span class="badge-ok">${done} ✓</span> <span class="badge-wait">${pend} ⏳</span></td>
             <td><strong style="color:${isExpiredDate || rem <= 1 ? 'var(--danger)' : 'var(--brand-blue)'};">${statusText}</strong></td>
@@ -1629,7 +2050,7 @@
         });
       }
 
-      // عرض المواعيد القادمة للطبيب
+      // عرض المواعيد للطبيب (بنظام 12 ساعة واليوم)
       const docApptList = document.getElementById('docAppointmentsList');
       docApptList.innerHTML = '';
       if (appointments.length === 0) {
@@ -1639,73 +2060,112 @@
           const st = String(ap.Status || 'Pending').trim();
           const stBadge = st === 'Confirmed'
             ? '<span class="badge-ok">مؤكد من المريض ✓</span>'
-            : (st === 'Declined' ? `<span class="badge-danger">اعتذر: ${ap.Client_Response_Note || ''}</span>` : '<span class="badge-wait">بانتظار تأكيد المريض ⏳</span>');
+            : (st === 'Completed' ? '<span class="badge-brand">تمت الجلسة ✓</span>' : (st === 'Declined' ? `<span class="badge-danger">اعتذر: ${ap.Client_Response_Note || ''}</span>` : '<span class="badge-wait">بانتظار التأكيد ⏳</span>'));
           docApptList.innerHTML += `
             <div style="padding:8px 10px; border-bottom:1px solid var(--border-color); display:flex; justify-content:space-between; align-items:center; font-size:12.5px;">
-              <span>👤 <strong>${ap.Client_Name}</strong> — 📆 ${ap.Appt_Date} الساعة ${ap.Appt_Time}</span>
+              <span>👤 <strong>${ap.Client_Name}</strong> — 🗓️ ${ap.Day_Name_Ar || ''} (${ap.Appt_Date_ISO || ap.Appt_Date}) — ⏰ ${ap.Time_12h_Ar || ap.Appt_Time}</span>
               ${stBadge}
             </div>
           `;
         });
       }
 
-      // معرض الحالات للطبيب (شامل الحالات التي رشحها الطبيب)
+      // معرض الحالات للطبيب (مع شريط اقتراح السعر التفاعلي + توضيح حالة القبول أو الإلغاء)
       const casesList = document.getElementById('docCasesList');
       casesList.innerHTML = '';
       if (cases.length === 0) {
-        casesList.innerHTML = '<p style="text-align:center; color:#64748b;">لا توجد حالات متاحة في نطاق محافظتك حالياً.</p>';
+        casesList.innerHTML = '<p style="text-align:center; color:#64748b;">لا توجد حالات متاحة في نطاق محافظتك أو منطقتك حالياً.</p>';
       } else {
-        cases.forEach(c => {
+        cases.slice().reverse().forEach(c => {
           const isMine = String(c.Submitted_By_Doc_ID || '').trim() === String(currentUser.id).trim();
-          const isOpen = String(c.Status || '').trim() === 'Open';
-          const alreadyApplied = String(c.Applied_Doctors || '').includes(currentUser.id);
+          const st = String(c.Status || '').trim();
+          const isOpen = st === 'Open';
+
+          // فحص هل تقدم الطبيب سابقاً وبأي سعر
+          const appliedEntries = String(c.Applied_Doctors || '').split(',').filter(Boolean);
+          const myEntry = appliedEntries.find(e => e.startsWith(currentUser.id + '|'));
+          const alreadyApplied = Boolean(myEntry);
+          const fairCut = Number(c.Doctor_Cut || 200);
+          const myPrevPrice = myEntry && myEntry.split('|')[2] ? Number(myEntry.split('|')[2]) : fairCut;
+
+          const minPrice = Math.max(50, Math.round((fairCut * 0.65) / 10) * 10);
+          const maxPrice = Math.max(fairCut + 100, Math.round((fairCut * 1.35) / 10) * 10);
+
+          let statusRibbonHtml = '';
+          if (st === 'Assigned') {
+            const wonByMe = String(c.Approved_Doctor_ID || '').trim() === String(currentUser.id).trim();
+            statusRibbonHtml = wonByMe
+              ? `<div class="badge-ok" style="width:100%; text-align:center; padding:8px; margin-top:8px;">🎉 مبارك! تم قبولك وإسناد هذه الحالة إليك</div>`
+              : `<div class="badge-wait" style="width:100%; text-align:center; padding:8px; margin-top:8px;">ℹ️ تم إسناد هذه الحالة لطبيب آخر — نرحب بتقديمك في الحالات القادمة</div>`;
+          } else if (st === 'Cancelled' || st === 'Rejected') {
+            statusRibbonHtml = `<div class="badge-danger" style="width:100%; text-align:center; padding:8px; margin-top:8px;">🚫 تم إلغاء هذه الحالة من قِبل الإدارة</div>`;
+          }
+
           const div = document.createElement('div');
           div.className = 'session-item';
           div.innerHTML = `
             <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:6px; flex-wrap:wrap; gap:6px;">
               <strong style="color:var(--brand-blue-dark);">📍 المنطقة: ${c.Region} (${c.Target_Governorates || 'الكل'})</strong>
               <div>
-                ${isMine ? `<span class="badge-ok">🎁 حالة مرشحة منك (${c.Status === 'Pending_Approval' ? 'قيد مراجعة الإدارة' : (c.Referral_Bonus_Paid === 'Yes' ? 'تم صرف مكافأتك ✓' : c.Status)})</span>` : ''}
+                ${isMine ? `<span class="badge-ok">🎁 مرشحة منك (${st === 'Pending_Approval' ? 'قيد المراجعة' : (c.Referral_Bonus_Paid === 'Yes' ? 'تم صرف مكافأتك ✓' : st)})</span>` : ''}
                 <span class="badge-brand">${c.Total_Sessions} جلسة</span>
               </div>
             </div>
-            <p style="margin:4px 0 10px; font-size:13.5px;">📋 <strong>التفاصيل:</strong> ${c.Condition_Summary}</p>
+            <p style="margin:4px 0 8px; font-size:13.5px;">📋 <strong>التفاصيل:</strong> ${c.Condition_Summary}</p>
+
             ${isOpen ? `
-              <div style="display:flex; justify-content:space-between; align-items:center;">
-                <span class="badge-ok">💰 عائد الجلسة: ${c.Doctor_Cut} ج.م</span>
-                <button type="button" class="doc-apply-btn btn-sm ${alreadyApplied ? '' : 'btn-gradient'}" data-cid="${c.Case_ID}" ${alreadyApplied ? 'disabled' : ''}>
-                  ${alreadyApplied ? '✓ تم التقديم' : '🙋‍♂️ تقديم على الحالة'}
-                </button>
+              <div class="price-slider-box">
+                <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px;">
+                  <span style="font-size:12px; font-weight:800;">🎚️ اقترح سعرك للجلسة (السعر العادل بالمنتصف: <strong>${fairCut} ج.م</strong>):</span>
+                  <strong id="sliderVal_${c.Case_ID}" style="font-size:15px; color:var(--brand-blue);">${myPrevPrice} ج.م</strong>
+                </div>
+                <div class="price-slider-track">
+                  <input type="range" id="sliderInput_${c.Case_ID}" min="${minPrice}" max="${maxPrice}" step="10" value="${myPrevPrice}" oninput="onCasePriceSliderChange('${c.Case_ID}', ${fairCut})">
+                </div>
+                <div class="price-slider-labels">
+                  <span style="color:#059669;">أقل سعر (${minPrice} ج) — أعلى فرصة قبول 🚀</span>
+                  <span style="color:var(--brand-blue);">⚖️ السعر العادل (${fairCut} ج)</span>
+                  <span style="color:#D97706;">أعلى (${maxPrice} ج) — فرصة أقل ⚠️</span>
+                </div>
+                <div id="sliderHint_${c.Case_ID}" style="margin-top:8px; font-size:12px; font-weight:800; text-align:center; padding:6px; border-radius:8px; background:#EEF2FF; color:var(--brand-blue);">
+                  ⚖️ أنت عند السعر العادل للجلسة (${fairCut} ج.م) — فرصة قبول قياسية
+                </div>
               </div>
-            ` : ''}
+              <button type="button" class="doc-apply-btn btn-gradient" data-cid="${c.Case_ID}" style="width:100%;">
+                ${alreadyApplied ? `🔄 تحديث عرضي السعري (مقدم بـ ${myPrevPrice} ج.م)` : '🙋‍♂️ تقديم على الحالة بالسعر المختار'}
+              </button>
+            ` : statusRibbonHtml}
           `;
           casesList.appendChild(div);
+          if (isOpen) onCasePriceSliderChange(c.Case_ID, fairCut);
         });
 
         document.querySelectorAll('.doc-apply-btn').forEach(btn => {
           btn.addEventListener('click', async function() {
             const caseId = this.getAttribute('data-cid');
+            const sliderEl = document.getElementById('sliderInput_' + caseId);
+            const proposedCut = sliderEl ? Number(sliderEl.value) : '';
             this.disabled = true;
-            this.innerText = '⏳ جاري التقديم...';
+            this.innerText = '⏳ جاري إرسال عرضك...';
             try {
               const res = await callServer({
                 action: 'applyForCase',
                 caseId,
                 doctorId: currentUser.id,
-                doctorName: currentUser.name
+                doctorName: currentUser.name,
+                proposedCut
               });
               showNotice(res.message, res.success);
               if (res.success && res.state) renderDoctorState(res.state);
             } catch (e) {
               showNotice('❌ فشل الاتصال', false);
               this.disabled = false;
-              this.innerText = '🙋‍♂️ تقديم على الحالة';
             }
           });
         });
       }
 
-      // جدول الطبيب: يعرض المكافآت والخصومات الإدارية كبند واضح + سجل الجلسات
+      // سجل الجلسات والمكافآت
       const sTable = document.getElementById('docSessionsTable');
       sTable.innerHTML = '';
 
@@ -1724,7 +2184,7 @@
         `;
       });
 
-      sessions.slice().reverse().forEach(s => {
+      myOwnSessions.slice().reverse().forEach(s => {
         const isSigned = String(s.Client_Sign).trim() !== 'Pending';
         sTable.innerHTML += `
           <tr>
@@ -1743,7 +2203,96 @@
       });
     }
 
-    // نوافذ الطبيب (طلب صرف، اقتراح موعد، جدول ثابت، عرض حالة)
+    // تحديث مؤشر السعر العادل التفاعلي عند تحريك الشريط
+    function onCasePriceSliderChange(caseId, fairCut) {
+      const slider = document.getElementById('sliderInput_' + caseId);
+      const valSpan = document.getElementById('sliderVal_' + caseId);
+      const hintBox = document.getElementById('sliderHint_' + caseId);
+      if (!slider || !valSpan || !hintBox) return;
+
+      const val = Number(slider.value);
+      valSpan.innerText = val + ' ج.م';
+      const diff = val - Number(fairCut);
+
+      if (diff < 0) {
+        valSpan.style.color = '#059669';
+        hintBox.style.background = '#DCFCE7';
+        hintBox.style.color = '#166534';
+        hintBox.innerText = `🚀 ممتاز! سعرك أقل من السعر العادل بـ (${Math.abs(diff)} ج.م) — فرصة قبولك وأولوية ترشيحك عالية جداً!`;
+      } else if (diff === 0) {
+        valSpan.style.color = 'var(--brand-blue)';
+        hintBox.style.background = '#EEF2FF';
+        hintBox.style.color = 'var(--brand-blue)';
+        hintBox.innerText = `⚖️ أنت عند السعر العادل للجلسة (${fairCut} ج.م) — فرصة قبول قياسية ومتوازنة`;
+      } else {
+        valSpan.style.color = '#D97706';
+        hintBox.style.background = '#FEF3C7';
+        hintBox.style.color = '#92400E';
+        hintBox.innerText = `⚠️ سعرك أعلى من السعر العادل بـ (+${diff} ج.م) — فرصة القبول أقل وتعتمد على بُعد المنطقة`;
+      }
+    }
+
+    // نافذة تحديث مناطق وأدوات الطبيب
+    function openDoctorProfileUpdateModal() {
+      const curRegs = (docLastStateCache && (docLastStateCache.myPendingRegions || docLastStateCache.myRegions)) || '';
+      const curEq = (docLastStateCache && (docLastStateCache.myPendingEquipment || docLastStateCache.myEquipment)) || '';
+
+      document.querySelectorAll('.doc-reg-cb').forEach(cb => {
+        cb.checked = curRegs.includes(cb.value);
+      });
+      document.querySelectorAll('.doc-eq-cb').forEach(cb => {
+        cb.checked = curEq.includes(cb.value);
+      });
+      document.getElementById('docCustomRegionsInput').value = curRegs;
+      document.getElementById('docCustomEquipInput').value = curEq;
+      document.getElementById('doctorProfileUpdateModal').style.display = 'flex';
+    }
+
+    document.querySelectorAll('.doc-reg-cb').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const checked = Array.from(document.querySelectorAll('.doc-reg-cb:checked')).map(x => x.value);
+        document.getElementById('docCustomRegionsInput').value = checked.join('، ');
+      });
+    });
+
+    document.querySelectorAll('.doc-eq-cb').forEach(cb => {
+      cb.addEventListener('change', () => {
+        const checked = Array.from(document.querySelectorAll('.doc-eq-cb:checked')).map(x => x.value);
+        document.getElementById('docCustomEquipInput').value = checked.join('، ');
+      });
+    });
+
+    document.getElementById('submitDocProfileUpdateBtn').addEventListener('click', async function() {
+      const pendingRegions = document.getElementById('docCustomRegionsInput').value.trim();
+      const pendingEquipment = document.getElementById('docCustomEquipInput').value.trim();
+
+      if (!pendingRegions && !pendingEquipment) {
+        showNotice('⚠️ يرجى اختيار أو كتابة المناطق أو الأدوات الطبية', false);
+        return;
+      }
+
+      const btn = this;
+      btn.disabled = true;
+      btn.innerText = '⏳ جاري الإرسال للإدارة...';
+      try {
+        const res = await callServer({
+          action: 'doctorRequestProfileUpdate',
+          doctorId: currentUser.id,
+          pendingRegions,
+          pendingEquipment
+        });
+        btn.disabled = false;
+        btn.innerText = '🚀 إرسال للإدارة للموافقة والاعتماد';
+        document.getElementById('doctorProfileUpdateModal').style.display = 'none';
+        showNotice(res.message, res.success);
+        if (res.success && res.state) renderDoctorState(res.state);
+      } catch (e) {
+        btn.disabled = false;
+        btn.innerText = '🚀 إرسال للإدارة للموافقة والاعتماد';
+        showNotice('❌ خطأ في الاتصال', false);
+      }
+    });
+
     function openPayoutRequestModal() {
       document.getElementById('reqPayoutMethodInput').value = docMyPaymentInfo || '';
       document.getElementById('payoutRequestModal').style.display = 'flex';
@@ -1918,7 +2467,7 @@
     });
 
     // ==========================================
-    // 3. رندر وتفاعل واجهة الإدارة (Admin)
+    // 3. رندر وتفاعل واجهة الإدارة الشاملة (Admin View)
     // ==========================================
     function onServiceTypeChange() {
       const type = document.getElementById('admServiceType').value;
@@ -1979,6 +2528,11 @@
       document.getElementById('specificUserWrap').style.display = (val === 'specific') ? 'block' : 'none';
     }
 
+    function toggleTreasuryDocFields() {
+      const type = document.getElementById('trsTypeSelect').value;
+      document.getElementById('trsDocWrap').style.display = (type === 'Income') ? 'grid' : 'none';
+    }
+
     async function triggerAutomatedReminders(btnEl) {
       btnEl.disabled = true;
       const oldTxt = btnEl.innerText;
@@ -1993,6 +2547,153 @@
       btnEl.innerText = oldTxt;
     }
 
+    // بناء قائمة الشهور المتاحة في الفلتر الشهري
+    function populateAdminMonthFilter() {
+      const sel = document.getElementById('admMonthFilterSelect');
+      const currentVal = sel.value || 'ALL';
+      const now = new Date();
+      const currentMonthKey = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}`;
+
+      const monthSet = new Set([currentMonthKey]);
+      adminContractsCache.forEach(c => { if (c.Month_Key) monthSet.add(c.Month_Key); });
+      adminSessionsCache.forEach(s => { if (s.Month_Key) monthSet.add(s.Month_Key); });
+      adminTreasuryCache.forEach(t => { if (t.Month_Key) monthSet.add(t.Month_Key); });
+
+      const sortedMonths = Array.from(monthSet).sort().reverse();
+      const monthNamesAr = ['يناير', 'فبراير', 'مارس', 'أبريل', 'مايو', 'يونيو', 'يوليو', 'أغسطس', 'سبتمبر', 'أكتوبر', 'نوفمبر', 'ديسمبر'];
+
+      sel.innerHTML = `<option value="ALL">🌐 كل الشهور (إجمالي تراكمي)</option>`;
+      sortedMonths.forEach(mKey => {
+        const parts = mKey.split('-');
+        const mIdx = parseInt(parts[1], 10) - 1;
+        const label = (!isNaN(mIdx) && monthNamesAr[mIdx]) ? `${monthNamesAr[mIdx]} ${parts[0]} (${mKey})` : mKey;
+        sel.innerHTML += `<option value="${mKey}">${label}${mKey === currentMonthKey ? ' — الشهر الحالي' : ''}</option>`;
+      });
+
+      if (Array.from(sel.options).some(o => o.value === currentVal)) {
+        sel.value = currentVal;
+      } else {
+        sel.value = currentMonthKey;
+      }
+    }
+
+    // حساب الداشبورد الشهرية وفصل الفلوس الخلصانة عن الفلوس العايمة + المراجعة المالية
+    function recalculateAdminFinancials() {
+      const selectedMonth = document.getElementById('admMonthFilterSelect').value || 'ALL';
+      const isAllMonths = selectedMonth === 'ALL';
+
+      // 1. مقبوضات العقود في الشهر المختار
+      let periodContractCash = 0;
+      adminContractsCache.forEach(c => {
+        if (isAllMonths || c.Month_Key === selectedMonth) {
+          periodContractCash += Number(c.Paid_Amount || 0);
+        }
+      });
+
+      // 2. حركات الخزنة الحرة (كشوفات طياري ومصروفات) في الشهر المختار
+      let periodTreasuryNet = 0;
+      adminTreasuryCache.forEach(t => {
+        if (isAllMonths || t.Month_Key === selectedMonth) {
+          periodTreasuryNet += Number(t.Net_Center || 0);
+        }
+      });
+
+      // 3. الجلسات المنفذة والمؤكدة في الشهر المختار
+      let executedGross = 0, executedDocCut = 0;
+      adminSessionsCache.forEach(s => {
+        if (String(s.Client_Sign).trim() !== 'Pending') {
+          if (isAllMonths || s.Month_Key === selectedMonth) {
+            executedGross += Number(s.Session_Price || 0);
+            executedDocCut += Number(s.Doctor_Cut || 0);
+          }
+        }
+      });
+
+      // 4. التسويات الإدارية (بونص وخصم) في الشهر المختار
+      let periodAdjustmentsNet = 0;
+      adminAdjustmentsCache.forEach(a => {
+        if (isAllMonths || a.Month_Key === selectedMonth) {
+          periodAdjustmentsNet += Number(a.Amount || 0);
+        }
+      });
+
+      const totalCollectedInPeriod = periodContractCash + periodTreasuryNet;
+      const realizedNetProfitInPeriod = (executedGross - executedDocCut) - periodAdjustmentsNet + periodTreasuryNet;
+
+      // 5. الفلوس العايمة في السوق حالياً (الباقات غير الخلصانة فقط — لا تدخل فيها العقود المنتهية والخلصانة!)
+      let floatingClientDebt = 0;
+      let floatingUnpaidDocLiability = 0;
+      let floatingProjectedCenterProfit = 0;
+      let floatingProjectedDoctorCut = 0;
+
+      // التزامات أطباء لم تُصرف بعد (عايمة)
+      adminSessionsCache.forEach(s => {
+        if (String(s.Client_Sign).trim() !== 'Pending' && String(s.Payout_Status).trim() === 'Unpaid') {
+          floatingUnpaidDocLiability += Number(s.Doctor_Cut || 0);
+        }
+      });
+      adminAdjustmentsCache.forEach(a => {
+        if (String(a.Status || '').trim() === 'Unpaid') {
+          floatingUnpaidDocLiability += Number(a.Amount || 0);
+        }
+      });
+
+      const auditAlerts = [];
+
+      adminContractsCache.forEach(c => {
+        const cSess = adminSessionsCache.filter(s => String(s.Contract_ID).trim() === String(c.Contract_ID).trim());
+        const usedSess = cSess.length;
+        const totalSess = Number(c.Total_Sessions || 0);
+        const remSess = Math.max(0, totalSess - usedSess);
+        const debt = Number(c.Remaining_Debt || 0);
+
+        // العقد الخلصان (remSess === 0 && debt === 0) لا يدخل في الفلوس العايمة
+        const isSettledContract = (remSess === 0 && debt === 0);
+        if (!isSettledContract) {
+          floatingClientDebt += debt;
+          if (remSess > 0) {
+            const cutPerSess = Number(c.Doctor_Cut || 0);
+            const pricePerSess = Number(c.Session_Price || 0);
+            const profitPerSess = pricePerSess - cutPerSess;
+            floatingProjectedDoctorCut += remSess * cutPerSess;
+            floatingProjectedCenterProfit += remSess * profitPerSess;
+          }
+        }
+
+        // فحوصات المراجعة المالية الذكية (Audit Checks)
+        const consumedValue = usedSess * Number(c.Session_Price || 0);
+        const paidVal = Number(c.Paid_Amount || 0);
+        if (consumedValue > paidVal) {
+          auditAlerts.push(`🚨 <strong>تجاوز مالي (${c.Client_Name}):</strong> استهلك جلسات بقيمة (${consumedValue} ج.م) بينما المدفوع (${paidVal} ج.م) فقط — فرق عجز فوري: <strong>${consumedValue - paidVal} ج.م</strong>!`);
+        }
+        if (!c.Doctor_ID) {
+          auditAlerts.push(`⏳ <strong>باقة بدون طبيب (${c.Client_Name}):</strong> الباقة مفعلة (${totalSess} جلسة) وبانتظار تعيين طبيب معالج.`);
+        }
+        if (c.Is_Expired_Date && (remSess > 0 || debt > 0)) {
+          auditAlerts.push(`⌛ <strong>باقة منتهية الصلاحية (${c.Client_Name}):</strong> انتهت بتاريخ (${c.Expiry_Date}) وبها (${remSess} جلسات متبقية) ومديونية (${debt} ج.م).`);
+        }
+      });
+
+      document.getElementById('admCollectedCash').innerText = totalCollectedInPeriod + ' ج.م';
+      document.getElementById('admNetProfit').innerText = realizedNetProfitInPeriod + ' ج.م';
+      document.getElementById('admClientDebt').innerText = floatingClientDebt + ' ج.م';
+      document.getElementById('admUnpaidDocLiability').innerText = floatingUnpaidDocLiability + ' ج.م';
+      document.getElementById('admProjectedCenterProfit').innerText = floatingProjectedCenterProfit + ' ج.م';
+      document.getElementById('admProjectedDoctorCut').innerText = floatingProjectedDoctorCut + ' ج.م';
+      document.getElementById('admFreeTreasuryNet').innerText = periodTreasuryNet + ' ج.م';
+
+      document.getElementById('admCollectedLabel').innerText = isAllMonths ? '💰 محصل الخزنة (كل الشهور)' : `💰 محصل الخزنة (${selectedMonth})`;
+      document.getElementById('admNetProfitLabel').innerText = isAllMonths ? '✅ صافي ربح المركز (تراكمي)' : `✅ صافي ربح المركز (${selectedMonth})`;
+
+      // رندر صندوق المراجعة المالية الذكية
+      const auditBox = document.getElementById('admFinancialAuditBox');
+      if (auditAlerts.length === 0) {
+        auditBox.innerHTML = `<div class="badge-ok" style="padding:12px; width:100%; text-align:center;">✅ جميع العقود والحسابات متطابقة 100% ولا توجد تجاوزات مالية!</div>`;
+      } else {
+        auditBox.innerHTML = auditAlerts.map(a => `<div style="padding:8px 10px; border-bottom:1px solid var(--border-color);">${a}</div>`).join('');
+      }
+    }
+
     function renderAdminState(state) {
       adminUsersCache = state.users || [];
       adminContractsCache = state.contracts || [];
@@ -2000,71 +2701,78 @@
       adminAdjustmentsCache = state.adjustments || [];
       adminPayoutsCache = state.payouts || [];
       adminCasesCache = state.cases || [];
+      adminTreasuryCache = state.treasury || [];
       adminDoctorRatingsCache = state.doctorRatings || {};
       const messages = state.messages || [];
 
       const doctors = adminUsersCache.filter(u => String(u.Role).trim().toLowerCase() === 'doctor');
       const profDocSel = document.getElementById('profDoctorSelect');
-      profDocSel.innerHTML = '';
+      const profPartnerSel = document.getElementById('profAddPartnerSelect');
+      const trsDocSel = document.getElementById('trsDoctorSelect');
+
+      profDocSel.innerHTML = '<option value="">⏳ بانتظار تعيين طبيب (بدون طبيب حالياً)</option>';
+      profPartnerSel.innerHTML = '<option value="">— اختر طبيباً مشاركاً —</option>';
+      trsDocSel.innerHTML = '<option value="">— بدون طبيب (صافي للمركز) —</option>';
+
       doctors.forEach(d => {
-        profDocSel.innerHTML += `<option value="${d.User_ID}|${d.Name}">د. ${d.Name}</option>`;
+        const opt = `<option value="${d.User_ID}|${d.Name}">د. ${d.Name} (${d.Regions || d.Governorate || 'عام'})</option>`;
+        profDocSel.innerHTML += opt;
+        profPartnerSel.innerHTML += opt;
+        trsDocSel.innerHTML += opt;
       });
 
-      // الصف الأول: الحسابات الفعلية المحققة بالخزنة
-      let totalCollectedCash = 0;
-      let totalClientDebt = 0;
-      adminContractsCache.forEach(c => {
-        totalCollectedCash += Number(c.Paid_Amount || 0);
-        totalClientDebt += Number(c.Remaining_Debt || 0);
-      });
-
-      let executedGross = 0, executedDocCut = 0, unpaidDocLiability = 0;
-      adminSessionsCache.forEach(s => {
-        if (String(s.Client_Sign).trim() !== 'Pending') {
-          executedGross += Number(s.Session_Price || 0);
-          executedDocCut += Number(s.Doctor_Cut || 0);
-          if (String(s.Payout_Status).trim() === 'Unpaid') {
-            unpaidDocLiability += Number(s.Doctor_Cut || 0);
-          }
-        }
-      });
-
-      let totalAdjustmentsNet = 0;
-      adminAdjustmentsCache.forEach(a => {
-        const amt = Number(a.Amount || 0);
-        totalAdjustmentsNet += amt;
-        if (String(a.Status || '').trim() === 'Unpaid') {
-          unpaidDocLiability += amt;
-        }
-      });
-
-      const realizedNetProfit = (executedGross - executedDocCut) - totalAdjustmentsNet;
-
-      // الصف الثاني: التصور المبدئي للباقات السارية
-      let projectedDoctorCut = 0;
-      let projectedCenterProfit = 0;
-      adminContractsCache.forEach(c => {
-        const cSessCount = adminSessionsCache.filter(s => String(s.Contract_ID).trim() === String(c.Contract_ID).trim()).length;
-        const remainingPkgSess = Math.max(0, Number(c.Total_Sessions || 0) - cSessCount);
-        if (remainingPkgSess > 0) {
-          const cutPerSess = Number(c.Doctor_Cut || 0);
-          const pricePerSess = Number(c.Session_Price || 0);
-          const profitPerSess = pricePerSess - cutPerSess;
-          projectedDoctorCut += remainingPkgSess * cutPerSess;
-          projectedCenterProfit += remainingPkgSess * profitPerSess;
-        }
-      });
-
-      document.getElementById('admCollectedCash').innerText = totalCollectedCash + ' ج.م';
-      document.getElementById('admClientDebt').innerText = totalClientDebt + ' ج.م';
-      document.getElementById('admUnpaidDocLiability').innerText = unpaidDocLiability + ' ج.م';
-      document.getElementById('admNetProfit').innerText = realizedNetProfit + ' ج.م';
-      document.getElementById('admProjectedCenterProfit').innerText = projectedCenterProfit + ' ج.م';
-      document.getElementById('admProjectedDoctorCut').innerText = projectedDoctorCut + ' ج.م';
-
+      populateAdminMonthFilter();
+      recalculateAdminFinancials();
       calcNewContractSummary();
+
+      // عرض طلبات اعتماد المناطق والأدوات المعلقة من الأطباء
+      const pendingDocs = doctors.filter(d => d.Profile_Review_Status === 'Pending');
+      const pendCard = document.getElementById('admPendingProfilesCard');
+      const pendList = document.getElementById('admPendingProfilesList');
+      if (pendingDocs.length === 0) {
+        pendCard.style.display = 'none';
+      } else {
+        pendCard.style.display = 'block';
+        pendList.innerHTML = pendingDocs.map(d => `
+          <div style="background:#fff; padding:10px 12px; border-radius:12px; margin-bottom:8px; border:1px solid #FDE68A; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px;">
+            <div>
+              <strong>👨‍⚕️ د. ${d.Name}</strong>
+              <div style="font-size:12px;">📍 <strong>المناطق المقترحة:</strong> ${d.Pending_Regions || '—'}</div>
+              <div style="font-size:12px; color:#6B21A8;">🧰 <strong>الأدوات المقترحة:</strong> ${d.Pending_Equipment || '—'}</div>
+            </div>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="btn-sm btn-success" onclick="reviewDocProfile('${d.User_ID}', true, this)">✅ موافقة واعتماد</button>
+              <button type="button" class="btn-sm btn-danger" onclick="reviewDocProfile('${d.User_ID}', false, this)">❌ رفض</button>
+            </div>
+          </div>
+        `).join('');
+      }
+
       renderUsersDirectory();
 
+      // جدول حركات الخزنة الحرة
+      const trsTable = document.getElementById('admTreasuryTable');
+      trsTable.innerHTML = '';
+      if (adminTreasuryCache.length === 0) {
+        trsTable.innerHTML = '<tr><td colspan="7" style="text-align:center; color:#64748b;">لا توجد حركات خزنة حرة مسجلة بعد.</td></tr>';
+      } else {
+        adminTreasuryCache.slice().reverse().forEach(t => {
+          const isInc = String(t.Type).trim() === 'Income';
+          trsTable.innerHTML += `
+            <tr style="background:${isInc ? '#ECFDF5' : '#FEF2F2'};">
+              <td>${t.Date} <small>(${t.Month_Key || ''})</small></td>
+              <td><span class="${isInc ? 'badge-ok' : 'badge-danger'}">${isInc ? '➕ إيراد / كشف طياري' : '➖ مصروف'}</span></td>
+              <td><strong>${t.Title}</strong></td>
+              <td>${t.Amount} ج.م</td>
+              <td>${t.Doctor_Name ? `د. ${t.Doctor_Name} (${t.Doctor_Cut} ج)` : '—'}</td>
+              <td><strong style="color:${isInc ? '#059669' : 'var(--danger)'};">${t.Net_Center} ج.م</strong></td>
+              <td><button type="button" class="btn-sm btn-danger" onclick="deleteTreasuryItem('${t.Trans_ID}', this)">🗑️</button></td>
+            </tr>
+          `;
+        });
+      }
+
+      // سجل الرسائل
       const msgTable = document.getElementById('admMessagesLogTable');
       msgTable.innerHTML = '';
       if (messages.length === 0) {
@@ -2083,70 +2791,117 @@
         });
       }
 
-      // جدول الحالات المنشورة وترشيحات الأطباء
+      // 1. جدول ترشيحات العملاء («رشح لنا حالة واكسب كاش باك»)
+      const cliRefTable = document.getElementById('admClientReferralsTable');
+      cliRefTable.innerHTML = '';
+      const clientReferrals = adminCasesCache.filter(c => String(c.Submitted_By_Client_ID || '').trim() !== '');
+      if (clientReferrals.length === 0) {
+        cliRefTable.innerHTML = '<tr><td colspan="5" style="text-align:center; color:#64748b;">لا توجد ترشيحات حالات من العملاء حالياً.</td></tr>';
+      } else {
+        clientReferrals.slice().reverse().forEach(r => {
+          const st = String(r.Status || '').trim();
+          let stBadge = '<span class="badge-wait">⏳ تحت المراجعة</span>';
+          if (st === 'Client_Referral_Contracted') stBadge = `<span class="badge-ok">✅ تعاقد (+${r.Client_Referral_Reward} ج كاش باك)</span>`;
+          else if (st === 'Client_Referral_Declined') stBadge = `<span class="badge-danger">❌ رفض التعاقد</span>`;
+
+          cliRefTable.innerHTML += `
+            <tr>
+              <td><strong>👤 ${r.Submitted_By_Client_Name}</strong></td>
+              <td><strong>${r.Client_Name}</strong><br><a href="tel:${r.Client_Phone}" style="color:var(--brand-blue); font-weight:800;">📱 ${r.Client_Phone}</a></td>
+              <td>📍 ${r.Region}<br><small>${r.Condition_Summary || ''}</small></td>
+              <td>${stBadge}</td>
+              <td style="white-space:nowrap;">
+                <button type="button" class="btn-sm btn-success" onclick="handleClientReferralDecision('${r.Case_ID}', '${r.Submitted_By_Client_Name}', true, this)">✅ العميل تعاقد (إضافة كاش باك)</button>
+                <button type="button" class="btn-sm btn-danger" onclick="handleClientReferralDecision('${r.Case_ID}', '${r.Submitted_By_Client_Name}', false, this)">❌ رفض التعاقد</button>
+              </td>
+            </tr>
+          `;
+        });
+      }
+
+      // 2. جدول معرض الحالات للأطباء + التحكم الكامل (إخفاء، إلغاء، تعديل، حذف، وقبول طبيب)
       const casesTable = document.getElementById('admCasesTable');
       casesTable.innerHTML = '';
-      if (adminCasesCache.length === 0) {
+      const marketCases = adminCasesCache.filter(c => String(c.Submitted_By_Client_ID || '').trim() === '');
+
+      if (marketCases.length === 0) {
         casesTable.innerHTML = '<tr><td colspan="5" style="text-align:center; color:#64748b;">لا توجد حالات منشورة في المعرض.</td></tr>';
       } else {
-        adminCasesCache.slice().reverse().forEach(c => {
+        marketCases.slice().reverse().forEach(c => {
           const st = String(c.Status || '').trim();
           const isPendingApproval = st === 'Pending_Approval';
           const isOpen = st === 'Open';
+          const isHidden = st === 'Hidden';
+          const fairCut = Number(c.Doctor_Cut || 0);
           const appliedRaw = String(c.Applied_Doctors || '').trim();
 
-          let actionHtml = '<small style="color:#64748b;">لا يوجد متقدمين بعد</small>';
-          if (isPendingApproval) {
-            actionHtml = `
-              <button type="button" class="btn-sm btn-success" onclick="openAdminApproveCaseModal('${c.Case_ID}')">✅ تسعير ونشر</button>
-              <button type="button" class="btn-sm btn-danger" onclick="rejectSubmittedCase('${c.Case_ID}', this)">❌ رفض</button>
-            `;
-          } else if (st === 'Assigned') {
-            actionHtml = `<span class="badge-ok">تم التعيين: د. ${c.Approved_Doctor_Name}</span>`;
-          } else if (st === 'Rejected') {
-            actionHtml = `<span class="badge-danger">مرفوضة</span>`;
-          } else if (isOpen && appliedRaw) {
-            actionHtml = appliedRaw.split(',').map(item => {
-              const [dId, dName] = item.split('|');
-              return `<button type="button" class="adm-approve-doc-btn btn-sm btn-gradient" data-cid="${c.Case_ID}" data-did="${dId}" data-dname="${dName}" style="margin:2px;">✅ قبول د. ${dName}</button>`;
-            }).join(' ');
+          let statusBadge = `<span class="badge-wait">${st}</span>`;
+          if (isOpen) statusBadge = `<span class="badge-ok">🟢 مفتوحة بالمعرض</span>`;
+          else if (isHidden) statusBadge = `<span class="badge-wait">👁️ مخفية مؤقتاً</span>`;
+          else if (st === 'Assigned') statusBadge = `<span class="badge-brand">✅ تم إسنادها: د. ${c.Approved_Doctor_Name}</span>`;
+          else if (st === 'Cancelled') statusBadge = `<span class="badge-danger">🚫 ملغاة (اتكنسلت)</span>`;
+          else if (isPendingApproval) statusBadge = `<span class="badge-danger">⏳ ترشيح طبيب بانتظار المراجعة</span>`;
+
+          const adminControlsHtml = `
+            <div style="margin-top:6px; display:flex; gap:4px; flex-wrap:wrap;">
+              ${isPendingApproval ? `<button type="button" class="btn-sm btn-success" onclick="openAdminApproveCaseModal('${c.Case_ID}', false)">✅ تسعير ونشر</button>` : ''}
+              ${isOpen ? `<button type="button" class="btn-sm btn-warning" onclick="manageCaseStatus('${c.Case_ID}', 'hide', this)">👁️ إخفاء</button>` : ''}
+              ${(isHidden || st === 'Cancelled' || st === 'Assigned') ? `<button type="button" class="btn-sm btn-success" onclick="manageCaseStatus('${c.Case_ID}', 'reopen', this)">📢 إعادة فتح</button>` : ''}
+              ${st !== 'Cancelled' ? `<button type="button" class="btn-sm btn-danger" onclick="manageCaseStatus('${c.Case_ID}', 'cancel', this)">🚫 إلغاء</button>` : ''}
+              <button type="button" class="btn-sm" onclick="openAdminApproveCaseModal('${c.Case_ID}', true)">✏️ تعديل</button>
+              <button type="button" class="btn-sm btn-danger" onclick="manageCaseStatus('${c.Case_ID}', 'delete', this)">🗑️ حذف</button>
+            </div>
+          `;
+
+          let applicantsHtml = '<small style="color:#64748b;">لا يوجد متقدمين بعد</small>';
+          if (appliedRaw) {
+            const parsedApplicants = appliedRaw.split(',').filter(Boolean).map(item => {
+              const parts = item.split('|');
+              const dId = parts[0];
+              const dName = parts[1] || '';
+              const propPrice = parts[2] ? Number(parts[2]) : fairCut;
+              const docUser = adminUsersCache.find(u => String(u.User_ID).trim() === String(dId).trim());
+              const docEquip = docUser && docUser.Equipment ? `🧰 ${docUser.Equipment}` : '';
+              return { dId, dName, propPrice, docEquip };
+            }).sort((a, b) => a.propPrice - b.propPrice);
+
+            applicantsHtml = parsedApplicants.map(ap => {
+              const diff = ap.propPrice - fairCut;
+              const priceTag = diff < 0
+                ? `<span class="badge-ok">عرض: ${ap.propPrice} ج (وفر ${Math.abs(diff)} ج 🚀)</span>`
+                : (diff === 0 ? `<span class="badge-brand">بالسعر العادل: ${ap.propPrice} ج</span>` : `<span class="badge-wait">عرض: ${ap.propPrice} ج (+${diff} ج)</span>`);
+              return `
+                <div style="background:#F8FAFC; border:1px solid var(--border-color); padding:6px 8px; border-radius:10px; margin-bottom:5px; display:flex; justify-content:space-between; align-items:center; gap:6px; flex-wrap:wrap;">
+                  <div>
+                    <strong>د. ${ap.dName}</strong> ${priceTag}
+                    ${ap.docEquip ? `<div style="font-size:10.5px; color:#6B21A8;">${ap.docEquip}</div>` : ''}
+                  </div>
+                  <button type="button" class="btn-sm btn-gradient" onclick="openApproveDoctorCaseModal('${c.Case_ID}', '${ap.dId}', '${ap.dName}', ${ap.propPrice}, '${c.Client_Name}', '${c.Linked_Contract_ID || ''}')">✅ قبول وتعيين</button>
+                </div>
+              `;
+            }).join('');
           }
 
           const refInfo = c.Submitted_By_Doc_Name
-            ? `<br><span class="badge-pink" style="background:#FDF4FF; color:#86198F; padding:2px 6px; border-radius:6px; font-size:10.5px;">🎁 مرشحة من: د. ${c.Submitted_By_Doc_Name} ${c.Client_Phone ? '| 📱 ' + c.Client_Phone : ''}</span>`
+            ? `<br><span class="badge-brand">🎁 مرشحة من: د. ${c.Submitted_By_Doc_Name} ${c.Client_Phone ? '| 📱 ' + c.Client_Phone : ''}</span>`
+            : '';
+          const linkedNote = c.Linked_Contract_ID
+            ? `<br><span class="badge-ok">🔗 مرتبطة بعقد العميل (${c.Linked_Contract_ID})</span>`
             : '';
 
           casesTable.innerHTML += `
             <tr>
-              <td><strong>${c.Client_Name}</strong><br><small style="color:#64748b;">🗺️ ${c.Target_Governorates || 'الكل'} | 📍 ${c.Region}</small></td>
+              <td><strong>${c.Client_Name}</strong>${linkedNote}<br><small style="color:#64748b;">🗺️ ${c.Target_Governorates || 'الكل'} | 📍 ${c.Region}</small></td>
               <td>${c.Condition_Summary}${refInfo}</td>
-              <td>${c.Total_Sessions} جلسة<br><small>(${c.Session_Price || 0} / ${c.Doctor_Cut || 0} ج.م)</small></td>
-              <td><span class="${isPendingApproval ? 'badge-danger' : (isOpen ? 'badge-wait' : 'badge-ok')}">${isPendingApproval ? 'بانتظار مراجعتك' : (isOpen ? 'مفتوحة' : st)}</span></td>
-              <td>${actionHtml}</td>
+              <td>${c.Total_Sessions} جلسة<br><small>سعر: ${c.Session_Price || 0} | <strong>العادل للطبيب: ${fairCut} ج</strong></small></td>
+              <td>${statusBadge}${adminControlsHtml}</td>
+              <td>${applicantsHtml}</td>
             </tr>
           `;
         });
-
-        document.querySelectorAll('.adm-approve-doc-btn').forEach(btn => {
-          btn.addEventListener('click', async function() {
-            const caseId = this.getAttribute('data-cid');
-            const doctorId = this.getAttribute('data-did');
-            const doctorName = this.getAttribute('data-dname');
-            this.disabled = true;
-            this.innerText = '⏳ جاري التفعيل...';
-            try {
-              const res = await callServer({ action: 'approveDoctorForCase', caseId, doctorId, doctorName });
-              showNotice(res.message, res.success);
-              if (res.success && res.state) renderAdminState(res.state);
-            } catch (e) {
-              showNotice('❌ خطأ في الاتصال', false);
-              this.disabled = false;
-            }
-          });
-        });
       }
 
-      // جدول طلبات صرف المستحقات المعلقة من الأطباء
+      // جدول طلبات صرف المستحقات المعلقة
       const reqPayTable = document.getElementById('admPayoutRequestsTable');
       reqPayTable.innerHTML = '';
       const pendingPayoutReqs = adminPayoutsCache.filter(p => String(p.Status || '').trim() === 'Pending_Approval');
@@ -2170,7 +2925,7 @@
         });
       }
 
-      // جدول المرتبات الأسبوعية والتسويات (بونص / خصم)
+      // جدول المرتبات الأسبوعية
       const payTable = document.getElementById('admPayrollTable');
       payTable.innerHTML = '';
       doctors.forEach(d => {
@@ -2187,7 +2942,7 @@
 
         const tr = document.createElement('tr');
         tr.innerHTML = `
-          <td><strong>د. ${d.Name}</strong><br><small>${ratingText}<br>🗺️ ${d.Governorate || 'بدون محافظة'}</small></td>
+          <td><strong>د. ${d.Name}</strong><br><small>${ratingText}<br>🗺️ ${d.Governorate || ''} ${d.Regions ? '— 📍 ' + d.Regions : ''}</small></td>
           <td><span class="badge-ok">${unpaidConfirmed.length} جلسة</span></td>
           <td><span class="badge-wait">${pendingClient.length} جلسة</span></td>
           <td><strong style="color:${adjsSum >= 0 ? '#059669' : 'var(--danger)'};">${adjsSum >= 0 ? '+' + adjsSum : adjsSum} ج.م</strong></td>
@@ -2218,6 +2973,7 @@
         });
       });
 
+      // سجل الجلسات السري
       const logTable = document.getElementById('admSessionsLogTable');
       logTable.innerHTML = '';
       adminSessionsCache.slice().reverse().forEach(s => {
@@ -2263,7 +3019,189 @@
       });
     }
 
-    // مراجعة طلب صرف المستحقات من الأدمن
+    // اعتماد أو رفض مناطق وأدوات الطبيب من الأدمن
+    async function reviewDocProfile(doctorId, approveFlag, btnEl) {
+      btnEl.disabled = true;
+      try {
+        const res = await callServer({
+          action: 'adminReviewDoctorProfile',
+          doctorId,
+          approve: approveFlag
+        });
+        showNotice(res.message, res.success);
+        if (res.success && res.state) renderAdminState(res.state);
+      } catch (e) {
+        showNotice('❌ خطأ في الاتصال', false);
+        btnEl.disabled = false;
+      }
+    }
+
+    // قرار الأدمن في ترشيح العميل («العميل تعاقد» أو «العميل رفض التعاقد»)
+    async function handleClientReferralDecision(caseId, referringClientName, contractedFlag, btnEl) {
+      let cashbackReward = 0;
+      if (contractedFlag) {
+        const inputVal = prompt(`🎉 مبارك تعاقد الحالة! اكتب مبلغ الكاش باك (ج.م) المراد إضافته فوراً في محفظة العميل الداعي (${referringClientName}):`, '350');
+        if (inputVal === null) return;
+        cashbackReward = Number(inputVal || 0);
+        if (cashbackReward <= 0) {
+          showNotice('⚠️ يرجى إدخال مبلغ كاش باك صحيح أكبر من صفر', false);
+          return;
+        }
+      } else {
+        if (!confirm(`هل تريد تسجيل أن الحالة المرشحة رفضت التعاقد وإرسال إشعار للعميل (${referringClientName}) للتواصل معها مجدداً؟`)) return;
+      }
+
+      btnEl.disabled = true;
+      try {
+        const res = await callServer({
+          action: 'adminReviewClientReferral',
+          caseId,
+          contracted: contractedFlag,
+          cashbackReward
+        });
+        showNotice(res.message, res.success);
+        if (res.success && res.state) renderAdminState(res.state);
+      } catch (e) {
+        showNotice('❌ خطأ في الاتصال', false);
+        btnEl.disabled = false;
+      }
+    }
+
+    // التحكم السريع في حالة المعرض (إخفاء، إعادة فتح، إلغاء، حذف)
+    async function manageCaseStatus(caseId, subAction, btnEl) {
+      if (subAction === 'delete' && !confirm('هل أنت متأكد من حذف هذه الحالة نهائياً من المعرض؟')) return;
+      btnEl.disabled = true;
+      try {
+        const res = await callServer({
+          action: 'adminManageCase',
+          caseId,
+          subAction
+        });
+        showNotice(res.message, res.success);
+        if (res.success && res.state) renderAdminState(res.state);
+      } catch (e) {
+        showNotice('❌ خطأ في الاتصال', false);
+        btnEl.disabled = false;
+      }
+    }
+
+    // فتح نافذة قبول طبيب في حالة بالمعرض (مع خيار استبدال الطبيب أو إضافته كطبيب مشارك في نفس العقد)
+    function openApproveDoctorCaseModal(caseId, docId, docName, proposedPrice, clientName, linkedContractId) {
+      document.getElementById('appDocCaseId').value = caseId;
+      document.getElementById('appDocId').value = docId;
+      document.getElementById('appDocName').value = docName;
+      document.getElementById('appDocAgreedCut').value = proposedPrice;
+
+      const existingCnt = adminContractsCache.find(c =>
+        (linkedContractId && String(c.Contract_ID).trim() === String(linkedContractId).trim()) ||
+        String(c.Client_Name).trim() === String(clientName).trim()
+      );
+
+      const sumBox = document.getElementById('appDocSummaryBox');
+      if (existingCnt) {
+        sumBox.innerHTML = `
+          <div>👤 <strong>المريض:</strong> ${clientName} | 👨‍⚕️ <strong>الطبيب المختار:</strong> د. ${docName}</div>
+          <div style="color:#059669; font-weight:800;">🔗 للمريض باقة حالية (${existingCnt.Contract_ID} — ${existingCnt.All_Doctors_Display})؛ لن يتم إنشاء عقد مكرر، بل سيتم تحديث نفس الباقة حسب اختيارك بالأسفل!</div>
+        `;
+      } else {
+        sumBox.innerHTML = `
+          <div>👤 <strong>المريض:</strong> ${clientName} | 👨‍⚕️ <strong>الطبيب المختار:</strong> د. ${docName}</div>
+          <div>📦 حالة جديدة — سيتم تفعيل باقتها مع د. ${docName} بالسعر المعتمد بالأسفل.</div>
+        `;
+      }
+
+      document.getElementById('approveDoctorCaseModal').style.display = 'flex';
+    }
+
+    document.getElementById('confirmApproveDocCaseBtn').addEventListener('click', async function() {
+      const caseId = document.getElementById('appDocCaseId').value;
+      const doctorId = document.getElementById('appDocId').value;
+      const doctorName = document.getElementById('appDocName').value;
+      const approvedDoctorCut = Number(document.getElementById('appDocAgreedCut').value || 0);
+      const assignMode = document.getElementById('appDocAssignMode').value;
+
+      const btn = this;
+      btn.disabled = true;
+      btn.innerText = '⏳ جاري الاعتماد...';
+      try {
+        const res = await callServer({
+          action: 'approveDoctorForCase',
+          caseId,
+          doctorId,
+          doctorName,
+          approvedDoctorCut,
+          assignMode
+        });
+        btn.disabled = false;
+        btn.innerText = '🚀 اعتماد وتفعيل الطبيب';
+        document.getElementById('approveDoctorCaseModal').style.display = 'none';
+        showNotice(res.message, res.success);
+        if (res.success && res.state) renderAdminState(res.state);
+      } catch (e) {
+        btn.disabled = false;
+        btn.innerText = '🚀 اعتماد وتفعيل الطبيب';
+        showNotice('❌ خطأ في الاتصال', false);
+      }
+    });
+
+    // إضافة أو حذف حركة في الخزنة الحرة
+    document.getElementById('addTreasuryBtn').addEventListener('click', async function() {
+      const type = document.getElementById('trsTypeSelect').value;
+      const title = document.getElementById('trsTitleInput').value.trim();
+      const amount = Number(document.getElementById('trsAmountInput').value || 0);
+      const date = document.getElementById('trsDateInput').value;
+      const docVal = document.getElementById('trsDoctorSelect').value;
+      const [doctorId, doctorName] = docVal ? docVal.split('|') : ['', ''];
+      const doctorCut = Number(document.getElementById('trsDocCutInput').value || 0);
+
+      if (!title || amount <= 0) {
+        showNotice('⚠️ يرجى كتابة مسمى الحركة وإدخال مبلغ صحيح', false);
+        return;
+      }
+
+      const btn = this;
+      btn.disabled = true;
+      btn.innerText = '⏳ جاري الحفظ بالخزنة...';
+      try {
+        const res = await callServer({
+          action: 'addTreasuryEntry',
+          type,
+          title,
+          amount,
+          date,
+          doctorId,
+          doctorName,
+          doctorCut
+        });
+        btn.disabled = false;
+        btn.innerText = '💾 تسجيل الحركة في الخزنة فوراً';
+        showNotice(res.message, res.success);
+        if (res.success) {
+          document.getElementById('trsTitleInput').value = '';
+          document.getElementById('trsAmountInput').value = '';
+          document.getElementById('trsDocCutInput').value = '0';
+          if (res.state) renderAdminState(res.state);
+        }
+      } catch (e) {
+        btn.disabled = false;
+        btn.innerText = '💾 تسجيل الحركة في الخزنة فوراً';
+        showNotice('❌ خطأ في الاتصال', false);
+      }
+    });
+
+    async function deleteTreasuryItem(transId, btnEl) {
+      if (!confirm('هل تريد حذف هذه الحركة المالية من الخزنة؟')) return;
+      btnEl.disabled = true;
+      try {
+        const res = await callServer({ action: 'deleteTreasuryEntry', transId });
+        showNotice(res.message, res.success);
+        if (res.success && res.state) renderAdminState(res.state);
+      } catch (e) {
+        showNotice('❌ خطأ في الاتصال', false);
+        btnEl.disabled = false;
+      }
+    }
+
     async function reviewPayoutReq(payoutId, approveFlag, btnEl) {
       let rejectionReason = '';
       if (!approveFlag) {
@@ -2286,11 +3224,11 @@
       }
     }
 
-    // مراجعة الحالات المرشحة من الأطباء
-    function openAdminApproveCaseModal(caseId) {
+    function openAdminApproveCaseModal(caseId, isEditOnly = false) {
       const c = adminCasesCache.find(x => String(x.Case_ID).trim() === String(caseId).trim());
       if (!c) return;
       document.getElementById('admRevCaseId').value = c.Case_ID;
+      document.getElementById('admRevCaseIsEditOnly').value = isEditOnly ? '1' : '0';
       document.getElementById('admRevCaseClientName').innerText = c.Client_Name;
       document.getElementById('admRevCaseRegion').value = c.Region || '';
       document.getElementById('admRevCaseSummary').value = c.Condition_Summary || '';
@@ -2303,6 +3241,7 @@
 
     document.getElementById('confirmApproveSubmittedCaseBtn').addEventListener('click', async function() {
       const caseId = document.getElementById('admRevCaseId').value;
+      const isEditOnly = document.getElementById('admRevCaseIsEditOnly').value === '1';
       const region = document.getElementById('admRevCaseRegion').value.trim();
       const conditionSummary = document.getElementById('admRevCaseSummary').value.trim();
       const totalSessions = Number(document.getElementById('admRevCaseSessions').value || 6);
@@ -2311,15 +3250,16 @@
       const targetGovernorates = document.getElementById('admRevCaseGov').value.trim();
 
       if (sessionPrice <= 0 || doctorCut <= 0) {
-        showNotice('⚠️ يرجى تحديد سعر الجلسة ونصيب الطبيب قبل النشر', false);
+        showNotice('⚠️ يرجى تحديد سعر الجلسة والسعر العادل للطبيب', false);
         return;
       }
       const btn = this;
       btn.disabled = true;
-      btn.innerText = '⏳ جاري النشر...';
+      btn.innerText = '⏳ جاري الحفظ...';
       try {
         const res = await callServer({
-          action: 'adminReviewSubmittedCase',
+          action: isEditOnly ? 'adminManageCase' : 'adminReviewSubmittedCase',
+          subAction: isEditOnly ? 'edit' : undefined,
           caseId,
           approve: true,
           region,
@@ -2330,35 +3270,16 @@
           targetGovernorates
         });
         btn.disabled = false;
-        btn.innerText = '📢 موافقة ونشر في المعرض';
+        btn.innerText = '💾 حفظ ونشر في المعرض';
         document.getElementById('adminApproveCaseModal').style.display = 'none';
         showNotice(res.message, res.success);
         if (res.success && res.state) renderAdminState(res.state);
       } catch (e) {
         btn.disabled = false;
-        btn.innerText = '📢 موافقة ونشر في المعرض';
+        btn.innerText = '💾 حفظ ونشر في المعرض';
         showNotice('❌ خطأ في الاتصال', false);
       }
     });
-
-    async function rejectSubmittedCase(caseId, btnEl) {
-      const rejectionReason = prompt('اكتب سبب رفض الحالة ليصل للطبيب المرشِّح:');
-      if (rejectionReason === null) return;
-      btnEl.disabled = true;
-      try {
-        const res = await callServer({
-          action: 'adminReviewSubmittedCase',
-          caseId,
-          approve: false,
-          rejectionReason
-        });
-        showNotice(res.message, res.success);
-        if (res.success && res.state) renderAdminState(res.state);
-      } catch (e) {
-        showNotice('❌ خطأ في الاتصال', false);
-        btnEl.disabled = false;
-      }
-    }
 
     function setDirFilter(filterVal, btnEl) {
       currentDirFilter = filterVal;
@@ -2385,11 +3306,17 @@
 
         if (govFilter) {
           const uGov = String(u.Governorate || '');
-          if (!uGov.includes(govFilter) && !uGov.includes('الكل')) return false;
+          const uReg = String(u.Regions || '');
+          if (!uGov.includes(govFilter) && !uReg.includes(govFilter) && !uGov.includes('الكل')) return false;
         }
 
         if (currentDirFilter === 'client') return role === 'client';
         if (currentDirFilter === 'doctor') return role === 'doctor';
+        if (currentDirFilter === 'unassigned') {
+          if (role !== 'client') return false;
+          const c = adminContractsCache.find(x => String(x.Client_ID).trim() === String(u.User_ID).trim() || String(x.Client_Name).trim() === String(u.Name).trim());
+          return c && !String(c.Doctor_ID || '').trim();
+        }
         if (currentDirFilter === 'debt') {
           if (role !== 'client') return false;
           const clientContracts = adminContractsCache.filter(c => String(c.Client_ID).trim() === String(u.User_ID).trim() || String(c.Client_Name).trim() === String(u.Name).trim());
@@ -2424,36 +3351,40 @@
       scoredList.forEach(item => {
         const u = item.user;
         const role = String(u.Role).trim().toLowerCase();
-        const hasTg = String(u.Telegram_ID || '').trim() !== '';
         const roleBadge = role === 'doctor'
           ? '<span class="badge-brand">👨‍⚕️ طبيب</span>'
           : (role === 'admin' ? '<span class="badge-danger">🛡️ أدمن</span>' : '<span class="badge-ok">👤 مريض</span>');
 
-        let finSummaryHtml = hasTg ? '<span class="badge-ok">متصل بتليجرام ✓</span>' : '<span class="badge-wait">غير متصل</span>';
+        let finSummaryHtml = '';
         let clientContract = null;
 
         if (role === 'client') {
           const wBal = Number(u.Wallet_Balance || 0);
+          const wDays = Number(u.Wallet_Days_Left || 0);
           clientContract = adminContractsCache.find(c => String(c.Client_ID).trim() === String(u.User_ID).trim() || String(c.Client_Name).trim() === String(u.Name).trim());
           if (clientContract) {
             const cSess = adminSessionsCache.filter(s => String(s.Contract_ID).trim() === String(clientContract.Contract_ID).trim());
             const remSess = Math.max(0, Number(clientContract.Total_Sessions) - cSess.length);
             const debt = Number(clientContract.Remaining_Debt || 0);
+            const docBadge = clientContract.Doctor_ID
+              ? `<strong>${clientContract.All_Doctors_Display}</strong>`
+              : `<span class="badge-wait">⏳ بانتظار تعيين طبيب</span>`;
             finSummaryHtml = `
-              <div><small>👨‍⚕️ د. ${clientContract.Doctor_Name} | باقي: <strong>${remSess}</strong>/${clientContract.Total_Sessions} جلسة ${clientContract.Expiry_Date ? '(صلاحية: ' + clientContract.Expiry_Date + ')' : ''}</small></div>
-              <div>
+              <div><small>${docBadge} | باقي: <strong>${remSess}</strong>/${clientContract.Total_Sessions} جلسة ${clientContract.Expiry_Date ? '(صلاحية: ' + clientContract.Expiry_Date + ')' : ''}</small></div>
+              <div style="margin-top:3px;">
                 <span class="badge-ok">دفع: ${clientContract.Paid_Amount} ج</span>
                 ${debt > 0 ? `<span class="badge-danger">عليه: ${debt} ج.م</span>` : `<span class="badge-brand">خالص ✓</span>`}
-                <span class="badge-brand">🎁 محفظة: ${wBal} ج</span>
+                <span class="badge-brand">🎁 محفظة: ${wBal} ج ${wBal > 0 ? `(${wDays} يوم)` : ''}</span>
               </div>
             `;
           } else {
-            finSummaryHtml = `<small style="color:#64748b;">بدون باقة مفعلة | 🎁 محفظة: ${wBal} ج.م</small>`;
+            finSummaryHtml = `<small style="color:#64748b;">بدون باقة مفعلة | 🎁 محفظة: ${wBal} ج.م ${wBal > 0 ? `(${wDays} يوم)` : ''}</small>`;
           }
         } else if (role === 'doctor') {
           const rText = formatDoctorRatingText(adminDoctorRatingsCache[u.User_ID]);
           finSummaryHtml = `
-            <div><small style="color:var(--brand-blue); font-weight:700;">🗺️ ${u.Governorate || 'المحافظة غير محددة'}</small></div>
+            <div><small style="color:var(--brand-blue); font-weight:700;">🗺️ ${u.Governorate || 'غير محدد'} ${u.Regions ? '— 📍 ' + u.Regions : ''}</small></div>
+            ${u.Equipment ? `<div><small style="color:#6B21A8; font-weight:700;">🧰 أدوات الطبيب: ${u.Equipment}</small></div>` : ''}
             <div><span class="badge-brand">${rText}</span></div>
           `;
         }
@@ -2465,7 +3396,7 @@
           <td>${u.Phone}</td>
           <td>${finSummaryHtml}</td>
           <td style="white-space:nowrap;">
-            ${clientContract ? `<button type="button" class="btn-sm btn-success" onclick="openClientProfileModal('${clientContract.Contract_ID}')">📦 الباقة والدفع</button>` : ''}
+            ${clientContract ? `<button type="button" class="btn-sm btn-success" onclick="openClientProfileModal('${clientContract.Contract_ID}')">📦 الباقة والأطباء</button>` : ''}
             ${role === 'doctor' ? `<button type="button" class="btn-sm btn-warning" onclick="openAdjustmentModal('${u.User_ID}', '${u.Name}')">⚖️ مكافأة / خصم</button>` : ''}
             <button type="button" class="btn-sm btn-pink" onclick="openQuickDM('${u.User_ID}')">💬 مراسلة</button>
             <button type="button" class="btn-sm" onclick="openEditUser('${u.User_ID}')">✏️ بياناته</button>
@@ -2473,6 +3404,41 @@
         `;
         dirTable.appendChild(tr);
       });
+    }
+
+    // إدارة نافذة بروفايل العميل والأطباء المشاركين في نفس الباقة
+    function renderModalPartnersList() {
+      const box = document.getElementById('profPartnersList');
+      if (modalPartnerDoctorsTemp.length === 0) {
+        box.innerHTML = '<small style="color:#64748b;">لا يوجد طبيب ثانٍ مشارك حالياً في هذه الباقة.</small>';
+        return;
+      }
+      box.innerHTML = modalPartnerDoctorsTemp.map((p, idx) => `
+        <div style="display:flex; justify-content:space-between; align-items:center; background:#fff; padding:6px 10px; border-radius:8px; border:1px solid var(--border-color); margin-bottom:4px; font-size:12px;">
+          <span>🤝 <strong>د. ${p.doctorName}</strong> (نصيبه: ${p.doctorCut} ج.م/جلسة)</span>
+          <button type="button" class="btn-sm btn-danger" onclick="removePartnerDoctorFromModal(${idx})">✕ إزالة</button>
+        </div>
+      `).join('');
+    }
+
+    function addPartnerDoctorToModal() {
+      const selVal = document.getElementById('profAddPartnerSelect').value;
+      const cutVal = Number(document.getElementById('profAddPartnerCut').value || document.getElementById('profDoctorCut').value || 200);
+      if (!selVal) {
+        showNotice('⚠️ اختر الطبيب المشارك أولاً', false);
+        return;
+      }
+      const [dId, dName] = selVal.split('|');
+      modalPartnerDoctorsTemp = modalPartnerDoctorsTemp.filter(p => p.doctorId !== dId);
+      modalPartnerDoctorsTemp.push({ doctorId: dId, doctorName: dName, doctorCut: cutVal });
+      document.getElementById('profAddPartnerSelect').value = '';
+      document.getElementById('profAddPartnerCut').value = '';
+      renderModalPartnersList();
+    }
+
+    function removePartnerDoctorFromModal(idx) {
+      modalPartnerDoctorsTemp.splice(idx, 1);
+      renderModalPartnersList();
     }
 
     function openClientProfileModal(contractId) {
@@ -2491,11 +3457,15 @@
       document.getElementById('profCurrentDebt').innerText = (c.Remaining_Debt || 0) + ' ج.م';
 
       const docSel = document.getElementById('profDoctorSelect');
-      Array.from(docSel.options).forEach(opt => {
-        if (opt.value.startsWith(c.Doctor_ID + '|') || opt.value.endsWith('|' + c.Doctor_Name)) {
-          docSel.value = opt.value;
-        }
-      });
+      docSel.value = '';
+      if (c.Doctor_ID) {
+        Array.from(docSel.options).forEach(opt => {
+          if (opt.value.startsWith(c.Doctor_ID + '|')) docSel.value = opt.value;
+        });
+      }
+
+      modalPartnerDoctorsTemp = Array.isArray(c.Partner_Doctors_List) ? [...c.Partner_Doctors_List] : [];
+      renderModalPartnersList();
 
       document.getElementById('profTotalSessions').value = c.Total_Sessions;
       document.getElementById('profSessionPrice').value = c.Session_Price;
@@ -2503,6 +3473,7 @@
       document.getElementById('profTotalPkgValue').value = c.Total_Package_Value;
       document.getElementById('profPaidAmount').value = c.Paid_Amount;
       document.getElementById('profClientWallet').value = clientUser ? Number(clientUser.Wallet_Balance || 0) : 0;
+      document.getElementById('profWalletExpiryDays').value = clientUser ? Number(clientUser.Wallet_Days_Left || 90) : 90;
       document.getElementById('profExpiryDate').value = c.Expiry_Date || '';
       document.getElementById('profAddedPayment').value = '';
       updateProfileDebtPreview();
@@ -2617,7 +3588,7 @@
     document.getElementById('saveContractProfileBtn').addEventListener('click', async function() {
       const contractId = document.getElementById('profContractId').value;
       const dVal = document.getElementById('profDoctorSelect').value;
-      const [doctorId, doctorName] = dVal ? dVal.split('|') : ['', ''];
+      const [doctorId, doctorName] = dVal ? dVal.split('|') : ['', 'بانتظار تعيين طبيب'];
       const totalSessions = Number(document.getElementById('profTotalSessions').value || 0);
       const sessionPrice = Number(document.getElementById('profSessionPrice').value || 0);
       const doctorCut = Number(document.getElementById('profDoctorCut').value || 0);
@@ -2626,7 +3597,9 @@
       const addedPayment = Number(document.getElementById('profAddedPayment').value || 0);
       const paidAmount = oldPaid + addedPayment;
       const clientWalletBalance = Number(document.getElementById('profClientWallet').value || 0);
+      const walletExpiryDays = Number(document.getElementById('profWalletExpiryDays').value || 90);
       const expiryDate = document.getElementById('profExpiryDate').value;
+      const partnerDoctors = modalPartnerDoctorsTemp.map(p => `${p.doctorId}|${p.doctorName}|${p.doctorCut}`).join(',');
 
       const btn = this;
       btn.disabled = true;
@@ -2638,6 +3611,7 @@
           contractId,
           doctorId,
           doctorName,
+          partnerDoctors,
           totalSessions,
           sessionPrice,
           doctorCut,
@@ -2645,6 +3619,7 @@
           paidAmount,
           addedPayment,
           clientWalletBalance,
+          walletExpiryDays,
           expiryDate
         });
         btn.disabled = false;
@@ -2669,7 +3644,7 @@
         btnEl.innerText = res.success ? '✓ تم التذكير' : oldText;
         if (!res.success) btnEl.disabled = false;
       } catch (e) {
-        showNotice('❌ ' + (e.message || 'خطأ في الاتصال بالسيرفر'), false);
+        showNotice('❌ خطأ في الاتصال بالسيرفر', false);
         btnEl.disabled = false;
         btnEl.innerText = oldText;
       }
@@ -2741,7 +3716,7 @@
       const btn = this;
 
       if (!region || !conditionSummary || !totalSessions || !sessionPrice || !doctorCut) {
-        showNotice('⚠️ يرجى ملء المنطقة والتفاصيل وبيانات الجلسات', false);
+        showNotice('⚠️ يرجى ملء المنطقة والتفاصيل وبيانات الجلسات والسعر العادل', false);
         return;
       }
 
@@ -2772,7 +3747,7 @@
           doctorCut: Number(doctorCut)
         });
         btn.disabled = false;
-        btn.innerText = '📢 نشر الحالة وإشعار أطباء المحافظة فقط';
+        btn.innerText = '📢 نشر الحالة وإشعار أطباء المحافظة والمنطقة';
         showNotice(res.message, res.success);
         if (res.success) {
           clearSmartCombo('caseClient');
@@ -2786,7 +3761,7 @@
         }
       } catch (e) {
         btn.disabled = false;
-        btn.innerText = '📢 نشر الحالة وإشعار أطباء المحافظة فقط';
+        btn.innerText = '📢 نشر الحالة وإشعار أطباء المحافظة والمنطقة';
         showNotice('❌ خطأ في الاتصال بالسيرفر', false);
       }
     });
@@ -2799,6 +3774,8 @@
       const govSelect = document.getElementById('newUserGovSelect');
       const selectedGovs = Array.from(govSelect.selectedOptions).map(o => o.value).join('، ');
       const governorate = (role === 'Doctor') ? (selectedGovs || 'الكل') : '';
+      const regions = (role === 'Doctor') ? document.getElementById('newUserRegions').value.trim() : '';
+      const equipment = (role === 'Doctor') ? document.getElementById('newUserEquipment').value.trim() : '';
       const btn = this;
 
       if (!name || !phone || !password) {
@@ -2816,7 +3793,9 @@
           phone,
           password,
           role,
-          governorate
+          governorate,
+          regions,
+          equipment
         });
         btn.disabled = false;
         btn.innerText = 'إنشاء الحساب فوراً';
@@ -2825,6 +3804,8 @@
           document.getElementById('newUserName').value = '';
           document.getElementById('newUserPhone').value = '';
           document.getElementById('newUserPass').value = '';
+          document.getElementById('newUserRegions').value = '';
+          document.getElementById('newUserEquipment').value = '';
           Array.from(govSelect.options).forEach(o => o.selected = false);
           if (res.state) renderAdminState(res.state);
         }
@@ -2835,6 +3816,7 @@
       }
     });
 
+    // تفعيل الباقة (تقبل التفعيل حتى لو لم يتم اختيار طبيب بعد!)
     document.getElementById('addContractBtn').addEventListener('click', async function() {
       const serviceType = document.getElementById('admServiceType').value;
       const cVal = document.getElementById('admClientSelect').value;
@@ -2848,13 +3830,13 @@
       const useWalletBalance = document.getElementById('admUseWalletCheckbox').checked;
       const btn = this;
 
-      if (!cVal || !dVal || totalSessions <= 0 || sessionPrice <= 0) {
-        showNotice('⚠️ يرجى اختيار المريض والطبيب من شريط البحث وإدخال الجلسات والسعر', false);
+      if (!cVal || totalSessions <= 0 || sessionPrice <= 0) {
+        showNotice('⚠️ يرجى اختيار المريض من شريط البحث وإدخال عدد الجلسات والسعر', false);
         return;
       }
 
       const [clientId, clientName] = cVal.split('|');
-      const [doctorId, doctorName] = dVal.split('|');
+      const [doctorId, doctorName] = dVal ? dVal.split('|') : ['', 'بانتظار تعيين طبيب'];
 
       btn.disabled = true;
       btn.innerText = '⏳ جاري التفعيل والحفظ...';
@@ -2900,9 +3882,12 @@
       document.getElementById('editUserPhone').value = u.Phone || '';
       document.getElementById('editUserPass').value = u.Password || '';
 
-      const isDoc = String(u.Role).trim().toLowerCase() === 'doctor';
-      const govWrap = document.getElementById('editUserGovWrap');
-      govWrap.style.display = isDoc ? 'block' : 'none';
+      const role = String(u.Role).trim().toLowerCase();
+      const isDoc = role === 'doctor';
+      const isCli = role === 'client';
+
+      document.getElementById('editUserGovWrap').style.display = isDoc ? 'block' : 'none';
+      document.getElementById('editClientWalletWrap').style.display = isCli ? 'block' : 'none';
 
       if (isDoc) {
         const govStr = String(u.Governorate || '');
@@ -2910,6 +3895,13 @@
         Array.from(govSelect.options).forEach(opt => {
           opt.selected = govStr.includes(opt.value);
         });
+        document.getElementById('editUserRegions').value = u.Regions || '';
+        document.getElementById('editUserEquipment').value = u.Equipment || '';
+      }
+
+      if (isCli) {
+        document.getElementById('editUserWalletBal').value = Number(u.Wallet_Balance || 0);
+        document.getElementById('editUserWalletDays').value = Number(u.Wallet_Days_Left || 90);
       }
 
       document.getElementById('editUserModal').style.display = 'flex';
@@ -2924,11 +3916,18 @@
       const name = document.getElementById('editUserName').value.trim();
       const phone = document.getElementById('editUserPhone').value.trim();
       const password = document.getElementById('editUserPass').value.trim();
-      const govWrapVisible = document.getElementById('editUserGovWrap').style.display !== 'none';
+      const isDocVisible = document.getElementById('editUserGovWrap').style.display !== 'none';
+      const isCliVisible = document.getElementById('editClientWalletWrap').style.display !== 'none';
+
       const govSelect = document.getElementById('editUserGovSelect');
-      const governorate = govWrapVisible
+      const governorate = isDocVisible
         ? (Array.from(govSelect.selectedOptions).map(o => o.value).join('، ') || 'الكل')
         : undefined;
+      const regions = isDocVisible ? document.getElementById('editUserRegions').value.trim() : undefined;
+      const equipment = isDocVisible ? document.getElementById('editUserEquipment').value.trim() : undefined;
+
+      const walletBalance = isCliVisible ? Number(document.getElementById('editUserWalletBal').value || 0) : undefined;
+      const walletExpiryDays = isCliVisible ? Number(document.getElementById('editUserWalletDays').value || 90) : undefined;
 
       if (!name || !phone) {
         showNotice('⚠️ الاسم ورقم الموبايل مطلوبان', false);
@@ -2947,6 +3946,10 @@
           phone,
           password,
           governorate,
+          regions,
+          equipment,
+          walletBalance,
+          walletExpiryDays,
           deleteUser: false
         });
         btn.disabled = false;
